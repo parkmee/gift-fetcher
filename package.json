@@ -26,5 +26,17 @@
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
     "prettier": "^1.15.2"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parkmee/gift-fetcher.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/parkmee/gift-fetcher/issues"
+  },
+  "homepage": "https://github.com/parkmee/gift-fetcher#readme"
 }
