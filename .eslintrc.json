@@ -1,7 +1,12 @@
 {
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
     "env": {
         "browser": true,
         "commonjs": true,
+        "es6": true,
         "node": true
     },
     "extends": "prettier",
@@ -38,6 +43,7 @@
             "error",
             "always"
         ],
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "max-len": ["error", {"code": 120, "ignoreUrls": true}]
     }
 }
