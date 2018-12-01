@@ -9,6 +9,7 @@ describe("canary test", function() {
   });
 
   it("should fail this non-canary test", function() {
-    expect(Giftevent()).to.be.instanceof(Object);
+    //expect(Giftevent()).to.be.instanceof(Object);
+    expect(false).to.be.true;
   });
 });
