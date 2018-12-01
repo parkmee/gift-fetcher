@@ -12,6 +12,7 @@
     "password": null,
     "database": "testdb",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql",
     "logging": false
   },
