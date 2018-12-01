@@ -1,5 +1,5 @@
 const expect = require("chai").expect;
-const Giftevent = require("../models/giftevent");
+//const Giftevent = require("../models/giftevent");
 
 describe("canary test", function() {
   // A "canary" test is one we set up to always pass
