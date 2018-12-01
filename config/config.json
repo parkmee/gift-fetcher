@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "gift_fetcher",
+    "database": "gift_fetcher_dev",
     "host": "localhost",
     "port": 3306,
     "dialect": "mysql"
@@ -10,8 +10,9 @@
   "test": {
     "username": "root",
     "password": null,
-    "database": "testdb",
+    "database": "gift_fetcher_test",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql",
     "logging": false
   },

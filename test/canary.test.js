@@ -1,5 +1,5 @@
 const expect = require("chai").expect;
-const Example = require("../models/example");
+//const Example = require("../models/giftevent");
 
 describe("canary test", function() {
   // A "canary" test is one we set up to always pass
@@ -8,7 +8,9 @@ describe("canary test", function() {
     expect(true).to.be.true;
   });
 
+  /*
   it("should fail this non-canary test", function() {
     expect(Example()).to.be.instanceof(Object);
   });
+   */
 });

@@ -6,7 +6,6 @@
   DELETE  /api/purchasedgift/delete/:purchasedgiftid    delete a purchasedgift
 */
 
-
 const db = require("../models");
 
 module.exports = function(app) {
@@ -18,11 +17,12 @@ module.exports = function(app) {
   });
 
   // don't think this is needed but adding for now
-  // app.get("/api/savedgift/get/:savedgiftid", function(req, res) {
-  //   db.Savedgift.findAll({ where: { id: req.params.savedgiftid } }).then(function(dbData) {
-  //     res.json(dbData);
-  //   });
-  // });
+  /*app.get("/api/savedgift/get/:savedgiftid", function(req, res) {
+    db.Savedgift.findAll({ where: { id: req.params.savedgiftid } }).then(function(dbData) {
+      res.json(dbData);
+    });
+  });
+  */
 
   // Create a new saved gift
   app.post("/api/purchasedgifts/create", function(req, res) {

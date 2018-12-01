@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS gift_fetcher_dev;
+CREATE DATABASE gift_fetcher_dev;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+DROP DATABASE IF EXISTS gift_fetcher_test;
+CREATE DATABASE gift_fetcher_test;
