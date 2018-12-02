@@ -4,38 +4,23 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(150),
       allowNull: false
     },
-    password: {
+    name: {
       type: DataTypes.STRING(150),
       allowNull: false
-    },
-    username: {
-      type: DataTypes.STRING(150),
-      allowNull: false
-    },
-    firstname: {
-      type: DataTypes.STRING(150),
-      allowNull: false
-    },
-    lastname: {
-      type: DataTypes.STRING(150),
-      allowNull: false
-    },
-    address: {
-      type: DataTypes.STRING(150)
-    },
-    address2: {
-      type: DataTypes.STRING(150)
-    },
-    city: {
-      type: DataTypes.STRING(150)
-    },
-    state: {
-      type: DataTypes.STRING(2)
-    },
-    zipcode: {
-      type: DataTypes.STRING(12)
     }
   });
+
+  Person.associate = function(models) {
+    Person.hasMany(models.Contact, {
+      onDelete: "cascade"
+    });
+  };
+
+  Person.associate = function(models) {
+    Person.hasMany(models.Event, {
+      onDelete: "cascade"
+    });
+  };
 
   Person.associate = function(models) {
     Person.hasMany(models.Giftpreference, {
@@ -44,7 +29,13 @@ module.exports = function(sequelize, DataTypes) {
   };
 
   Person.associate = function(models) {
-    Person.hasMany(models.Savedgift, {
+    Person.hasMany(models.Purchase, {
+      onDelete: "cascade"
+    });
+  };
+
+  Person.associate = function(models) {
+    Person.hasMany(models.Savedproduct, {
       onDelete: "cascade"
     });
   };

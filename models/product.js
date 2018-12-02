@@ -1,14 +1,14 @@
 module.exports = function(sequelize, DataTypes) {
-  const Holiday = sequelize.define("Holiday", {
-    description: {
+  const Product = sequelize.define("Product", {
+    amazonid: {
       type: DataTypes.STRING(150),
       allowNull: false
     },
-    date: {
-      type: DataTypes.DATEONLY,
+    description: {
+      type: DataTypes.STRING(150),
       allowNull: false
     }
   });
 
-  return Holiday;
+  return Product;
 };
