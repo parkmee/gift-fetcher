@@ -27,9 +27,8 @@ require("./routes/htmlRoutes")(app);
 
 require("./routes/giftEventRoutes")(app);
 require("./routes/giftPreferenceRoutes")(app);
-require("./routes/holidayRoutes")(app);
 require("./routes/personRoutes")(app);
-require("./routes/purchasedGiftRoutes")(app);
+require("./routes/purchaseRoutes")(app);
 require("./routes/savedGiftRoutes")(app);
 
 const syncOptions = { force: false };
