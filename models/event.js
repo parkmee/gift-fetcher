@@ -4,8 +4,12 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(150),
       allowNull: false
     },
-    eventdate: {
+    eventDate: {
       type: DataTypes.DATEONLY,
+      allowNull: false
+    },
+    createdBy: {
+      type: DataTypes.INTEGER,
       allowNull: false
     }
   });

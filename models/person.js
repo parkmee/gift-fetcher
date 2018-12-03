@@ -1,29 +1,35 @@
 module.exports = function(sequelize, DataTypes) {
   const Person = sequelize.define("Person", {
+    userName: {
+      type: DataTypes.STRING(150),
+      allowNull: false
+    },
+    password: {
+      type: DataTypes.STRING(150),
+      allowNull: false
+    },
     email: {
       type: DataTypes.STRING(150),
       allowNull: false
     },
-    name: {
+    firstName: {
+      type: DataTypes.STRING(150),
+      allowNull: false
+    },
+    lastName: {
       type: DataTypes.STRING(150),
       allowNull: false
     }
   });
 
   Person.associate = function(models) {
-    Person.hasMany(models.Contact, {
+    Person.hasMany(models.GiftPreference, {
       onDelete: "cascade"
     });
   };
 
   Person.associate = function(models) {
-    Person.hasMany(models.Event, {
-      onDelete: "cascade"
-    });
-  };
-
-  Person.associate = function(models) {
-    Person.hasMany(models.Giftpreference, {
+    Person.hasMany(models.SavedDate, {
       onDelete: "cascade"
     });
   };
@@ -35,8 +41,15 @@ module.exports = function(sequelize, DataTypes) {
   };
 
   Person.associate = function(models) {
-    Person.hasMany(models.Savedproduct, {
+    Person.hasMany(models.SavedProduct, {
       onDelete: "cascade"
+    });
+  };
+
+  Person.associate = function(models) {
+    Person.belongsToMany(Person, {
+      as: "linkedPerson",
+      through: "contacts"
     });
   };
 
