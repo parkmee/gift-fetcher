@@ -9,7 +9,7 @@ module.exports = function(app) {
   });
 
   // get one contact
-  app.getOne("/api/contact/get/:contactid", function(req, res) {
+  app.get("/api/contact/get/:contactid", function(req, res) {
     db.Contact.findAll({ where: { id: req.params.contactid } }).then(function(dbData) {
       res.json(dbData);
     });

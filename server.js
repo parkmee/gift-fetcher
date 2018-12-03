@@ -22,14 +22,17 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/apiRoutes")(app);
+//require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-require("./routes/giftEventRoutes")(app);
+require("./routes/contactRoutes")(app);
+require("./routes/eventRoutes")(app);
 require("./routes/giftPreferenceRoutes")(app);
 require("./routes/personRoutes")(app);
+require("./routes/productRoutes")(app);
 require("./routes/purchaseRoutes")(app);
-require("./routes/savedGiftRoutes")(app);
+require("./routes/savedProductRoutes")(app);
+require("./routes/userRoutes")(app);
 
 const syncOptions = { force: false };
 
