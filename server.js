@@ -25,20 +25,23 @@ app.set("view engine", "handlebars");
 //require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-require("./routes/contactRoutes")(app);
 require("./routes/eventRoutes")(app);
 require("./routes/giftPreferenceRoutes")(app);
 require("./routes/personRoutes")(app);
 require("./routes/productRoutes")(app);
 require("./routes/purchaseRoutes")(app);
+require("./routes/savedDateRoutes")(app);
 require("./routes/savedProductRoutes")(app);
-require("./routes/userRoutes")(app);
 
 const syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
 if (process.env.NODE_ENV === "test") {
+  syncOptions.force = true;
+}
+
+if (process.env.NODE_ENV === "development") {
   syncOptions.force = true;
 }
 

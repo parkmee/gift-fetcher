@@ -1,7 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
-  const GiftPreference = sequelize.define("GiftPreference", {
-    preference: {
+  const SavedDate = sequelize.define("SavedDate", {
+    description: {
       type: DataTypes.STRING(150),
+      allowNull: false
+    },
+    savedDate: {
+      type: DataTypes.DATEONLY,
       allowNull: false
     },
     createdBy: {
@@ -10,13 +14,13 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  GiftPreference.associate = function(models) {
-    GiftPreference.belongsTo(models.Person, {
+  SavedDate.associate = function(models) {
+    SavedDate.belongsTo(models.Person, {
       foreignKey: {
         allowNull: false
       }
     });
   };
 
-  return GiftPreference;
+  return SavedDate;
 };

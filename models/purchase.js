@@ -3,13 +3,17 @@ module.exports = function(sequelize, DataTypes) {
     purchasedate: {
       type: DataTypes.DATE,
       allowNull: false
+    },
+    eventId: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     }
   });
 
   Purchase.associate = function(models) {
     Purchase.belongsTo(models.Event, {
       foreignKey: {
-        allowNull: true
+        allowNull: false
       }
     });
   };

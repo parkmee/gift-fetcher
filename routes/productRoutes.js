@@ -4,8 +4,8 @@ module.exports = function(app) {
   // get all products should not be implemented as there might be MANY Products
 
   // get product by productid
-  app.get("/api/product/:productid", function(req, res) {
-    db.Product.findAll({ where: { id: req.params.productid } }).then(function(dbData) {
+  app.get("/api/product/:productId", function(req, res) {
+    db.Product.findAll({ where: { id: req.params.productId } }).then(function(dbData) {
       res.json(dbData);
     });
   });
@@ -18,8 +18,8 @@ module.exports = function(app) {
   });
 
   // Delete a product
-  app.delete("/api/product/:productid", function(req, res) {
-    db.Product.destroy({ where: { id: req.params.productid } }).then(function(dbData) {
+  app.delete("/api/product/:productId", function(req, res) {
+    db.Product.destroy({ where: { id: req.params.productId } }).then(function(dbData) {
       res.json(dbData);
     });
   });

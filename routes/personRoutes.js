@@ -1,12 +1,12 @@
 const db = require("../models");
 
 module.exports = function(app) {
-  // get all people
-  app.get("/api/person/get", function(req, res) {
-    db.Person.findAll().then(function(dbData) {
-      res.json(dbData);
-    });
-  });
+  // get all people - dont't think this is necessary
+  // app.get("/api/person/get", function(req, res) {
+  //   db.Person.findAll().then(function(dbData) {
+  //     res.json(dbData);
+  //   });
+  // });
 
   // get one
   app.get("/api/person/get/:personid", function(req, res) {
@@ -23,8 +23,8 @@ module.exports = function(app) {
   });
 
   // Delete a person
-  app.delete("/api/giftpreference/:personid", function(req, res) {
-    db.Person.destroy({ where: { id: req.params.personid } }).then(function(dbData) {
+  app.delete("/api/person/:personId", function(req, res) {
+    db.Person.destroy({ where: { id: req.params.personId } }).then(function(dbData) {
       res.json(dbData);
     });
   });

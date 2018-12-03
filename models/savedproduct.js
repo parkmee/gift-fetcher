@@ -1,29 +1,26 @@
-module.exports = function(sequelize) {
-  const Savedproduct = sequelize.define("Savedproduct", {});
+module.exports = function(sequelize, DataTypes) {
+  const SavedProduct = sequelize.define("SavedProduct", {
+    createdBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
+  });
 
-  Savedproduct.associate = function(models) {
-    Savedproduct.belongsTo(models.Contact, {
+  SavedProduct.associate = function(models) {
+    SavedProduct.belongsTo(models.Person, {
       foreignKey: {
         allowNull: false
       }
     });
   };
 
-  Savedproduct.associate = function(models) {
-    Savedproduct.belongsTo(models.Person, {
+  SavedProduct.associate = function(models) {
+    SavedProduct.belongsTo(models.Product, {
       foreignKey: {
         allowNull: false
       }
     });
   };
 
-  Savedproduct.associate = function(models) {
-    Savedproduct.belongsTo(models.Product, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
-
-  return Savedproduct;
+  return SavedProduct;
 };
