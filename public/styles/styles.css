@@ -16,5 +16,15 @@
 
 /* Carousel */
 #gift-carousel {
-  height: 200px;
+  height: 225px;
 }
+
+/* Calendar */
+.calendar-view {
+  margin: 20px;
+}
+h2 {
+  font-family: 'Telex';
+  font-size: 20px;
+}
+
