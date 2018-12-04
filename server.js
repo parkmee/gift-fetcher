@@ -35,6 +35,9 @@ require("./routes/savedProductRoutes")(app);
 
 const syncOptions = { force: false };
 
+//test data generator
+const TestData = require("./testDataGenerator");
+td = new TestData();
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
 if (process.env.NODE_ENV === "test") {
@@ -47,6 +50,7 @@ if (process.env.NODE_ENV === "development") {
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
+  td.createTestData();
   app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
