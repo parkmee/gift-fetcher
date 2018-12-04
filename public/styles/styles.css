@@ -1,3 +1,42 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+.brand-logo {
+  font-family: 'Sacramento';
+  padding: 0px 20px !important;
+}
+
+.section-title {
+  font-family: 'Telex';
+  font-size: 25px;
+  padding: 0px 20px;
+  margin: 20px 0px 0px 0px;
+}
+
+/* Carousel */
+#gift-carousel {
+  height: 225px;
+}
+
+/* Calendar */
+.calendar-view {
+  margin: 20px;
+}
+h2 {
+  font-family: 'Telex';
+  font-size: 20px;
+}
+
+/* Form */
+.form-title {
+  font-family: 'Telex';
+  font-size: 25px;
+}
+
+.form-section {
+  font-family: 'Telex';
+  font-size: 20px;
+}
+
+
