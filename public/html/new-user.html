@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Materialize Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Full Calendar Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../public/styles/styles.css" media="screen" title="no title" charset="utf-8">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Rancho|Sacramento|Telex" rel="stylesheet">
+
+  <title>Gift Fetcher</title>
+
+
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo"></i>Gift Fetcher</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+        <li><a href="friend-list.html"><i class="fas fa-user-friends"></i></a></li>
+        <li><a href="search-gifts.html"><i class="fas fa-gift"></i></a></li>
+        <li><a href="account.html"><i class="fas fa-cog"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="form-title">Sign-Up</h1>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input placeholder="First Name" id="first-name" type="text" class="validate">
+            <label for="first-name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input placeholder="Last Name" id="last-name" type="text" class="validate">
+            <label for="last-name">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input placeholder="User Name" id="user-name" type="text" class="validate">
+            <label for="user-name">User Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input placeholder="MM/DD" id="dob" type="text" class="validate">
+            <label for="dob">Birthday</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input placeholder="Enter password" id="password-1" type="password" class="validate">
+            <label for="password-1">Password</label>
+          </div>
+          <div class="input-field col s6">
+            <input placeholder="Re-enter password" id="password-2" type="password" class="validate">
+            <label for="password-2">Password</label>
+          </div>
+        </div>
+        <h1 class="form-title">Profile</h1>
+        <p>Please provide your special dates, gift preferences, and wish list below. Information you provide below will
+          be visible to other users who add you to their Gift Fetcher contact list.</p>
+        <div class="personal-dates-subform">
+          <h3 class="form-section">Special Dates (optional)</h3>
+          <div class="row">
+            <div class="input-field col s7">
+              <input placeholder="Date description" id="date-description" type="text" class="validate">
+              <label for="date-description">Description</label>
+            </div>
+            <div class="input-field col s2">
+              <input placeholder="MM/YYYY" id="special-date" type="text" class="validate">
+              <label for="special-date">Date</label>
+            </div>
+            <div class="input-field col s2">
+              <select>
+                <option value="true" selected>Yes</option>
+                <option>No</option>
+              </select>
+              <label>Recurring</label>
+            </div>
+            <!-- Clicking this button adds additional rows -->
+            <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
+          </div>
+        </div>
+
+        <div class="personal-preferences-subform">
+            <h3 class="form-section">Gift Preferences (optional)</h3>
+            <div class="row">
+              <div class="input-field col s11">
+                <input placeholder="Favorite hobbies (ex: fishing, gaming), categories (ex: electronics, kitchen), or color" id="gift-preference" type="text" class="validate">
+                <label for="gift-preference">Description</label>
+              </div>
+              <!-- clicking this button adds additional rows -->
+              <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
+            </div>
+          </div>
+
+          <div class="personal-wish-list-subform">
+              <h3 class="form-section">Wish List (optional)</h3>
+              <a class="waves-effect waves-light btn-large">Add</a>
+              <!-- Add carousel here -->
+          </div>
+      </form>
+    </div>
+
+  </div>
+
+</body>
+<!-- JQuery - required to load before Full Calendar -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<!-- Moment.js - required to load before Full Calendar -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.js"></script>
+<!-- Latest version of materialize.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- This version of materialize.js required for carousel to work - must come 2nd -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<!-- Full Calendar -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('select').formSelect();
+  });
+</script>
+
+</html>

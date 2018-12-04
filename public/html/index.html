@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Materialize Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Full Calendar Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../public/styles/styles.css" media="screen" title="no title" charset="utf-8">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Rancho|Sacramento|Telex" rel="stylesheet">
+
+  <title>Gift Fetcher</title>
+
+
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo"></i>Gift Fetcher</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+        <li><a href="friend-list.html"><i class="fas fa-user-friends"></i></a></li>
+        <li><a href="search-gifts.html"><i class="fas fa-gift"></i></a></li>
+        <li><a href="account.html"><i class="fas fa-cog"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="fluid-container">
+    <div class="row gift-search-view">
+      <h1 class="section-title">Search Gifts</h1>
+      <div class="carousel" id="gift-carousel">
+        <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>
+        <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>
+        <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"></a>
+        <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>
+        <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>
+        <a class="carousel-item" href="#six!"><img src="https://lorempixel.com/250/250/nature/6"></a>
+        <a class="carousel-item" href="#seven!"><img src="https://lorempixel.com/250/250/nature/7"></a>
+        <a class="carousel-item" href="#eight!"><img src="https://lorempixel.com/250/250/nature/8"></a>
+        <a class="carousel-item" href="#nine!"><img src="https://lorempixel.com/250/250/nature/9"></a>
+        <a class="carousel-item" href="#ten!"><img src="https://lorempixel.com/250/250/cats/10"></a>
+      </div>
+    </div>
+    <div class="row upcoming-event-view">
+      <h1 class="section-title">Upcoming Gifting Events</h1>
+      <div class="calendar-view">
+        <!-- See https://fullcalendar.io/docs/google-calendar for info on how to integrate with Google Calendar -->
+        <div id="calendar"></div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+<!-- JQuery - required to load before Full Calendar -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<!-- Moment.js - required to load before Full Calendar -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.js"></script>
+<!-- Latest version of materialize.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- This version of materialize.js required for carousel to work - must come 2nd -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<!-- Full Calendar -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    /* Initialize sidenav */
+    $('.sidenav').sidenav();
+
+    /* Initialize carousel */
+    $('#gift-carousel').carousel();
+
+    /* Initialize calendar */
+    $('#calendar').fullCalendar({
+
+
+    });
+  });
+
+  /* use calendar.next() with an event listener to navigate forward on the calendar */
+  const calendar = $('#calendar').fullCalendar('getCalendar');
+</script>
+
+</html>
