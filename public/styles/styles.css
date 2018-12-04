@@ -3,5 +3,18 @@
 }
 
 .brand-logo {
-  font-family: 'Rancho', cursive;
+  font-family: 'Sacramento';
+  padding: 0px 20px !important;
+}
+
+.section-title {
+  font-family: 'Telex';
+  font-size: 25px;
+  padding: 0px 20px;
+  margin: 20px 0px 0px 0px;
+}
+
+/* Carousel */
+#gift-carousel {
+  height: 200px;
 }
