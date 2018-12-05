@@ -3,13 +3,13 @@ img {
 }
 
 /* Tiny Circleslider */
-#rotatescroll {
+#circleslider300x300 {
   height: 300px;
   position: relative;
   width: 300px;
 }
 
-#rotatescroll .viewport {
+#circleslider300x300 .viewport {
   height: 300px;
   position: relative;
   margin: 0 auto;
@@ -18,7 +18,7 @@ img {
   /* pointer-events: none */
 }
 
-#rotatescroll .overview {
+#circleslider300x300 .overview {
   position: absolute;
   width: 798px;
   list-style: none;
@@ -28,14 +28,14 @@ img {
   top: 0;
 }
 
-#rotatescroll .overview li {
+#circleslider300x300 .overview li {
   height: 300px;
   width: 300px;
   float: left;
   position: relative;
 }
 
-#rotatescroll .overlay {
+#circleslider300x300 .overlay {
   background: url(../images/bg-rotatescroll.png) no-repeat 0 0;
   pointer-events: none;
   position: absolute;
@@ -45,7 +45,7 @@ img {
   width: 300px;
 }
 
-#rotatescroll .thumb {
+#circleslider300x300 .thumb {
   background: url(../images/bg-thumb.png) no-repeat 50% 50%;
   touch-action: none;
   -ms-touch-action: none;
@@ -58,7 +58,7 @@ img {
   height: 100px;
 }
 
-#rotatescroll .dot {
+#circleslider300x300 .dot {
   cursor: pointer;
   background: url(../images/bg-dot3.png) no-repeat 0 0;
   display: none;
@@ -70,20 +70,20 @@ img {
   z-index: 100;
 }
 
-#rotatescroll .dot span {
+#circleslider300x300 .dot span {
   display: none;
 }
 
 /* Circle slider with variable width */
 
-#circleslider3 {
+#circleslider350x350 {
   height: 350px;
   padding: 25px;
   position: relative;
   width: 350px;
 }
 
-#circleslider3 .viewport {
+#circleslider350x350 .viewport {
   height: 350px;
   position: relative;
   margin: 0 auto;
@@ -91,7 +91,7 @@ img {
   width: 350px;
 }
 
-#circleslider3 .overview {
+#circleslider350x350 .overview {
   background-color: #efefef;
   position: absolute;
   width: 798px;
@@ -102,7 +102,7 @@ img {
   top: 0;
 }
 
-#circleslider3 .overview li {
+#circleslider350x350 .overview li {
   height: 350px;
   width: 350px;
   margin: 0 20px 0 0;
@@ -110,7 +110,7 @@ img {
   position: relative;
 }
 
-#circleslider3 .overlay {
+#circleslider350x350 .overlay {
   background: url(../images/bg-rotatescroll2.png) no-repeat 0 0;
   pointer-events: none;
   position: absolute;
@@ -120,7 +120,7 @@ img {
   width: 400px;
 }
 
-#circleslider3 .thumb {
+#circleslider350x350 .thumb {
   background: url(../images/bg-thumb.png) no-repeat 50% 50%;
   position: absolute;
   top: -3px;
@@ -131,7 +131,7 @@ img {
   height: 100px;
 }
 
-#circleslider3 .dot {
+#circleslider350x350 .dot {
   cursor: pointer;
   display: none;
   background: url(../images/bg-dot3.png) no-repeat 0 0;
@@ -147,6 +147,6 @@ img {
   z-index: 100;
 }
 
-#circleslider3 .dot span {
+#circleslider350x350 .dot span {
   cursor: pointer;
 }

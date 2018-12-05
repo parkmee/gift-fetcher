@@ -23,7 +23,7 @@
 
 <body>
   <div class="fluid-container">
-    <div id="rotatescroll">
+    <div id="circleslider300x300">
       <div class="viewport">
         <ul class="overview">
           <li><a href="#"><img src="../images/hdr1.jpg"></a></li>
@@ -39,7 +39,7 @@
       <div class="thumb"></div>
     </div>
 
-    <div id="circleslider3">
+    <div id="circleslider350x350">
       <div class="viewport">
         <ul class="overview">
           <li><a href="#" rel="group"><img src="../images/ex1.jpg"></a></li>
@@ -60,15 +60,15 @@
 
   <script type="text/javascript">
     $(document).ready(()=>{
-      $('#rotatescroll').tinycircleslider({
+      $('#circleslider300x300').tinycircleslider({
         interval: true,
         dotsSnap: true,
         dotsHide: false
       });
 
-      $("#circleslider3").tinycircleslider({
+      $("#circleslider350x350").tinycircleslider({
         dotsSnap: true,
-        radius: 170,
+        radius: 184,
         dotsHide: false,
         interval: true
       })
