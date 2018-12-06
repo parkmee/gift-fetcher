@@ -1,3 +1,7 @@
+html body {
+  height: 100%;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
@@ -14,7 +18,7 @@
   margin: 20px 0px 0px 0px;
 }
 
-/* Carousel */
+/* Gift Carousel */
 #gift-carousel {
   height: 225px;
 }
@@ -39,4 +43,26 @@ h2 {
   font-size: 20px;
 }
 
+/* Slick Carousel */
+.text-box {
+  height: 150px !important;
+  width: 150px !important;
+  text-align: center;
+  vertical-align: middle;
+  background-color: grey;
+  margin: 10px;
+  position: relative;
+}
+
+.event-text {
+  margin-top: 30%;
+}
+
+.remove-item {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 30px !important;
+  width: 30px !important;
+}
 

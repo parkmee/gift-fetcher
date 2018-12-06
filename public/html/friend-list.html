@@ -9,9 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <!-- Full Calendar Stylesheets -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css">
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../../public/styles/styles.css" media="screen" title="no title" charset="utf-8">
@@ -39,29 +38,53 @@
     </div>
   </nav>
 
-  <div class="container">
-    
-
+  <div class="fluid-container">
+    <div class="user-event-view">
+      <div class="user-event-carousel add-remove">
+        <div class="d-inline text-box">
+          <h5 class="event-text">Event 1<br> MM/YYYY</h5>
+          <a class="btn-floating btn-small waves-effect waves-light grey remove-item"><i class="material-icons delete-icon">close</i></a>
+        </div>
+        <div class="d-inline text-box"><h5 class="event-text">Event 2<br> MM/YYYY</h5></div>
+        <div class="d-inline text-box"><h5 class="event-text">Event 3<br> MM/YYYY</h5></div>
+        <div class="d-inline text-box"><h5 class="event-text">Event 4<br> MM/YYYY</h5></div>
+        <div class="d-inline text-box"><h5 class="event-text">Event 5<br> MM/YYYY</h5></div>
+        <div class="d-inline text-box"><h5 class="event-text">Event 6<br> MM/YYYY</h5></div>
+        <div class="d-inline text-box"><h5 class="event-text">Event 7<br> MM/YYYY</h5></div>
+        <div class="d-inline text-box"><h5 class="event-text">Event 8<br> MM/YYYY</h5></div>
+        <div class="d-inline text-box"><h5 class="event-text">Event 9<br> MM/YYYY</h5></div>
+      </div>
+      <form class="col 12">
+        <div class="add-event"></div>
+      </form>
+    </div>
+    <div class="user-preference-view"></div>
+    <div class="search-gifts"></div>
+    <div class="stored-gifts"></div>
+    <div class="purchase-history"></div>
   </div>
 
+  <!-- JQuery - required to load before Full Calendar -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <!-- Slick Carousel -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- Latest version of materialize.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- This version of materialize.js required for carousel to work - must come 2nd -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      /* Initialize Slick Carousel */
+      $('.user-event-carousel').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1
+      })
+    });
+  </script>
+
 </body>
-<!-- JQuery - required to load before Full Calendar -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-<!-- Moment.js - required to load before Full Calendar -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.js"></script>
-<!-- Latest version of materialize.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<!-- This version of materialize.js required for carousel to work - must come 2nd -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<!-- Full Calendar -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
-
-<script>
-  $(document).ready(function () {
-
-  });
-
-</script>
 
 </html>
