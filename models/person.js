@@ -46,7 +46,7 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
-  Person.associate = function(models) {
+  Person.associate = function() {
     Person.belongsToMany(Person, {
       as: "linkedPerson",
       through: "contacts"

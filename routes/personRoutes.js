@@ -10,7 +10,7 @@ module.exports = function(app) {
 
   // get one
   app.get("/api/person/get/:personid", function(req, res) {
-    db.Person.findOne({ where: { personid: req.params.personid } }).then(function(dbData) {
+    db.Person.findOne({ where: { id: req.params.personid } }).then(function(dbData) {
       res.json(dbData);
     });
   });
