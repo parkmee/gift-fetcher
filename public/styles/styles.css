@@ -50,11 +50,11 @@ html body {
 .date-circle {
   font-size: 25px;
   font: white !important;
-  padding-top: 10px;
+  padding-top: 9px;
   background-color: #91abad;
 }
 
-.avatar {
+.event-alerts .avatar {
   min-height: 64px !important;
 }
 
@@ -106,6 +106,41 @@ slider-bar .item-container {
 h2 {
   font-family: 'Telex';
   font-size: 20px;
+}
+
+/* Contact List */
+.friend-tile {
+  width: 200px;
+  font-size: 20px;
+  margin: 0px 0px 16px 16px;
+  background: white;
+  border-radius: 25px;
+}
+
+.friend-tile .row {
+  margin: 0px;
+  position: relative;
+}
+
+.friend-tile .user-icon {
+  font-size: 40px;
+  margin: 5px 0px 5px 0px;
+  color: #91abad;
+}
+
+.friend-name {
+  align-content: flex-start;
+  margin: auto 0;
+}
+
+.friend-first-name {
+  margin-right: 10px !important;
+}
+
+.friend-first-name, .friend-last-name {
+  font-size: 18px;
+  margin: 0px;
+  height: 25px !important;
 }
 
 /* Form */
