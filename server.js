@@ -23,7 +23,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 //require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+//require("./routes/htmlRoutes")(app);
 
 require("./routes/eventRoutes")(app);
 require("./routes/giftPreferenceRoutes")(app);
@@ -32,6 +32,8 @@ require("./routes/productRoutes")(app);
 require("./routes/purchaseRoutes")(app);
 require("./routes/savedDateRoutes")(app);
 require("./routes/savedProductRoutes")(app);
+
+require("./routes/htmlRoutes")(app);
 
 const syncOptions = { force: false };
 
