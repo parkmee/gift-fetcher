@@ -114,16 +114,16 @@
       <section id="product-search" class="my-2">
         <h1 class="section-title">Search</h1>
         <div class="slider-bar pb-3">
-          <div class="item-container d-inline-block"><a href="#"><img src="../images/ex1.jpg"></a></div>
-          <div class="item-container"><a href="#"><img src="../images/ex2.jpg"></a></div>
-          <div class="item-container"><a href="#"><img src="../images/ex3.jpg"></a></div>
-          <div class="item-container"><a href="#"><img src="../images/ex4.jpg"></a></div>
-          <div class="item-container"><a href="#"><img src="../images/ex5.jpg"></a></div>
-          <div class="item-container"><a href="#"><img src="../images/hdr1.jpg"></a></div>
-          <div class="item-container"><a href="#"><img src="../images/hdr2.jpg"></a></div>
-          <div class="item-container"><a href="#"><img src="../images/hdr3.jpg"></a></div>
-          <div class="item-container"><a href="#"><img src="../images/hdr4.jpg"></a></div>
-          <div class="item-container"><a href="#"><img src="../images/hdr5.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex1.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex2.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex3.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex4.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex5.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr1.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr2.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr3.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr4.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr5.jpg"></a></div>
         </div>
       </section>
 
@@ -166,11 +166,50 @@
 
       $('.slider-bar').slick({
         centerMode: true,
-        slidesToShow: 8,
-        slidesToScroll: 3
+        slidesToShow: 9,
+        slidesToScroll: 3,
+        centerPadding: '20px',
+        lazyLoad: 'ondemand',
+        responsive: [{
+          breakpoint: 1880,
+          settings: {
+            slidesToShow: 8
+          }
+        },{
+          breakpoint: 1730,
+          settings: {
+            slidesToShow: 7
+          }
+        },{
+          breakpoint: 1588,
+          settings: {
+            slidesToShow: 6
+          }
+        },{
+          breakpoint: 1420,
+          settings: {
+            slidesToShow: 5
+          }
+        },{
+          breakpoint: 1230,
+          settings: {
+            slidesToShow: 4
+          }
+        },{
+          breakpoint: 1090,
+          settings: {
+            slidesToShow: 3
+          }
+        },{
+          breakpoint: 955,
+          settings: {
+            slidesToShow: 2
+          }
+        }
+      ]
       });
 
-      /* Initialize Tiny circleslider */
+      /* Initialize tiny circleslider */
       $('#circleslider300x300').tinycircleslider({
         interval: true,
         dotsSnap: true,
