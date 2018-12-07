@@ -46,6 +46,27 @@ html body {
   height: 300px;
 }
 
+/* Upcoming events */
+.date-circle {
+  font-size: 25px;
+  font: white !important;
+  padding-top: 10px;
+  background-color: #91abad;
+}
+
+.avatar {
+  min-height: 64px !important;
+}
+
+.secondary-content {
+  margin-top: 8px;
+  font-size: 20px;
+}
+
+.missing-icon {
+  color: #ae0000;
+}
+
 /* Content body */
 .content {
   margin-left: 350px;

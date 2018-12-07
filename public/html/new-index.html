@@ -52,10 +52,11 @@
 
   <div class="fluid-container">
     <div class="sidenav">
-      <div class="row text-center">
+      <section class="row text-center">
         <h5 class="name-text col-12">Hello, Nani Whitner!</h5>
-      </div>
-      <div class="row d-flex justify-content-center">
+      </section>
+
+      <section class="row d-flex justify-content-center circle-slider">
         <div id="circleslider300x300">
           <div class="viewport">
             <ul class="overview">
@@ -71,35 +72,78 @@
           <div class="overlay"></div>
           <div class="thumb"></div>
         </div>
-      </div>
+      </section>
+
+      <section class="row d-block justify-content-center ml-2 event-alerts">
+        <h5 class="name-text col-12 text-center">Upcoming Events</h5>
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <div class="date-circle circle text-center">17</div>
+            <span class="title">Mike Kelley</span>
+            <p>Birthday <br>
+            </p>
+            <a href="#!" class="secondary-content ok-icon"><i class="fas fa-calendar-check"></i></a>
+          </li>
+          <li class="collection-item avatar">
+            <div class="date-circle circle text-center">18</div>
+            <span class="title">John Doe</span>
+            <p>Birthday <br>
+            </p>
+            <a href="#!" class="secondary-content ok-icon"><i class="fas fa-calendar-check"></i></a>
+          </li>
+          <li class="collection-item avatar">
+            <div class="date-circle circle text-center">28</div>
+            <span class="title">Pam Smith</span>
+            <p>Birthday <br>
+            </p>
+            <a href="#!" class="secondary-content missing-icon"><i class="fas fa-gift"></i></a>
+          </li>
+          <li class="collection-item avatar">
+            <div class="date-circle circle text-center">30</div>
+            <span class="title">Don Draper</span>
+            <p>Birthday <br>
+            </p>
+            <a href="#!" class="secondary-content missing-icon"><i class="fas fa-gift"></i></a>
+          </li>
+        </ul>
+      </section>
+
     </div>
-  </div>
 
-  <div class="content">
-    <section id="product-search" class="mt-3">
-      <h1 class="section-title col-12">Search</h1>
-      <div class="slider-bar">
-        <div class="item-container d-inline-block"><a href="#"><img src="../images/ex1.jpg"></a></div>
-        <div class="item-container"><a href="#"><img src="../images/ex2.jpg"></a></div>
-        <div class="item-container"><a href="#"><img src="../images/ex3.jpg"></a></div>
-        <div class="item-container"><a href="#"><img src="../images/ex4.jpg"></a></div>
-        <div class="item-container"><a href="#"><img src="../images/ex5.jpg"></a></div>
-        <div class="item-container"><a href="#"><img src="../images/hdr1.jpg"></a></div>
-        <div class="item-container"><a href="#"><img src="../images/hdr2.jpg"></a></div>
-        <div class="item-container"><a href="#"><img src="../images/hdr3.jpg"></a></div>
-        <div class="item-container"><a href="#"><img src="../images/hdr4.jpg"></a></div>
-        <div class="item-container"><a href="#"><img src="../images/hdr5.jpg"></a></div>
-      </div>
-    </section>
+    <div class="content">
+      <section id="product-search" class="my-2">
+        <h1 class="section-title">Search</h1>
+        <div class="slider-bar pb-3">
+          <div class="item-container d-inline-block"><a href="#"><img src="../images/ex1.jpg"></a></div>
+          <div class="item-container"><a href="#"><img src="../images/ex2.jpg"></a></div>
+          <div class="item-container"><a href="#"><img src="../images/ex3.jpg"></a></div>
+          <div class="item-container"><a href="#"><img src="../images/ex4.jpg"></a></div>
+          <div class="item-container"><a href="#"><img src="../images/ex5.jpg"></a></div>
+          <div class="item-container"><a href="#"><img src="../images/hdr1.jpg"></a></div>
+          <div class="item-container"><a href="#"><img src="../images/hdr2.jpg"></a></div>
+          <div class="item-container"><a href="#"><img src="../images/hdr3.jpg"></a></div>
+          <div class="item-container"><a href="#"><img src="../images/hdr4.jpg"></a></div>
+          <div class="item-container"><a href="#"><img src="../images/hdr5.jpg"></a></div>
+        </div>
+      </section>
 
-    <section id="event-view">
-      <h1 class="section-title w-100">Upcoming</h1>
-      <div class="calendar-view d-flex justify-content-center w-100">
-        <div id="calendar" class="fc-calendar-container"></div>
-    </section>
+      <section id="event-view" class="row">
+        <h1 class="section-title w-100">Calendar</h1>
+        <div class="calendar-view d-flex justify-content-center w-100">
+          <div id="calendar" class="fc-calendar-container"></div>
+      </section>
 
-    <section id="friend-view"></section>
-  </div>
+      <section id="friend-view">
+        <h1 class="section-title w-100">Contacts</h1>
+
+        <div class="friend-list-view"></div>
+        <ul class="list-group friend-list ml-5">
+          <li>
+            <a href="#">First Last</a>
+          </li>
+        </ul>
+      </section>
+    </div>
   </div>
 
   <footer></footer>
@@ -120,10 +164,9 @@
   <script type="text/javascript">
     $(document).ready(() => {
 
-
       $('.slider-bar').slick({
         centerMode: true,
-        slidesToShow: 3,
+        slidesToShow: 8,
         slidesToScroll: 3
       });
 
@@ -132,11 +175,11 @@
         interval: true,
         dotsSnap: true,
         dotsHide: false
-
-
       });
+
       $('#calendar').calendario();
 
+      $('body').bootstrapMaterialDesign();
     })
   </script>
 </body>
