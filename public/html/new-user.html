@@ -2,47 +2,46 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Gift Fetcher</title>
 
-  <!-- Materialize Stylesheets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Material Design for Bootstrap -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+    integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+  <!-- Materialize -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <!-- Full Calendar Stylesheets -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css">
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
 
-  <!-- Stylesheets -->
+  <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="../../public/styles/styles.css" media="screen" title="no title" charset="utf-8">
 
-  <!-- Fonts -->
+  <!-- Fonts and Icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Rancho|Sacramento|Telex" rel="stylesheet">
 
-  <title>Gift Fetcher</title>
-
-
 </head>
 
 <body>
-  <nav>
+  <nav class="sticky-top">
     <div class="nav-wrapper">
-      <a href="index.html" class="brand-logo"></i>Gift Fetcher</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="index.html"><i class="fas fa-home"></i></a></li>
-        <li><a href="friend-list.html"><i class="fas fa-user-friends"></i></a></li>
-        <li><a href="search-gifts.html"><i class="fas fa-gift"></i></a></li>
-        <li><a href="account.html"><i class="fas fa-cog"></i></a></li>
-      </ul>
+      <a href="index.html" class="brand-logo"><span class="gift-icon"><i class="fas fa-gift"></i></span>Gift Fetcher</a>
     </div>
   </nav>
 
   <div class="container">
     <h1 class="form-title">Sign-Up</h1>
     <div class="row">
-      <form class="col s12">
+      <form class="col s12 new-user-form">
         <div class="row">
           <div class="input-field col s6">
             <input placeholder="First Name" id="first-name" type="text" class="validate">
@@ -100,43 +99,96 @@
         </div>
 
         <div class="personal-preferences-subform">
-            <h3 class="form-section">Gift Preferences (optional)</h3>
-            <div class="row">
-              <div class="input-field col s11">
-                <input placeholder="Favorite hobbies (ex: fishing, gaming), categories (ex: electronics, kitchen), or color" id="gift-preference" type="text" class="validate">
-                <label for="gift-preference">Description</label>
-              </div>
-              <!-- clicking this button adds additional rows -->
-              <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
+          <h3 class="form-section">Gift Preferences (optional)</h3>
+          <div class="row">
+            <div class="input-field col s11">
+              <input placeholder="Favorite hobbies (ex: fishing, gaming), categories (ex: electronics, kitchen), or color"
+                id="gift-preference" type="text" class="validate">
+              <label for="gift-preference">Description</label>
             </div>
+            <!-- clicking this button adds additional rows -->
+            <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
           </div>
-
-          <div class="personal-wish-list-subform">
-              <h3 class="form-section">Wish List (optional)</h3>
-              <a class="waves-effect waves-light btn-large">Add</a>
-              <!-- Add carousel here -->
-          </div>
+        </div>
       </form>
     </div>
-
+    <h3 class="form-section wish-list">Wish List (optional)</h3>
+    <div class="row wish-list">
+      <div class="input-field col l5">
+        <input placeholder="Search keywords" id="product-search-term" type="text" class="validate">
+        <label for="product-search-term">Filter</label>
+      </div>
+      <!-- Clicking this button adds filter search terms -->
+      <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
+    </div>
+    <div class="filter-view d-flex flex-wrap">
+      <div class="filter-term-tile d-inline-flex">
+        <p>Pink <i class="fas fa-times-circle"></i></p>
+      </div>
+    </div>
+    <section id="product-search" class="my-2">
+      <div class="slider-bar pb-3">
+        <div class="item-container"><a href="#"><img data-lazy="../images/ex1.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/ex2.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/ex3.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/ex4.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/ex5.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/hdr1.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/hdr2.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/hdr3.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/hdr4.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/hdr5.jpg"></a></div>
+      </div>
+    </section>
   </div>
 
 </body>
-<!-- JQuery - required to load before Full Calendar -->
+<!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-<!-- Moment.js - required to load before Full Calendar -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.js"></script>
 <!-- Latest version of materialize.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<!-- This version of materialize.js required for carousel to work - must come 2nd -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<!-- Full Calendar -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+<!-- Slick Carousel -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+
 
 <script>
   $(document).ready(function () {
     $('select').formSelect();
+  });
+
+  $('.slider-bar').slick({
+    centerMode: true,
+    slidesToShow: 7,
+    slidesToScroll: 3,
+    centerPadding: '20px',
+    lazyLoad: 'ondemand',
+    responsive: [{
+      breakpoint: 1700,
+      settings: {
+        slidesToShow: 6
+      }
+    }, {
+      breakpoint: 1680,
+      settings: {
+        slidesToShow: 5
+      }
+    }, {
+      breakpoint: 1288,
+      settings: {
+        slidesToShow: 4
+      }
+    }, {
+      breakpoint: 1055,
+      settings: {
+        slidesToShow: 3
+      }
+    }, {
+      breakpoint: 700,
+      settings: {
+        slidesToShow: 2
+      }
+    }]
   });
 </script>
 

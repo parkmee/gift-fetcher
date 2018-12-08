@@ -47,10 +47,14 @@ html body {
 }
 
 /* Upcoming events */
+.event-list {
+  border-radius: 24px;
+}
+
 .date-circle {
   font-size: 25px;
-  font: white !important;
-  padding-top: 9px;
+  color: white !important;
+  padding: 11px 1px 0px 0px;
   background-color: #91abad;
 }
 
@@ -175,5 +179,44 @@ h2 {
   right: 5px;
   height: 30px !important;
   width: 30px !important;
+}
+
+/* New User Form */
+.btn-floating {
+  background-color: #91abad;
+}
+
+.new-user-form {
+  margin-bottom: 0px;
+}
+
+.caret {
+  display: none;
+}
+
+/* User Wish List */
+
+.wish-list {
+  margin-top: 0px;
+}
+
+.filter-term-tile {
+  padding: 10px;
+  background-color: #91abad;
+  border-radius: 24px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.filter-term-tile p {
+  margin: 0px;
+}
+
+#product-search-term {
+  margin-bottom: 0px;
+}
+
+#product-search .slick-arrow:before {
+  color: #ae0000;
 }
 
