@@ -2,89 +2,276 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Gift Fetcher</title>
 
-  <!-- Materialize Stylesheets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Material Design for Bootstrap -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+    integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+  <!-- Materialize -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Slick Carousel -->
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="../../public/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <!-- Tiny Circleslide Stylesheet -->
+  <link rel="stylesheet" type="text/css" media="screen" href="../styles/tinycircleslider.css" />
 
-  <!-- Fonts -->
+  <!-- Calendar -->
+  <link rel="stylesheet" type="text/css" href="../styles/calendar.css">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="../../public/styles/main.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="../../public/styles/friend-list.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="../../public/styles/carousel.css" media="screen" title="no title" charset="utf-8">
+
+  <!-- Fonts and Icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Rancho|Sacramento|Telex" rel="stylesheet">
 
-  <title>Gift Fetcher</title>
-
-
 </head>
 
 <body>
-  <nav>
+  <nav class="sticky-top">
     <div class="nav-wrapper">
-      <a href="index.html" class="brand-logo"></i>Gift Fetcher</a>
+      <a href="index.html" class="brand-logo"><span class="gift-icon"><i class="fas fa-gift"></i></span>Gift Fetcher</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="index.html"><i class="fas fa-home"></i></a></li>
         <li><a href="friend-list.html"><i class="fas fa-user-friends"></i></a></li>
-        <li><a href="search-gifts.html"><i class="fas fa-gift"></i></a></li>
-        <li><a href="account.html"><i class="fas fa-cog"></i></a></li>
+        <li><a href="profile.html"><i class="fas fa-cog"></i></a></li>
       </ul>
     </div>
   </nav>
 
   <div class="fluid-container">
-    <div class="user-event-view">
-      <div class="user-event-carousel add-remove">
-        <div class="d-inline text-box">
-          <h5 class="event-text">Event 1<br> MM/YYYY</h5>
-          <a class="btn-floating btn-small waves-effect waves-light grey remove-item"><i class="material-icons delete-icon">close</i></a>
+    <div class="sidenav">
+      <section class="row text-center">
+        <h5 class="name-text col-12">Contacts</h5>
+      </section>
+
+      <section class="row d-flex justify-content-center circle-slider">
+        <div id="circleslider300x300">
+          <div class="viewport">
+            <ul class="overview">
+              <li><div class="name-tile text-center">John Doe</div></li>
+              <li><div class="name-tile text-center">John Draper</div></li>
+              <li><div class="name-tile text-center">Mike Kelley</div></li>
+              <li><div class="name-tile text-center">Brintza Miles</div></li>
+              <li><div class="name-tile text-center">Greg Papadoplous</div></li>
+              <li><div class="name-tile text-center">Sastry Satyanarayana</div></li>
+              <li><div class="name-tile text-center">Vishnu Zee</div></li>
+            </ul>
+          </div>
+
+          <div class="dot"></div>
+          <div class="overlay"></div>
+          <div class="thumb"></div>
         </div>
-        <div class="d-inline text-box"><h5 class="event-text">Event 2<br> MM/YYYY</h5></div>
-        <div class="d-inline text-box"><h5 class="event-text">Event 3<br> MM/YYYY</h5></div>
-        <div class="d-inline text-box"><h5 class="event-text">Event 4<br> MM/YYYY</h5></div>
-        <div class="d-inline text-box"><h5 class="event-text">Event 5<br> MM/YYYY</h5></div>
-        <div class="d-inline text-box"><h5 class="event-text">Event 6<br> MM/YYYY</h5></div>
-        <div class="d-inline text-box"><h5 class="event-text">Event 7<br> MM/YYYY</h5></div>
-        <div class="d-inline text-box"><h5 class="event-text">Event 8<br> MM/YYYY</h5></div>
-        <div class="d-inline text-box"><h5 class="event-text">Event 9<br> MM/YYYY</h5></div>
-      </div>
-      <form class="col 12">
-        <div class="add-event"></div>
-      </form>
+      </section>
+
+      <section class="row d-block justify-content-center ml-2 event-alerts">
+        <h5 class="name-text col-12 text-center">Upcoming Events</h5>
+        <h5 class="name-text col-12 text-center">12/17 - 12/30</h5>
+        <ul class="collection event-list">
+          <li class="collection-item avatar">
+            <div class="date-circle circle text-center">17</div>
+            <span class="title">Mike Kelley</span>
+            <p>Birthday <br>
+            </p>
+            <a href="#!" class="secondary-content ok-icon"><i class="fas fa-calendar-check"></i></a>
+          </li>
+          <li class="collection-item avatar">
+            <div class="date-circle circle text-center">18</div>
+            <span class="title">John Doe</span>
+            <p>Birthday <br>
+            </p>
+            <a href="#!" class="secondary-content ok-icon"><i class="fas fa-calendar-check"></i></a>
+          </li>
+          <li class="collection-item avatar">
+            <div class="date-circle circle text-center">28</div>
+            <span class="title">Pam Smith</span>
+            <p>Birthday <br>
+            </p>
+            <a href="#!" class="secondary-content missing-icon"><i class="fas fa-gift"></i></a>
+          </li>
+          <li class="collection-item avatar">
+            <div class="date-circle circle text-center">30</div>
+            <span class="title">Don Draper</span>
+            <p>Birthday <br>
+            </p>
+            <a href="#!" class="secondary-content missing-icon"><i class="fas fa-gift"></i></a>
+          </li>
+        </ul>
+      </section>
+
     </div>
-    <div class="user-preference-view"></div>
-    <div class="search-gifts"></div>
-    <div class="stored-gifts"></div>
-    <div class="purchase-history"></div>
+
+    <div class="content">
+      <section id="events">
+        <h1 class="section-title w-100">Special Events</h1>
+        <div class="event-view d-flex flex-wrap">
+
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-ring"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Anniversay</p>
+                <p class="event-date">12/3</p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-birthday-cake"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Birthday</p>
+                <p class="event-date">12/3</p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-user-graduate"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Graduation</p>
+                <p class="event-date">12/3</p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-heart"></i></div>
+              <div class="col-8 event-details d-flex flex-wrap">
+                <p class="event-name">Valentine's Day</p>
+                <p class="event-date">2/14</p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Mother's Day</p>
+                <p class="event-date">12/3</p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="product-search" class="my-2">
+        <h1 class="section-title">Search</h1>
+        <div class="slider-bar pb-3">
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex1.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex2.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex3.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex4.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex5.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr1.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr2.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr3.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr4.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr5.jpg"></a></div>
+        </div>
+
+      </section>
+      <div class="row wish-list">
+        <div class="input-field col l5">
+          <input placeholder="Enter favorite color, hobbies, interests, etc" id="add-preference" type="text" class="validate">
+          <label for="add-preference">Add Preferences</label>
+        </div>
+        <!-- Clicking this button adds filter search terms -->
+        <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
+      </div>
+
+    </div>
   </div>
 
-  <!-- JQuery - required to load before Full Calendar -->
+  <footer></footer>
+
+  <!-- JS Libraries -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <!-- Slick Carousel -->
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <!-- Latest version of materialize.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <!-- This version of materialize.js required for carousel to work - must come 2nd -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <!-- Slick Carousel -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+  <!-- Tiny Circleslider -->
+  <script type="text/javascript" src="../js/jquery.tinycircleslider.js"></script>
+  <!-- Calendar -->
+  <script type="text/javascript" src="../js/jquery.calendario.js"></script>
 
-  <script>
-    $(document).ready(function () {
-      /* Initialize Slick Carousel */
-      $('.user-event-carousel').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1
-      })
-    });
+  <!-- Initialize Document -->
+  <script type="text/javascript">
+    $(document).ready(() => {
+
+      $('.slider-bar').slick({
+        centerMode: true,
+        slidesToShow: 9,
+        slidesToScroll: 3,
+        centerPadding: '20px',
+        lazyLoad: 'ondemand',
+        responsive: [{
+          breakpoint: 1880,
+          settings: {
+            slidesToShow: 8
+          }
+        }, {
+          breakpoint: 1730,
+          settings: {
+            slidesToShow: 7
+          }
+        }, {
+          breakpoint: 1588,
+          settings: {
+            slidesToShow: 6
+          }
+        }, {
+          breakpoint: 1420,
+          settings: {
+            slidesToShow: 5
+          }
+        }, {
+          breakpoint: 1230,
+          settings: {
+            slidesToShow: 4
+          }
+        }, {
+          breakpoint: 1090,
+          settings: {
+            slidesToShow: 3
+          }
+        }, {
+          breakpoint: 955,
+          settings: {
+            slidesToShow: 2
+          }
+        }]
+      });
+
+      /* Initialize tiny circleslider */
+      $('#circleslider300x300').tinycircleslider({
+        interval: false,
+        dotsSnap: true,
+        dotsHide: false
+      });
+
+      $('body').bootstrapMaterialDesign();
+    })
   </script>
-
 </body>
 
 </html>

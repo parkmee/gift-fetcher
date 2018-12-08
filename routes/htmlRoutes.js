@@ -11,10 +11,28 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/new-user", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("new-user", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/friend-list/:id", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("friend-list", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
+  app.get("/profile", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
+      res.render("profile", {
         example: dbExample
       });
     });

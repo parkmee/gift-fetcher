@@ -1,0 +1,48 @@
+.name-tile {
+  margin: 120px 0px 0px 0px;
+  height: 300px;
+  width: 300px;
+  font-size: 40px;
+}
+
+/* Contact List */
+.event-tile {
+  width: 245px;
+  font-size: 20px;
+  margin: 0px 0px 16px 16px;
+  background: white;
+  border-radius: 25px;
+}
+
+.event-tile .row {
+  margin: 0px;
+  position: relative;
+}
+
+.event-tile .event-icon {
+  font-size: 35px;
+  margin: 5px 0px 5px 0px;
+  color: #91abad;
+}
+
+.event-details {
+  align-content: flex-start;
+  margin: auto 0px auto 5px;
+}
+
+.event-name {
+  margin-right: 10px !important;
+}
+
+.event-name, .event-date {
+  font-size: 18px;
+  margin: 0px;
+  height: 25px !important;
+}
+
+.delete-icon {
+  position: relative;
+  right: 5px;
+  top: 5px;
+  color: #91abad;
+}
