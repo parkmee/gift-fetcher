@@ -1,11 +1,20 @@
 const path = require("path");
+const TestData = require("../public/js/testdata");
+const testEvents = TestData.testEvents;
 
 module.exports = function(app) {
   // Load index page
 
   app.get("/index", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/html/index.html"));
+    const hbsObject = {
+      events: testEvents
+    };
+    res.render("index", hbsObject);
   });
+
+  /* app.get("/index", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/index.html"));
+  }); */
 
   app.get("/friend-list", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/html/friend-list.html"));

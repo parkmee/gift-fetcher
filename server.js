@@ -13,7 +13,38 @@ app.use(express.json());
 app.use("/public", express.static(__dirname + "/public"));
 
 // Handlebars
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({
+  defaultLayout: "main",
+  // Source - https://stackoverflow.com/questions/33059203/error-missing-helper-in-handlebars-js
+  helpers: {
+    math: function (v1, operator, v2) {
+      v1 = parseFloat(v1);
+      v2 = parseFloat(v2);
+      return {
+        "+": v1 + v2,
+        "-": v1 - v2,
+        "*": v1 * v2,
+        "/": v1 / v2,
+        "%": v1 % v2
+      }[operator];
+    },
+    compare: function (v1, operator, v2) {
+      v1 = v1.toLowerCase();
+      v2 = v2.toLowerCase();
+      return {
+        "==": v1 == v2,
+        "!=": v1 != v2,
+        "===": v1 === v2,
+        "<": v1 < v2,
+        "<=": v1 <= v2,
+        ">": v1 > v2,
+        ">=": v1 >= v2,
+        "&&": !!(v1 && v2),
+        "||": !!(v1 || v2)
+      }[operator];
+    }
+  }
+}));
 app.set("view engine", "handlebars");
 
 // Routes

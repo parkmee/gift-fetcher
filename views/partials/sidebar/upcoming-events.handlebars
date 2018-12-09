@@ -1,0 +1,26 @@
+<section class="row d-block justify-content-center ml-2 event-alerts">
+  <h5 class="section-title col-12 text-center mt-2">upcoming events</h5>
+  <h5 class="sub-title col-12 text-center mt-2">12/9-12/29</h5>
+
+  <div class="upcoming-event-view d-block justify-content-center">
+    {{#each events}}
+    <div class="event-tile">
+      <div class="row">
+        <div class="col-2 event-icon"><i class="fas fa-hanukiah"></i></div>
+        <div class="col-8 event-details">
+          <p class="contact-name">{{personFirstName}} {{personLastName}}</p>
+          <p class="event-name">{{eventTitle}}</p>
+          <p class="event-date">{{eventDate}}
+            {{#if eventPurchased}}
+            <span class="ok-icon"><i class="far fa-calendar-check"></i></span>
+            {{else}}
+            <span class="missing-icon"><i class="fas fa-gift"></i></span>
+            {{/if}}
+          </p>
+        </div>
+        <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</section>

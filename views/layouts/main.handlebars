@@ -3,6 +3,7 @@
 
 <head>
   <title>Gift Fetcher</title>
+  <base href="/">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,20 +23,20 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
 
   <!-- Tiny Circleslide Stylesheet -->
-  <link rel="stylesheet" type="text/css" media="screen" href="../styles/tinycircleslider.css" />
+  <link type="text/css" href="../../public/styles/tinycircleslider.css">
 
   <!-- Calendar -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css">
 
   <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="../../public/styles/main.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="../../public/styles/carousel.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="../../public/styles/custom-carousel.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="../../public/styles/friend-list.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="../../public/styles/modal.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="../../public/styles/new-user.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="../../public/styles/tinycircleslider.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../../public/styles/main.css">
+  <link rel="stylesheet" type="text/css" href="../../public/styles/carousel.css">
+  <link rel="stylesheet" type="text/css" href="../../public/styles/custom-carousel.css">
+  <link rel="stylesheet" type="text/css" href="../../public/styles/friend-list.css">
+  <link rel="stylesheet" type="text/css" href="../../public/styles/modal.css">
+  <link rel="stylesheet" type="text/css" href="../../public/styles/new-user.css">
+  <link rel="stylesheet" type="text/css" href="../../public/styles/tinycircleslider.css">
 
   <!-- Fonts and Icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
@@ -52,26 +53,12 @@
   <!-- Slick Carousel -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
   <!-- Tiny Circleslider -->
-  <script type="text/javascript" src="../js/jquery.tinycircleslider.js"></script>
+  <script type="text/javascript" src="../../public/js/jquery.tinycircleslider.js"></script>
   <!-- Full Calendar -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+  {{!-- Custom JS --}}
+  <script type="text/javascript" src="../../public/js/compare.js"></script>
 
-  <script type="text/javascript">
-
-    { { !--Initialize Tiny Circleslider-- } }
-    $(document).on(ready, () => {
-      $('#circleslider300x300').tinycircleslider({
-        interval: true,
-        dotsSnap: true,
-        dotsHide: false
-      });
-
-      { { !--Initialize Full Calendar-- } }
-      $('#calendar').fullCalendar();
-
-      $('body').bootstrapMaterialDesign();
-    });
-  </script>
 </head>
 
 <body>
