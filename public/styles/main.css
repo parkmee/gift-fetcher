@@ -9,13 +9,16 @@ html body {
 .nav-wrapper {
   background-color: #91abad;
 }
+
 .brand-logo {
   font-family: 'Sacramento';
   padding: 0px 20px !important;
+  font-size: 45px !important;
 }
 
 .gift-icon {
   color: #ae0000;
+  font-size: 45px !important;
 }
 
 /* Side nav */
@@ -58,8 +61,8 @@ html body {
 
 .delete-icon {
   position: relative;
-  right: 5px;
-  top: 5px;
+  right: 0px;
+  top: 15px;
   color: white;
 }
 
@@ -78,10 +81,6 @@ html body {
 .content {
   margin-left: 350px;
   padding: 0px 10px;
-}
-
-.content section {
-  /* background:lightgrey; */
 }
 
 /* Section */
@@ -149,12 +148,16 @@ h2 {
   font-size: 16px;
 }
 
-/* Submit Button */
+/* Buttons */
 
 .submit-btn {
   border-radius: 24px;
   background-color: #91abad;
   font-family: 'Syncopate';
+}
+
+.btn-floating {
+  background-color: #91abad;
 }
 
 
@@ -180,4 +183,8 @@ h2 {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #b30000; 
+}
+
+.caret {
+  display: none;
 }
