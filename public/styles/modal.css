@@ -1,0 +1,24 @@
+#contact-modal input {
+  margin: 0px;
+}
+
+.new-event-tile {
+  padding: 10px;
+  background-color: #91abad;
+  border-radius: 24px;
+  color: white;
+  margin: 0px 5px 10px 0px;
+  font-family: 'Syncopate';
+}
+
+.new-event-tile p {
+  margin: 0px;
+}
+
+.nav-icon {
+  color: #91abad;
+}
+
+.modal-footer {
+  height: 50px;
+}

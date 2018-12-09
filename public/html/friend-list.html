@@ -31,11 +31,14 @@
   <link rel="stylesheet" href="../../public/styles/main.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="../../public/styles/friend-list.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="../../public/styles/carousel.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="../../public/styles/modal.css" media="screen" title="no title" charset="utf-8">
 
   <!-- Fonts and Icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Rancho|Sacramento|Telex" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded%7CDelius+Unicase%7CElsie+Swash+Caps%7CFontdiner+Swanky%7CMichroma%7CMountains+of+Christmas%7COrbitron%7CPermanent+Marker%7CRevalia%7CSpecial+Elite%7CSyncopate"
+    rel="stylesheet">
 
 </head>
 
@@ -52,22 +55,115 @@
   </nav>
 
   <div class="fluid-container">
+
+    <div id="contact-modal" class="modal">
+      <div class="modal-content">
+        <div class="d-flex">
+          <h4 class="mr-auto">Add/Edit Contact </h4>
+          <h4><i class="fas fa-times-circle nav-icon modal-close"></i></h4>
+        </div>
+        <form>
+          <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="First Name" id="first-name" type="text" class="validate">
+              <label for="first-name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input placeholder="Last Name" id="last-name" type="text" class="validate">
+              <label for="last-name">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input placeholder="MM/DD" id="dob" type="text" class="validate">
+              <label for="dob">Birthday</label>
+            </div>
+            <div class="input-field col s6">
+              <input placeholder="Email" id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+          </div>
+
+          <div class="personal-dates-subform">
+            <h3 class="form-section">Special Dates (optional)</h3>
+            <div class="new-event-view d-flex flex-wrap">
+              <div class="new-event-tile d-inline-flex">
+                <p>Anniversary - 10/17 <i class="fas fa-times-circle"></i></p>
+              </div>
+              <div class="new-event-tile d-inline-flex">
+                <p>Graduation - 2/17/19 <i class="fas fa-times-circle"></i></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="Date description" id="date-description" type="text" class="validate">
+                <label for="date-description">Description</label>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="input-field col s2">
+                <input placeholder="MM/DD/YYYY" id="special-date" type="text" class="validate">
+                <label for="special-date">Date</label>
+              </div>
+              <div class="input-field col s2">
+                <select>
+                  <option value="true" selected>Yes</option>
+                  <option>No</option>
+                </select>
+                <label>Recurring</label>
+              </div>
+              <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <h5 class="btn-flat delete-contact-btn">DELETE</h5>
+        <h5 class="btn-flat save-contact-btn">SAVE & CLOSE</h5>
+      </div>
+    </div>
+
+    <div id="event-modal" class="modal">
+      <div class="modal-content">
+        <h5>Title</h5>
+      </div>
+    </div>
+
     <div class="sidenav">
-      <section class="row text-center">
-        <h5 class="name-text col-12">Contacts</h5>
-      </section>
+      <div class="row d-flex mt-3">
+        <h1 class="section-title text-center mr-auto">Contacts</h1>
+        <a class="btn-floating btn-small waves-effect waves-light modal-trigger" href="#contact-modal" id="add-event-btn"><i
+            class="material-icons">add</i></a>
+      </div>
 
       <section class="row d-flex justify-content-center circle-slider">
         <div id="circleslider300x300">
           <div class="viewport">
             <ul class="overview">
-              <li><div class="name-tile text-center">John Doe</div></li>
-              <li><div class="name-tile text-center">John Draper</div></li>
-              <li><div class="name-tile text-center">Mike Kelley</div></li>
-              <li><div class="name-tile text-center">Brintza Miles</div></li>
-              <li><div class="name-tile text-center">Greg Papadoplous</div></li>
-              <li><div class="name-tile text-center">Sastry Satyanarayana</div></li>
-              <li><div class="name-tile text-center">Vishnu Zee</div></li>
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center">
+                  <a class="modal-trigger" href="#contact-modal">John Doe</a>
+                </div>
+              </li>
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center"><a href="contact-modal">Don Draper</a></div>
+              </li>
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center"><a href="contact-modal">Mike Kelley</a></div>
+              </li>
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center"><a href="contact-modal">Brintza Miles</a></div>
+              </li>
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center"><a href="contact-modal">Greg Papadoplous</a></div>
+              </li>
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center"><a href="contact-modal">Sastry Satyanarayana</a></div>
+              </li>
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center"><a href="contact-modal">Vishnu Zee</a></div>
+              </li>
             </ul>
           </div>
 
@@ -77,54 +173,20 @@
         </div>
       </section>
 
-      <section class="row d-block justify-content-center ml-2 event-alerts">
-        <h5 class="name-text col-12 text-center">Upcoming Events</h5>
-        <h5 class="name-text col-12 text-center">12/17 - 12/30</h5>
-        <ul class="collection event-list">
-          <li class="collection-item avatar">
-            <div class="date-circle circle text-center">17</div>
-            <span class="title">Mike Kelley</span>
-            <p>Birthday <br>
-            </p>
-            <a href="#!" class="secondary-content ok-icon"><i class="fas fa-calendar-check"></i></a>
-          </li>
-          <li class="collection-item avatar">
-            <div class="date-circle circle text-center">18</div>
-            <span class="title">John Doe</span>
-            <p>Birthday <br>
-            </p>
-            <a href="#!" class="secondary-content ok-icon"><i class="fas fa-calendar-check"></i></a>
-          </li>
-          <li class="collection-item avatar">
-            <div class="date-circle circle text-center">28</div>
-            <span class="title">Pam Smith</span>
-            <p>Birthday <br>
-            </p>
-            <a href="#!" class="secondary-content missing-icon"><i class="fas fa-gift"></i></a>
-          </li>
-          <li class="collection-item avatar">
-            <div class="date-circle circle text-center">30</div>
-            <span class="title">Don Draper</span>
-            <p>Birthday <br>
-            </p>
-            <a href="#!" class="secondary-content missing-icon"><i class="fas fa-gift"></i></a>
-          </li>
-        </ul>
-      </section>
+      <section id="events" class="d-block special-events">
+        <div class="row d-flex">
+          <h1 class="section-title text-center mr-auto">Events</h1>
+          <a class="btn-floating btn-small waves-effect waves-light" id="add-event-btn"><i class="material-icons">add</i></a>
+        </div>
 
-    </div>
-
-    <div class="content">
-      <section id="events">
-        <h1 class="section-title w-100">Special Events</h1>
-        <div class="event-view d-flex flex-wrap">
+        <div class="event-view d-block justify-content-center">
 
           <div class="event-tile">
             <div class="row">
               <div class="col-2 event-icon"><i class="fas fa-ring"></i></div>
               <div class="col-8 event-details">
-                <p class="event-name">Anniversay</p>
-                <p class="event-date">12/3</p>
+                <p class="event-name">Anniversary</p>
+                <p class="event-date">1/5 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
               </div>
               <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
             </div>
@@ -134,7 +196,17 @@
               <div class="col-2 event-icon"><i class="fas fa-birthday-cake"></i></div>
               <div class="col-8 event-details">
                 <p class="event-name">Birthday</p>
-                <p class="event-date">12/3</p>
+                <p class="event-date">1/30 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-heart"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Valentine's Day</p>
+                <p class="event-date">2/14 <span class="missing-icon"><i class="fas fa-gift"></i></p>
               </div>
               <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
             </div>
@@ -144,17 +216,7 @@
               <div class="col-2 event-icon"><i class="fas fa-user-graduate"></i></div>
               <div class="col-8 event-details">
                 <p class="event-name">Graduation</p>
-                <p class="event-date">12/3</p>
-              </div>
-              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
-            </div>
-          </div>
-          <div class="event-tile">
-            <div class="row">
-              <div class="col-2 event-icon"><i class="fas fa-heart"></i></div>
-              <div class="col-8 event-details d-flex flex-wrap">
-                <p class="event-name">Valentine's Day</p>
-                <p class="event-date">2/14</p>
+                <p class="event-date">2/17/19 <span class="missing-icon"><i class="fas fa-gift"></i></p>
               </div>
               <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
             </div>
@@ -164,16 +226,120 @@
               <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
               <div class="col-8 event-details">
                 <p class="event-name">Mother's Day</p>
-                <p class="event-date">12/3</p>
+                <p class="event-date">5/12 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Custom Event</p>
+                <p class="event-date">9/9 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Custom Event</p>
+                <p class="event-date">10/5 <span class="missing-icon"><i class="fas fa-gift"></i></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Christmas</p>
+                <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
               </div>
               <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
             </div>
           </div>
         </div>
       </section>
+    </div>
 
-      <section id="product-search" class="my-2">
-        <h1 class="section-title">Search</h1>
+    <div class="content">
+
+      <section id="preference-list" class="mt-3">
+        <h1 class="section-title">Gift Preferences</h1>
+        <form class="row">
+          <div class="input-field col s6" id="add-preference">
+            <input class="mb-0" placeholder="Enter favorite colors, hobbies, interests, etc" id="preference-input" type="text">
+            <label for="preference-input">Add Preference</label>
+          </div>
+          <!-- Clicking this button adds filter search terms -->
+          <a class="btn-floating btn-small waves-effect waves-light mr-2"><i class="material-icons">add</i></a>
+          <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">email</i></a>
+        </form>
+
+        <div class="preference-view d-flex flex-wrap">
+          <div class="preference-tile self-selected d-inline-flex">
+            <p class="preference-name">Pink</p>
+          </div>
+          <div class="preference-tile self-selected d-inline-flex">
+            <p class="preference-name">Electronics</p>
+          </div>
+          <div class="preference-tile d-inline-flex">
+            <p class="preference-name">Video Games <i class="far fa-times-circle"></i></p>
+          </div>
+          <div class="preference-tile d-inline-flex">
+            <p class="preference-name">Cats <i class="far fa-times-circle"></i></p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="ml-3">
+
+      <section id="product-list" class="my-2">
+        <h1 class="section-title">Search for Gifts</h1>
+        <form class="row">
+          <div class="input-field col s6" id="add-preference">
+            <input class="mb-0" placeholder="Enter search terms" id="preference-input" type="text">
+            <label for="preference-input">Refine Search</label>
+          </div>
+          <!-- Clicking this button adds filter search terms -->
+          <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
+        </form>
+
+
+        <div class="preference-view d-flex flex-wrap">
+          <div class="preference-tile d-inline-flex">
+            <p class="preference-name">Pink <i class="far fa-times-circle"></i></p>
+          </div>
+          <div class="preference-tile d-inline-flex">
+            <p class="preference-name">Electronics <i class="far fa-times-circle"></i></p>
+          </div>
+          <div class="preference-tile d-inline-flex">
+            <p class="preference-name">Sony <i class="far fa-times-circle"></i></p>
+          </div>
+        </div>
+      </section>
+      <div class="slider-bar pb-3">
+        <div class="item-container"><a href="#"><img data-lazy="../images/ex1.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/ex2.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/ex3.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/ex4.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/ex5.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/hdr1.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/hdr2.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/hdr3.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/hdr4.jpg"></a></div>
+        <div class="item-container"><a href="#"><img data-lazy="../images/hdr5.jpg"></a></div>
+      </div>
+
+      </section>
+      <hr class="ml-3">
+
+      <div class="wish-list">
+        <h1 class="section-title">Saved Gifts</h1>
+
         <div class="slider-bar pb-3">
           <div class="item-container"><a href="#"><img data-lazy="../images/ex1.jpg"></a></div>
           <div class="item-container"><a href="#"><img data-lazy="../images/ex2.jpg"></a></div>
@@ -186,20 +352,29 @@
           <div class="item-container"><a href="#"><img data-lazy="../images/hdr4.jpg"></a></div>
           <div class="item-container"><a href="#"><img data-lazy="../images/hdr5.jpg"></a></div>
         </div>
-
-      </section>
-      <div class="row wish-list">
-        <div class="input-field col l5">
-          <input placeholder="Enter favorite color, hobbies, interests, etc" id="add-preference" type="text" class="validate">
-          <label for="add-preference">Add Preferences</label>
-        </div>
-        <!-- Clicking this button adds filter search terms -->
-        <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
       </div>
 
+      <hr class="ml-3">
+
+      <div class="purchase-history-list">
+        <h1 class="section-title">Purchase History</h1>
+
+        <div class="slider-bar pb-3">
+          <div class="item-container" data-toggle="tooltip" data-placement="top" title="Christmas: 12/25/2017"><a href="#"><img
+                data-lazy="../images/ex1.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex2.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex3.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex4.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex5.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr1.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr2.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr3.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr4.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr5.jpg"></a></div>
+        </div>
+      </div>
     </div>
   </div>
-
   <footer></footer>
 
   <!-- JS Libraries -->
@@ -269,7 +444,15 @@
         dotsHide: false
       });
 
+      $('.modal').modal();
+      $('#contact-modal').modal();
+
+      $('select').formSelect();
+
+      $('.datepicker').datepicker();
+
       $('body').bootstrapMaterialDesign();
+
     })
   </script>
 </body>
