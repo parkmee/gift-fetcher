@@ -15,6 +15,23 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/person/getPersonEvents/:personid/:createdby", function(req, res) {
+    db.Person.findAll({
+      where: { id: req.params.personid },
+      include: [
+        {
+          model: db.Event,
+          through: {
+            attributes: ["title", "description", "eventDate", "purchased"],
+            where: { createdBy: req.params.createdby }
+          }
+        }
+      ]
+    }).then(function(dbData) {
+      res.json(dbData);
+    });
+  });
+
   // get one
   app.get("/api/person/getpersonbyemail/:email", function(req, res) {
     db.Person.findOne({ where: { email: req.params.email } }).then(function(dbData) {

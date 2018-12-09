@@ -47,6 +47,10 @@ module.exports = function(sequelize, DataTypes) {
   };
 
   Person.associate = function() {
+    Person.belongsToMany(models.Event);
+  };
+
+  Person.associate = function() {
     Person.belongsToMany(Person, {
       as: "linkedPerson",
       through: "contacts"

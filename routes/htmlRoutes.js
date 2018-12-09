@@ -30,7 +30,6 @@ module.exports = function(app) {
 
   app.get("/logon", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
-  });
 
   app.get("/calendartest", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.html"));
