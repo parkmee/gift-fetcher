@@ -15,6 +15,13 @@ module.exports = function(app) {
     });
   });
 
+  // get one
+  app.get("/api/person/getpersonbyemail/:email", function(req, res) {
+    db.Person.findOne({ where: { email: req.params.email } }).then(function(dbData) {
+      res.json(dbData);
+    });
+  });
+
   // Create a new person
   app.post("/api/person/create", function(req, res) {
     db.Person.create(req.body).then(function(dbData) {
