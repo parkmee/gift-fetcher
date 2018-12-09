@@ -15,6 +15,10 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname + "/../public/html/new-index.html"));
   });
 
+  app.get("/calendartest", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.html"));
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
