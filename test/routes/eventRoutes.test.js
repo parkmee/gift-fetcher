@@ -1,74 +1,193 @@
-// var chai = require("chai");
-// var chaiHttp = require("chai-http");
-// var server = require("../server");
-// var db = require("../models");
-// var expect = chai.expect;
+/* require("dotenv").config({
+  path: __dirname + ".env"
+});
+var chai = require("chai");
+var chaiHttp = require("chai-http");
+var server = require("../server");
+var db = require("../models");
+var expect = chai.expect;
 
-// // Setting up the chai http plugin
-// chai.use(chaiHttp);
+// Setting up the chai http plugin
+chai.use(chaiHttp);
 
-// var request;
+var request;
 
 // // TODO:  things to test
 // /*
+
 //     GET "/api/event/getpersonevents/:personId"
 //     GET "/api/event/getupcoming/:windowDays"
 //     POST "/api/event/create"
 //     DELETE "/api/event/:eventId"
 // */
 
-// describe("GET /api/event", function() {
-//   // Before each test begins, create a new request server for testing
-//   // & delete all examples from the db
-//   beforeEach(function(done) {
-//     request = chai.request(server);
-//     db.sequelize.sync({ force: true }).then(function() {
-//       done();
-//     });
-//   });
+describe("GET /api/event/getpersonevents/:personId", function() {
+  // Before each test begins, create a new request server for testing
+  // & delete all examples from the db
+  beforeEach(function(done) {
+    request = chai.request(server);
+    db.sequelize.sync({ force: true }).then(function() {
+      done();
+    });
+  });
+});
 
-//   it("should find all events by person id", function(done) {
-//     // Add some examples to the db to test with
-//     db.Event.bulkCreate([
-//       { description: "First Event", eventDate: "2019-01-01", PersonId: 1, createdBy: 1 },
-//       { description: "Second Event", eventDate: "2019-01-02", PersonId: 2, createdBy: 2 }
-//     ]).then(function() {
-//       // Request the route that returns all examples
-//       request.get("/api/event/getpersonevents/1").end(function(err, res) {
-//         var responseStatus = res.status;
-//         var responseBody = res.body;
+it("should find all events by person id", function(done) {
+  //Add some examples to the db to test with
+  db.Event.bulkCreate([
+    { description: "First Event", eventDate: "2019-01-01", PersonId: 1, createdBy: 1 },
+    { description: "Second Event", eventDate: "2019-01-02", PersonId: 2, createdBy: 2 }
+  ]).then(function() {
+    //Request the route that returns all examples
+    request.get("/api/event/getpersonevents/1").end(function(err, res) {
+      var responseStatus = res.status;
+      var responseBody = res.body;
 
-//         // Run assertions on the response
+      // Run assertions on the response
 
-//         expect(err).to.be.null;
+      expect(err).to.be.null;
+      expect(responseStatus).to.equal(200);
+      expect(responseBody[0])
+        .to.be.an("object")
+        .that.includes({
+          description: "First Event",
+          eventDate: "2019-01-01",
+          PersonId: 1,
+          createdBy: 1
+        });
 
-//         expect(responseStatus).to.equal(200);
+      //The `done` function is used to end any asynchronous tests
+      done();
+    });
+  });
+}); */
+/*
+//     GET "/api/event/getupcoming/:windowDays"
 
-//         expect(responseBody)
-//           .to.be.an("array")
-//           .that.has.lengthOf(2);
+describe("GET /api/event/getupcoming/:windowDays", function() {
+  // Before each test begins, create a new request server for testing
+  // & delete all examples from the db
+  beforeEach(function(done) {
+    request = chai.request(server);
+    db.sequelize.sync({ force: true }).then(function() {
+      done();
+    });
+  });
+});
 
-//         expect(responseBody[0])
-//           .to.be.an("object")
-//           .that.includes({
-//             description: "First Event",
-//             eventDate: "2019-01-01",
-//             PersonId: 1,
-//             createdBy: 1
-//           });
+it("should find all upcoming events by 14 day Window", function(done) {
+  //Add some examples to the db to test with
+  db.Event.bulkCreate([
+    { description: "First Event", eventDate: "2019-01-01", PersonId: 1, createdBy: 1 },
+    { description: "Second Event", eventDate: "2018-12-15", PersonId: 2, createdBy: 2 }
+  ]).then(function() {
+    //Request the route that returns all examples
+    request.get("/api/event/getupcoming/14").end(function(err, res) {
+      var responseStatus = res.status;
+      var responseBody = res.body;
 
-//         expect(responseBody[1])
-//           .to.be.an("object")
-//           .that.includes({
-//             description: "Second Event",
-//             eventDate: "2019-01-02",
-//             PersonId: 2,
-//             createdBy: 2
-//           });
+      // Run assertions on the response
 
-//         // The `done` function is used to end any asynchronous tests
-//         done();
-//       });
-//     });
-//   });
-// });
+      expect(err).to.be.null;
+      expect(responseStatus).to.equal(200);
+      expect(responseBody[0])
+        .to.be.an("object")
+        .that.includes({
+          description: "Second Event",
+          eventDate: "2018-12-15",
+          PersonId: 2,
+          createdBy: 2
+        });
+
+      //The `done` function is used to end any asynchronous tests
+      done();
+    });
+  });
+});
+
+//Test POST "/api/event/create"
+describe("POST /api/event/create", function() {
+  // Before each test begins, create a new request server for testing
+  // & delete all examples from the db
+  beforeEach(function(done) {
+    request = chai.request(server);
+    db.sequelize.sync({ force: true }).then(function() {
+      done();
+    });
+  });
+
+  it("should save an event", function(done) {
+    // Create an object to send to the endpoint
+    var reqBody = {
+      description: "First Event",
+      eventDate: "2018-12-15",
+      PersonId: 1,
+      createdBy: 1
+    };
+
+    // POST the request body to the server
+    request
+      .post("/api/event/create")
+      .send(reqBody)
+      .end(function(err, res) {
+        var responseStatus = res.status;
+        var responseBody = res.body;
+
+        // Run assertions on the response
+
+        expect(err).to.be.null;
+
+        expect(responseStatus).to.equal(200);
+
+        expect(responseBody)
+          .to.be.an("object")
+          .that.includes(reqBody);
+
+        // The `done` function is used to end any asynchronous tests
+        done();
+      });
+  });
+});
+
+//Test "DELETE "/api/event/:eventId"
+
+describe("DELETE /api/event/:eventId", () => {
+  beforeEach(function(done) {
+    request = chai.request(server);
+    db.sequelize.sync({ force: true }).then(function() {
+      done();
+    });
+  });
+
+  it("it should create an event", function() {
+    db.Event.create({
+      description: "First Event",
+      eventDate: "2018-12-15",
+      PersonId: 1,
+      createdBy: 1
+    });
+
+    it("should delete what was inserted", function() {
+      request.delete("/api/event/1").end(function(err, res) {
+        var responseStatus = res.status;
+        expect(responseStatus).to.equal(200);
+        expect(err).to.be.null;
+      });
+    });
+
+    it("testing to see if inserted point is still there", function(done) {
+      request.get("/api/event/1").end(function(err, res) {
+        var responseStatus = res.status;
+
+        // Run assertions on the response
+
+        expect(err).to.be.null;
+
+        expect(responseStatus).to.equal(404);
+
+        done();
+      });
+    });
+  });
+});
+ */
