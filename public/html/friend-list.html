@@ -59,9 +59,8 @@
     <div id="contact-modal" class="modal">
       <div class="modal-content">
         <div class="d-flex">
-            <h4 class="mr-auto">Add/Edit Contact </h4>
-            
-            <h4><i class="fas fa-times-circle nav-icon modal-close"></i></h4>
+          <h4 class="mr-auto">Add/Edit Contact </h4>
+          <h4><i class="fas fa-times-circle nav-icon modal-close"></i></h4>
         </div>
         <form>
           <div class="row">
@@ -88,13 +87,13 @@
           <div class="personal-dates-subform">
             <h3 class="form-section">Special Dates (optional)</h3>
             <div class="new-event-view d-flex flex-wrap">
-                <div class="new-event-tile d-inline-flex">
-                  <p>Anniversary - 10/17 <i class="fas fa-times-circle"></i></p>
-                </div>
-                <div class="new-event-tile d-inline-flex">
-                  <p>Graduation - 2/17/19 <i class="fas fa-times-circle"></i></p>
-                </div>
+              <div class="new-event-tile d-inline-flex">
+                <p>Anniversary - 10/17 <i class="fas fa-times-circle"></i></p>
               </div>
+              <div class="new-event-tile d-inline-flex">
+                <p>Graduation - 2/17/19 <i class="fas fa-times-circle"></i></p>
+              </div>
+            </div>
             <div class="row">
               <div class="input-field col s12">
                 <input placeholder="Date description" id="date-description" type="text" class="validate">
@@ -120,219 +119,208 @@
         </form>
       </div>
       <div class="modal-footer">
-          <h5 class="btn-flat delete-contact-btn">DELETE</h5>
-          <h5 class="btn-flat save-contact-btn">SAVE & CLOSE</h5>
+        <h5 class="btn-flat delete-contact-btn">DELETE</h5>
+        <h5 class="btn-flat save-contact-btn">SAVE & CLOSE</h5>
       </div>
     </div>
-  </div>
 
-  <div class="sidenav">
-    <section class="row text-center">
-      <h5 class="section-title col-12 mt-2">
-        Contacts
-        <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
-      </h5>
-    </section>
+    <div id="event-modal" class="modal">
+      <div class="modal-content">
+        <h5>Title</h5>
+      </div>
+    </div>
 
-    <section class="row d-flex justify-content-center circle-slider">
-      <div id="circleslider300x300">
-        <div class="viewport">
-          <ul class="overview">
-            <li class="d-flex align-items-center justify-content-center">
-              <div class="name-tile text-center">
-                <a class="modal-trigger" href="#contact-modal">John Doe</a>
+    <div class="sidenav">
+      <div class="row d-flex mt-3">
+        <h1 class="section-title text-center mr-auto">Contacts</h1>
+        <a class="btn-floating btn-small waves-effect waves-light modal-trigger" href="#contact-modal" id="add-event-btn"><i
+            class="material-icons">add</i></a>
+      </div>
+
+      <section class="row d-flex justify-content-center circle-slider">
+        <div id="circleslider300x300">
+          <div class="viewport">
+            <ul class="overview">
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center">
+                  <a class="modal-trigger" href="#contact-modal">John Doe</a>
+                </div>
+              </li>
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center"><a href="contact-modal">Don Draper</a></div>
+              </li>
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center"><a href="contact-modal">Mike Kelley</a></div>
+              </li>
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center"><a href="contact-modal">Brintza Miles</a></div>
+              </li>
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center"><a href="contact-modal">Greg Papadoplous</a></div>
+              </li>
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center"><a href="contact-modal">Sastry Satyanarayana</a></div>
+              </li>
+              <li class="d-flex align-items-center justify-content-center">
+                <div class="name-tile text-center"><a href="contact-modal">Vishnu Zee</a></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="dot"></div>
+          <div class="overlay"></div>
+          <div class="thumb"></div>
+        </div>
+      </section>
+
+      <section id="events" class="d-block special-events">
+        <div class="row d-flex">
+          <h1 class="section-title text-center mr-auto">Events</h1>
+          <a class="btn-floating btn-small waves-effect waves-light" id="add-event-btn"><i class="material-icons">add</i></a>
+        </div>
+
+        <div class="event-view d-block justify-content-center">
+
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-ring"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Anniversary</p>
+                <p class="event-date">1/5 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
               </div>
-            </li>
-            <li class="d-flex align-items-center justify-content-center">
-              <div class="name-tile text-center"><a href="contact-modal">Don Draper</a></div>
-            </li>
-            <li class="d-flex align-items-center justify-content-center">
-              <div class="name-tile text-center"><a href="contact-modal">Mike Kelley</a></div>
-            </li>
-            <li class="d-flex align-items-center justify-content-center">
-              <div class="name-tile text-center"><a href="contact-modal">Brintza Miles</a></div>
-            </li>
-            <li class="d-flex align-items-center justify-content-center">
-              <div class="name-tile text-center"><a href="contact-modal">Greg Papadoplous</a></div>
-            </li>
-            <li class="d-flex align-items-center justify-content-center">
-              <div class="name-tile text-center"><a href="contact-modal">Sastry Satyanarayana</a></div>
-            </li>
-            <li class="d-flex align-items-center justify-content-center">
-              <div class="name-tile text-center"><a href="contact-modal">Vishnu Zee</a></div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="dot"></div>
-        <div class="overlay"></div>
-        <div class="thumb"></div>
-      </div>
-    </section>
-
-    <section id="events" class="d-block special-events">
-      <h1 class="section-title w-100 text-center">Special Events</h1>
-      <div class="event-view d-block justify-content-center">
-
-        <div class="event-tile">
-          <div class="row">
-            <div class="col-2 event-icon"><i class="fas fa-ring"></i></div>
-            <div class="col-8 event-details">
-              <p class="event-name">Anniversary</p>
-              <p class="event-date">1/5 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
             </div>
-            <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-birthday-cake"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Birthday</p>
+                <p class="event-date">1/30 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-heart"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Valentine's Day</p>
+                <p class="event-date">2/14 <span class="missing-icon"><i class="fas fa-gift"></i></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-user-graduate"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Graduation</p>
+                <p class="event-date">2/17/19 <span class="missing-icon"><i class="fas fa-gift"></i></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Mother's Day</p>
+                <p class="event-date">5/12 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Custom Event</p>
+                <p class="event-date">9/9 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Custom Event</p>
+                <p class="event-date">10/5 <span class="missing-icon"><i class="fas fa-gift"></i></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Christmas</p>
+                <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
           </div>
         </div>
-        <div class="event-tile">
-          <div class="row">
-            <div class="col-2 event-icon"><i class="fas fa-birthday-cake"></i></div>
-            <div class="col-8 event-details">
-              <p class="event-name">Birthday</p>
-              <p class="event-date">1/30 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
-            </div>
-            <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
-          </div>
-        </div>
-        <div class="event-tile">
-          <div class="row">
-            <div class="col-2 event-icon"><i class="fas fa-heart"></i></div>
-            <div class="col-8 event-details">
-              <p class="event-name">Valentine's Day</p>
-              <p class="event-date">2/14 <span class="missing-icon"><i class="fas fa-gift"></i></p>
-            </div>
-            <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
-          </div>
-        </div>
-        <div class="event-tile">
-          <div class="row">
-            <div class="col-2 event-icon"><i class="fas fa-user-graduate"></i></div>
-            <div class="col-8 event-details">
-              <p class="event-name">Graduation</p>
-              <p class="event-date">2/17/19 <span class="missing-icon"><i class="fas fa-gift"></i></p>
-            </div>
-            <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
-          </div>
-        </div>
-        <div class="event-tile">
-          <div class="row">
-            <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
-            <div class="col-8 event-details">
-              <p class="event-name">Mother's Day</p>
-              <p class="event-date">5/12 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
-            </div>
-            <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
-          </div>
-        </div>
-        <div class="event-tile">
-          <div class="row">
-            <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
-            <div class="col-8 event-details">
-              <p class="event-name">Custom Event</p>
-              <p class="event-date">9/9 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
-            </div>
-            <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
-          </div>
-        </div>
-        <div class="event-tile">
-          <div class="row">
-            <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
-            <div class="col-8 event-details">
-              <p class="event-name">Custom Event</p>
-              <p class="event-date">10/5 <span class="missing-icon"><i class="fas fa-gift"></i></p>
-            </div>
-            <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
-          </div>
-        </div>
-        <div class="event-tile">
-          <div class="row">
-            <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
-            <div class="col-8 event-details">
-              <p class="event-name">Christmas</p>
-              <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
-            </div>
-            <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="content">
-
-    <section id="preference-list" class="mt-2">
-      <h1 class="section-title">Gift Preferences</h1>
-      <form class="row">
-        <div class="input-field col s6" id="add-preference">
-          <input class="mb-0" placeholder="Enter favorite colors, hobbies, interests, etc" id="preference-input" type="text">
-          <label for="preference-input">Add Preference</label>
-        </div>
-        <!-- Clicking this button adds filter search terms -->
-        <a class="btn-floating btn-small waves-effect waves-light mr-2"><i class="material-icons">add</i></a>
-        <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">email</i></a>
-      </form>
-
-      <div class="preference-view d-flex flex-wrap">
-        <div class="preference-tile self-selected d-inline-flex">
-          <p class="preference-name">Pink</p>
-        </div>
-        <div class="preference-tile self-selected d-inline-flex">
-          <p class="preference-name">Electronics</p>
-        </div>
-        <div class="preference-tile d-inline-flex">
-          <p class="preference-name">Video Games <i class="far fa-times-circle"></i></p>
-        </div>
-        <div class="preference-tile d-inline-flex">
-          <p class="preference-name">Cats <i class="far fa-times-circle"></i></p>
-        </div>
-      </div>
-    </section>
-
-    <hr class="ml-3">
-
-    <section id="product-list" class="my-2">
-      <h1 class="section-title">Search for Gifts</h1>
-      <form class="row">
-        <div class="input-field col s6" id="add-preference">
-          <input class="mb-0" placeholder="Enter search terms" id="preference-input" type="text">
-          <label for="preference-input">Refine Search</label>
-        </div>
-        <!-- Clicking this button adds filter search terms -->
-        <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
-      </form>
-
-
-      <div class="preference-view d-flex flex-wrap">
-        <div class="preference-tile d-inline-flex">
-          <p class="preference-name">Pink <i class="far fa-times-circle"></i></p>
-        </div>
-        <div class="preference-tile d-inline-flex">
-          <p class="preference-name">Electronics <i class="far fa-times-circle"></i></p>
-        </div>
-        <div class="preference-tile d-inline-flex">
-          <p class="preference-name">Sony <i class="far fa-times-circle"></i></p>
-        </div>
-      </div>
-    </section>
-    <div class="slider-bar pb-3">
-      <div class="item-container"><a href="#"><img data-lazy="../images/ex1.jpg"></a></div>
-      <div class="item-container"><a href="#"><img data-lazy="../images/ex2.jpg"></a></div>
-      <div class="item-container"><a href="#"><img data-lazy="../images/ex3.jpg"></a></div>
-      <div class="item-container"><a href="#"><img data-lazy="../images/ex4.jpg"></a></div>
-      <div class="item-container"><a href="#"><img data-lazy="../images/ex5.jpg"></a></div>
-      <div class="item-container"><a href="#"><img data-lazy="../images/hdr1.jpg"></a></div>
-      <div class="item-container"><a href="#"><img data-lazy="../images/hdr2.jpg"></a></div>
-      <div class="item-container"><a href="#"><img data-lazy="../images/hdr3.jpg"></a></div>
-      <div class="item-container"><a href="#"><img data-lazy="../images/hdr4.jpg"></a></div>
-      <div class="item-container"><a href="#"><img data-lazy="../images/hdr5.jpg"></a></div>
+      </section>
     </div>
 
-    </section>
-    <hr class="ml-3">
+    <div class="content">
 
-    <div class="wish-list">
-      <h1 class="section-title">Saved Gifts</h1>
+      <section id="preference-list" class="mt-3">
+        <h1 class="section-title">Gift Preferences</h1>
+        <form class="row">
+          <div class="input-field col s6" id="add-preference">
+            <input class="mb-0" placeholder="Enter favorite colors, hobbies, interests, etc" id="preference-input" type="text">
+            <label for="preference-input">Add Preference</label>
+          </div>
+          <!-- Clicking this button adds filter search terms -->
+          <a class="btn-floating btn-small waves-effect waves-light mr-2"><i class="material-icons">add</i></a>
+          <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">email</i></a>
+        </form>
 
+        <div class="preference-view d-flex flex-wrap">
+          <div class="preference-tile self-selected d-inline-flex">
+            <p class="preference-name">Pink</p>
+          </div>
+          <div class="preference-tile self-selected d-inline-flex">
+            <p class="preference-name">Electronics</p>
+          </div>
+          <div class="preference-tile d-inline-flex">
+            <p class="preference-name">Video Games <i class="far fa-times-circle"></i></p>
+          </div>
+          <div class="preference-tile d-inline-flex">
+            <p class="preference-name">Cats <i class="far fa-times-circle"></i></p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="ml-3">
+
+      <section id="product-list" class="my-2">
+        <h1 class="section-title">Search for Gifts</h1>
+        <form class="row">
+          <div class="input-field col s6" id="add-preference">
+            <input class="mb-0" placeholder="Enter search terms" id="preference-input" type="text">
+            <label for="preference-input">Refine Search</label>
+          </div>
+          <!-- Clicking this button adds filter search terms -->
+          <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
+        </form>
+
+
+        <div class="preference-view d-flex flex-wrap">
+          <div class="preference-tile d-inline-flex">
+            <p class="preference-name">Pink <i class="far fa-times-circle"></i></p>
+          </div>
+          <div class="preference-tile d-inline-flex">
+            <p class="preference-name">Electronics <i class="far fa-times-circle"></i></p>
+          </div>
+          <div class="preference-tile d-inline-flex">
+            <p class="preference-name">Sony <i class="far fa-times-circle"></i></p>
+          </div>
+        </div>
+      </section>
       <div class="slider-bar pb-3">
         <div class="item-container"><a href="#"><img data-lazy="../images/ex1.jpg"></a></div>
         <div class="item-container"><a href="#"><img data-lazy="../images/ex2.jpg"></a></div>
@@ -345,28 +333,47 @@
         <div class="item-container"><a href="#"><img data-lazy="../images/hdr4.jpg"></a></div>
         <div class="item-container"><a href="#"><img data-lazy="../images/hdr5.jpg"></a></div>
       </div>
-    </div>
 
-    <hr class="ml-3">
+      </section>
+      <hr class="ml-3">
 
-    <div class="purchase-history-list">
-      <h1 class="section-title">Purchase History</h1>
+      <div class="wish-list">
+        <h1 class="section-title">Saved Gifts</h1>
 
-      <div class="slider-bar pb-3">
-        <div class="item-container" data-toggle="tooltip" data-placement="top" title="Christmas: 12/25/2017"><a href="#"><img
-              data-lazy="../images/ex1.jpg"></a></div>
-        <div class="item-container"><a href="#"><img data-lazy="../images/ex2.jpg"></a></div>
-        <div class="item-container"><a href="#"><img data-lazy="../images/ex3.jpg"></a></div>
-        <div class="item-container"><a href="#"><img data-lazy="../images/ex4.jpg"></a></div>
-        <div class="item-container"><a href="#"><img data-lazy="../images/ex5.jpg"></a></div>
-        <div class="item-container"><a href="#"><img data-lazy="../images/hdr1.jpg"></a></div>
-        <div class="item-container"><a href="#"><img data-lazy="../images/hdr2.jpg"></a></div>
-        <div class="item-container"><a href="#"><img data-lazy="../images/hdr3.jpg"></a></div>
-        <div class="item-container"><a href="#"><img data-lazy="../images/hdr4.jpg"></a></div>
-        <div class="item-container"><a href="#"><img data-lazy="../images/hdr5.jpg"></a></div>
+        <div class="slider-bar pb-3">
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex1.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex2.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex3.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex4.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex5.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr1.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr2.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr3.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr4.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr5.jpg"></a></div>
+        </div>
+      </div>
+
+      <hr class="ml-3">
+
+      <div class="purchase-history-list">
+        <h1 class="section-title">Purchase History</h1>
+
+        <div class="slider-bar pb-3">
+          <div class="item-container" data-toggle="tooltip" data-placement="top" title="Christmas: 12/25/2017"><a href="#"><img
+                data-lazy="../images/ex1.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex2.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex3.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex4.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/ex5.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr1.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr2.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr3.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr4.jpg"></a></div>
+          <div class="item-container"><a href="#"><img data-lazy="../images/hdr5.jpg"></a></div>
+        </div>
       </div>
     </div>
-  </div>
   </div>
   <footer></footer>
 

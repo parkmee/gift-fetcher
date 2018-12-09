@@ -11,6 +11,10 @@
 }
 
 /* Special Events */
+#add-event-btn {
+  margin-right: 30px;
+}
+
 .event-view {
   height: 350px;
   overflow: auto;
