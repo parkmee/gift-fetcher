@@ -6,7 +6,25 @@
     {{#each events}}
     <div class="event-tile">
       <div class="row">
-        <div class="col-2 event-icon"><i class="fas fa-hanukiah"></i></div>
+        <div class="col-2 event-icon">
+          {{#if (compare eventTitle "===" "Birthday")}}
+            <i class="fas fa-birthday-cake"></i>
+          {{else if (compare eventTitle "===" "Christmas")}}
+            <i class="fas fa-tree"></i>
+          {{else if (compare eventTitle "===" "Graduation")}}
+            <i class="fas fa-user-graduate"></i>
+          {{else if (compare eventTitle "===" "Hanukkah")}}
+            <i class="fas fa-hanukiah"></i>
+          {{else if (compare eventTitle "===" "Anniversary")}}
+            <i class="fas fa-ring"></i>
+            {{else if (compare eventTitle "===" "Wedding")}}
+            <i class="fas fa-ring"></i>
+          {{else if (compare eventTitle "===" "Valentine's Day")}}
+            <i class="fas fa-heart"></i>
+          {{else}}
+            <i class="fas fa-gift"></i>
+          {{/if}}
+        </div>
         <div class="col-8 event-details">
           <p class="contact-name">{{personFirstName}} {{personLastName}}</p>
           <p class="event-name">{{eventTitle}}</p>

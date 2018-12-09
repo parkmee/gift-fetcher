@@ -19,7 +19,7 @@ const testEvents = [
     personFirstName: "Richard",
     personLastName: "Whitner",
     eventCreatedBy: 1,
-    eventTitle: "Marriage",
+    eventTitle: "Wedding",
     eventDate: "12/25/2018",
     eventPurchased: false
   }, {
