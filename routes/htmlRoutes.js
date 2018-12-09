@@ -12,7 +12,7 @@ module.exports = function(app) {
   });
 
   app.get("/index", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/html/new-index.html"));
+    res.sendFile(path.join(__dirname + "/../public/html/index.html"));
   });
 
   app.get("/calendartest", function(req, res) {
