@@ -76,16 +76,16 @@
             </div>
           </div>
           <div class="event-tile">
-              <div class="row">
-                <div class="col-2 event-icon"><i class="fas fa-birthday-cake"></i></div>
-                <div class="col-8 event-details">
-                  <p class="contact-name">Mike Kelley</p>
-                  <p class="event-name">Birthday</p>
-                  <p class="event-date">12/17 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
-                </div>
-                <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-birthday-cake"></i></div>
+              <div class="col-8 event-details">
+                <p class="contact-name">Mike Kelley</p>
+                <p class="event-name">Birthday</p>
+                <p class="event-date">12/17 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
               </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
             </div>
+          </div>
           <div class="event-tile">
             <div class="row">
               <div class="col-2 event-icon"><i class="fas fa-user-graduate"></i></div>
@@ -142,38 +142,38 @@
             </div>
           </div>
           <div class="event-tile">
-              <div class="row">
-                <div class="col-2 event-icon"><i class="fas fa-tree"></i></div>
-                <div class="col-8 event-details">
-                  <p class="contact-name">Meeyoung Park</p>
-                  <p class="event-name">Christmas</p>
-                  <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
-                </div>
-                <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-tree"></i></div>
+              <div class="col-8 event-details">
+                <p class="contact-name">Meeyoung Park</p>
+                <p class="event-name">Christmas</p>
+                <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
               </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
             </div>
-            <div class="event-tile">
-                <div class="row">
-                  <div class="col-2 event-icon"><i class="fas fa-tree"></i></div>
-                  <div class="col-8 event-details">
-                    <p class="contact-name">Arun Srinivasan</p>
-                    <p class="event-name">Christmas</p>
-                    <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
-                  </div>
-                  <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
-                </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-tree"></i></div>
+              <div class="col-8 event-details">
+                <p class="contact-name">Arun Srinivasan</p>
+                <p class="event-name">Christmas</p>
+                <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
               </div>
-              <div class="event-tile">
-                  <div class="row">
-                    <div class="col-2 event-icon"><i class="fas fa-tree"></i></div>
-                    <div class="col-8 event-details">
-                      <p class="contact-name">Nani Whitner</p>
-                      <p class="event-name">Christmas</p>
-                      <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
-                    </div>
-                    <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
-                  </div>
-                </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-tree"></i></div>
+              <div class="col-8 event-details">
+                <p class="contact-name">Nani Whitner</p>
+                <p class="event-name">Christmas</p>
+                <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -199,7 +199,7 @@
       <hr class="ml-3">
 
       <section id="event-view" class="row">
-        <h1 class="section-title w-100">Calendar</h1>
+        <h1 class="section-title w-100">calendar</h1>
         <div class="calendar-view">
           <!-- See https://fullcalendar.io/docs/google-calendar for info on how to integrate with Google Calendar -->
           <div id="calendar"></div>
@@ -209,84 +209,50 @@
       <hr class="ml-3">
 
       <section id="friend-view">
-        <h1 class="section-title w-100">Contacts</h1>
+        <h1 class="section-title w-100">Contacts <a class="btn-floating btn-small waves-effect waves-light modal-trigger" href="#contact-modal" id="add-event-btn"><i
+          class="material-icons">add</i></a></h1>
 
         <div class="friend-list-view d-flex flex-wrap">
-          <div class="friend-tile">
-            <div class="row">
-              <div class="col-3 user-icon"><i class="fas fa-user-circle"></i></div>
-              <div class="col-8 friend-name d-flex flex-wrap">
-                <p class="friend-first-name">Doe,</p>
-                <p class="friend-last-name">John</p>
-              </div>
-            </div>
+          <div class="friend-tile d-inline-flex">
+            <p class="friend-name">John Adams <i class="far fa-times-circle"></i></p>
           </div>
-          <div class="friend-tile">
-            <div class="row">
-              <div class="col-3 user-icon"><i class="fas fa-user-circle"></i></div>
-              <div class="col-8 friend-name d-flex flex-wrap">
-                <p class="friend-first-name">Draper,</p>
-                <p class="friend-last-name">Don</p>
-              </div>
-            </div>
+          <div class="friend-tile d-inline-flex">
+            <p class="friend-name">Nina Dobrev <i class="far fa-times-circle"></i></p>
           </div>
-          <div class="friend-tile">
-            <div class="row">
-              <div class="col-3 user-icon"><i class="fas fa-user-circle"></i></div>
-              <div class="col-8 friend-name d-flex flex-wrap">
-                <p class="friend-first-name">Kelley,</p>
-                <p class="friend-last-name">Mike</p>
-              </div>
-            </div>
+          <div class="friend-tile d-inline-flex">
+            <p class="friend-name">John Doe <i class="far fa-times-circle"></i></p>
           </div>
-          <div class="friend-tile">
-            <div class="row">
-              <div class="col-3 user-icon"><i class="fas fa-user-circle"></i></div>
-              <div class="col-8 friend-name d-flex flex-wrap">
-                <p class="friend-first-name">Miles,</p>
-                <p class="friend-last-name">Brintza</p>
-              </div>
-            </div>
+          <div class="friend-tile d-inline-flex">
+            <p class="friend-name">Don Draper <i class="far fa-times-circle"></i></p>
           </div>
-          <div class="friend-tile">
-            <div class="row">
-              <div class="col-3 user-icon"><i class="fas fa-user-circle"></i></div>
-              <div class="col-8 friend-name d-flex flex-wrap">
-                <p class="friend-first-name">Papadopolous,</p>
-                <p class="friend-last-name">Greg</p>
-              </div>
-            </div>
+          <div class="friend-tile d-inline-flex">
+            <p class="friend-name">Mike Kelley <i class="far fa-times-circle"></i></p>
           </div>
-          <div class="friend-tile">
-            <div class="row">
-              <div class="col-3 user-icon"><i class="fas fa-user-circle"></i></div>
-              <div class="col-8 friend-name d-flex flex-wrap">
-                <p class="friend-first-name">Park,</p>
-                <p class="friend-last-name">Meeyoung</p>
-              </div>
-            </div>
+          <div class="friend-tile d-inline-flex">
+            <p class="friend-name">Brintza Miles <i class="far fa-times-circle"></i></p>
           </div>
-          <div class="friend-tile">
-            <div class="row">
-              <div class="col-3 user-icon"><i class="fas fa-user-circle"></i></div>
-              <div class="col-8 friend-name d-flex flex-wrap">
-                <p class="friend-first-name">Satyanarayana,</p>
-                <p class="friend-last-name">Sastry</p>
-              </div>
-            </div>
+          <div class="friend-tile d-inline-flex">
+            <p class="friend-name">Greg Papadopolous <i class="far fa-times-circle"></i></p>
           </div>
-          <div class="friend-tile">
-            <div class="row">
-              <div class="col-3 user-icon"><i class="fas fa-user-circle"></i></div>
-              <div class="col-8 friend-name d-flex flex-wrap">
-                <p class="friend-first-name">Zee,</p>
-                <p class="friend-last-name">Vishnu</p>
-              </div>
-            </div>
+          <div class="friend-tile d-inline-flex">
+            <p class="friend-name">Meeyoung Park <i class="far fa-times-circle"></i></p>
+          </div>
+          <div class="friend-tile d-inline-flex">
+            <p class="friend-name">Natalie Portman <i class="far fa-times-circle"></i></p>
+          </div>
+          <div class="friend-tile d-inline-flex">
+            <p class="friend-name">Sastry Satyanarayana <i class="far fa-times-circle"></i></p>
+          </div>
+          <div class="friend-tile d-inline-flex">
+            <p class="friend-name">Nani Whitner <i class="far fa-times-circle"></i></p>
           </div>
         </div>
-      </section>
+
     </div>
+  </div>
+  </div>
+  </section>
+  </div>
   </div>
 
   <footer></footer>
