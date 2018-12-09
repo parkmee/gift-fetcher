@@ -17,6 +17,7 @@ app.engine("handlebars", exphbs({
   defaultLayout: "main",
   // Source - https://stackoverflow.com/questions/33059203/error-missing-helper-in-handlebars-js
   helpers: {
+    // usage in handlebar: {{math @index "+" 1}}
     math: function (v1, operator, v2) {
       v1 = parseFloat(v1);
       v2 = parseFloat(v2);
@@ -28,6 +29,7 @@ app.engine("handlebars", exphbs({
         "%": v1 % v2
       }[operator];
     },
+    // usage in handlebars: {{#if (compare v1 "===" v2)}}
     compare: function (v1, operator, v2) {
       v1 = v1.toLowerCase();
       v2 = v2.toLowerCase();
