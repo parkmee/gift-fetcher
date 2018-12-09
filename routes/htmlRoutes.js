@@ -3,20 +3,24 @@ const path = require("path");
 module.exports = function(app) {
   // Load index page
 
-  app.get("/", function(req, res) {
+  app.get("/index", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/html/index.html"));
+  });
+
+  app.get("/friend-list", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/friend-list.html"));
+  });
+
+  app.get("/profile", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/profile.html"));
+  });
+
+  app.get("/new-user", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/new-user.html"));
   });
 
   app.get("/logon", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
-  });
-
-  app.get("/profile", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/html/new-user.html"));
-  });
-
-  app.get("/index", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/html/new-index.html"));
   });
 
   app.get("/calendartest", function(req, res) {
