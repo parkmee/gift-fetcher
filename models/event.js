@@ -1,5 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   const Event = sequelize.define("Event", {
+    title: {
+      type: DataTypes.STRING(150),
+      allowNull: false
+    },
     description: {
       type: DataTypes.STRING(150),
       allowNull: false
@@ -11,6 +15,11 @@ module.exports = function(sequelize, DataTypes) {
     createdBy: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    purchased: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
     }
   });
 
