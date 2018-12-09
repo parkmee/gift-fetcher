@@ -1,18 +1,38 @@
 const path = require("path");
+const TestData = require("../public/js/testdata");
+const testEvents = TestData.testEvents;
 
 module.exports = function(app) {
   // Load index page
 
-  app.get("/logon", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
+  app.get("/index", function(req, res) {
+    // TODO: retrieve currentUserId to populate upcoming events for that person
+    //$.ajax("api/event/getcreatedbyevents/:createdBy", )
+
+    const hbsObject = {
+      events: testEvents
+    };
+    res.render("index", hbsObject);
+  });
+
+  /* app.get("/index", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/index.html"));
+  }); */
+
+  app.get("/contacts", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/contacts.html"));
   });
 
   app.get("/profile", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/profile.html"));
+  });
+
+  app.get("/new-user", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/html/new-user.html"));
   });
 
-  app.get("/index", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/html/index.html"));
+  app.get("/logon", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
   });
 
   app.get("/calendartest", function(req, res) {

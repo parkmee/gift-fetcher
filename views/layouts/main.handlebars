@@ -2,11 +2,63 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  {{!-- adding bootstrap via npm package --}}
-  {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"> --}}
-  <link rel="stylesheet" href="../../public/styles/styles.css" media="screen" title="no title" charset="utf-8">
   <title>Gift Fetcher</title>
+  <base href="/">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Material Design for Bootstrap -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+    integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
+  <!-- Tiny Circleslide Stylesheet -->
+  <link type="text/css" href="../../public/styles/tinycircleslider.css">
+
+  <!-- Calendar -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css">
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="../../public/styles/main.css">
+  <link rel="stylesheet" type="text/css" href="../../public/styles/carousel.css">
+  <link rel="stylesheet" type="text/css" href="../../public/styles/custom-carousel.css">
+  <link rel="stylesheet" type="text/css" href="../../public/styles/friend-list.css">
+  <link rel="stylesheet" type="text/css" href="../../public/styles/modal.css">
+  <link rel="stylesheet" type="text/css" href="../../public/styles/new-user.css">
+  <link rel="stylesheet" type="text/css" href="../../public/styles/tinycircleslider.css">
+
+  <!-- Fonts and Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Rancho|Sacramento|Telex|Syncopate" rel="stylesheet">
+
+  <!-- JQuery - required to load before Full Calendar -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <!-- MomentJS - required to load before Full Calendar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.js"></script>
+  <!-- Latest version of materialize.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Slick Carousel -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+  <!-- Tiny Circleslider -->
+  <script type="text/javascript" src="../../public/js/jquery.tinycircleslider.js"></script>
+  <!-- Full Calendar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+  {{!-- Custom JS --}}
+  <script type="text/javascript" src="../../public/js/compare.js"></script>
+
 </head>
 
 <body>
