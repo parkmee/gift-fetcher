@@ -142,7 +142,7 @@ describe("DELETE /api/person/:id", () => {
     });
   });
 
-  it("it should create an example", function() {
+  it("it should create a person", function() {
     db.Person.create({
       userName: "userfive",
       password: "secret",
