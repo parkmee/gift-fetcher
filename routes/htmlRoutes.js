@@ -6,6 +6,9 @@ module.exports = function(app) {
   // Load index page
 
   app.get("/index", function(req, res) {
+    // TODO: retrieve currentUserId to populate upcoming events for that person
+    //$.ajax("api/event/getcreatedbyevents/:createdBy", )
+
     const hbsObject = {
       events: testEvents
     };
@@ -16,8 +19,8 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname + "/../public/html/index.html"));
   }); */
 
-  app.get("/friend-list", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/html/friend-list.html"));
+  app.get("/contacts", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/contacts.html"));
   });
 
   app.get("/profile", function(req, res) {
@@ -30,6 +33,7 @@ module.exports = function(app) {
 
   app.get("/logon", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
+  });
 
   app.get("/calendartest", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.html"));
