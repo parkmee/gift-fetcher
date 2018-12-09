@@ -5,44 +5,45 @@
   font-size: 40px;
 }
 
-/* Contact List */
+/* Special Events */
+.event-view {
+  height: 350px;
+  overflow: auto;
+}
+
 .event-tile {
-  width: 245px;
+  width: 300px;
   font-size: 20px;
-  margin: 0px 0px 16px 16px;
-  background: white;
+  margin: 0px auto 10px auto;
   border-radius: 25px;
+  background-color: #91abad;
 }
 
 .event-tile .row {
   margin: 0px;
   position: relative;
+
 }
 
 .event-tile .event-icon {
   font-size: 35px;
   margin: 5px 0px 5px 0px;
-  color: #91abad;
+  color: white;
 }
 
 .event-details {
   align-content: flex-start;
-  margin: auto 0px auto 5px;
+  margin: auto 0px auto 0px;
 }
 
 .event-name {
-  margin-right: 10px !important;
+  font-weight: bold;
 }
 
 .event-name, .event-date {
-  font-size: 18px;
+  font-size: 14px;
   margin: 0px;
   height: 25px !important;
-}
-
-.delete-icon {
-  position: relative;
-  right: 5px;
-  top: 5px;
-  color: #91abad;
+  font-family: 'Syncopate';
+  color: white;
 }

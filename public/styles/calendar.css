@@ -1,6 +1,6 @@
-@import url('custom_2.css');
+/* @import url('custom_2.css'); */
 
-@font-face {
+/* @font-face {
 	font-family: 'fontawesome-selected';
 	src: url("../font/fontawesome-selected.eot");
 	src: url("../font/fontawesome-selected.eot?#iefix") format('embedded-opentype'), 
@@ -15,6 +15,10 @@
 	position: relative;
 	height: 400px;
 	width: 400px;
+} */
+
+.calendar-view {
+	margin: 20px;
 }
 
 .fc-calendar {
@@ -22,7 +26,7 @@
 	height: 100%;
 }
 
-.fc-calendar .fc-head {
+/* .fc-calendar .fc-head {
 	height: 30px;
 	line-height: 30px;
 	background: #ccc;
@@ -37,9 +41,9 @@
 	height: -webkit-calc(100% - 30px);
 	height: calc(100% - 30px);
 	border: 1px solid #ddd;
-}
+} */
 
-.fc-calendar .fc-row {
+/* .fc-calendar .fc-row {
 	width: 100%;
 	border-bottom: 1px solid #ddd;
 }
@@ -57,22 +61,21 @@
 	height: -moz-calc(100%/6);
 	height: -webkit-calc(100%/6);
 	height: calc(100%/6);
-}
+} */
 
-.fc-calendar .fc-row>div,
+/* .fc-calendar .fc-row>div,
 .fc-calendar .fc-head>div {
 	float: left;
 	height: 100%;
 	width: 14.28%;
-	/* 100% / 7 */
 	width: -moz-calc(100%/7);
 	width: -webkit-calc(100%/7);
 	width: calc(100%/7);
 	position: relative;
-}
+} */
 
 /* IE 9 is rounding up the calc it seems */
-.ie9 .fc-calendar .fc-row>div,
+/* .ie9 .fc-calendar .fc-row>div,
 .ie9 .fc-calendar .fc-head>div {
 	width: 14.2%;
 }
@@ -122,4 +125,4 @@
 
 .fc-calendar .fc-row:last-child {
 	border-bottom: none;
-}
+} */

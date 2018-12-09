@@ -32,6 +32,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Rancho|Sacramento|Telex" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded%7CDelius+Unicase%7CElsie+Swash+Caps%7CFontdiner+Swanky%7CMichroma%7CMountains+of+Christmas%7COrbitron%7CPermanent+Marker%7CRevalia%7CSpecial+Elite%7CSyncopate"
+    rel="stylesheet">
 
 </head>
 
@@ -66,16 +68,7 @@
             <label for="dob">Birthday</label>
           </div>
         </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <input placeholder="Enter password" id="password-1" type="password" class="validate">
-            <label for="password-1">Password</label>
-          </div>
-          <div class="input-field col s6">
-            <input placeholder="Re-enter password" id="password-2" type="password" class="validate">
-            <label for="password-2">Password</label>
-          </div>
-        </div>
+
         <h1 class="form-title">Profile</h1>
         <p>Please provide your special dates, gift preferences, and wish list below. Information you provide below will
           be visible to other users who add you to their Gift Fetcher contact list.</p>
@@ -87,7 +80,7 @@
               <label for="date-description">Description</label>
             </div>
             <div class="input-field col s2">
-              <input placeholder="MM/YYYY" id="special-date" type="text" class="validate">
+              <input placeholder="MM/DD/YYYY" id="special-date" type="text" class="validate">
               <label for="special-date">Date</label>
             </div>
             <div class="input-field col s2">
@@ -100,6 +93,14 @@
             <!-- Clicking this button adds additional rows -->
             <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
           </div>
+          <div class="filter-view d-flex flex-wrap">
+              <div class="filter-term-tile d-inline-flex">
+                <p>Anniversary - 10/17 <i class="fas fa-times-circle"></i></p>
+              </div>
+              <div class="filter-term-tile d-inline-flex">
+                <p>Graduation - 2/17/19 <i class="fas fa-times-circle"></i></p>
+              </div>
+            </div>
         </div>
 
         <div class="personal-preferences-subform">
@@ -113,21 +114,35 @@
             <!-- clicking this button adds additional rows -->
             <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
           </div>
+          <div class="filter-view d-flex flex-wrap">
+            <div class="filter-term-tile d-inline-flex">
+              <p>KitchenAid <i class="fas fa-times-circle"></i></p>
+            </div>
+            <div class="filter-term-tile d-inline-flex">
+              <p>Video Games <i class="fas fa-times-circle"></i></p>
+            </div>
+            <div class="filter-term-tile d-inline-flex">
+              <p>Red <i class="fas fa-times-circle"></i></p>
+            </div>
+          </div>
         </div>
       </form>
     </div>
     <h3 class="form-section wish-list">Wish List (optional)</h3>
     <div class="row wish-list">
       <div class="input-field col l5">
-        <input placeholder="Search keywords" id="product-search-term" type="text" class="validate">
-        <label for="product-search-term">Filter</label>
+        <input placeholder="Enter search terms" id="product-search-term" type="text" class="validate">
+        <label for="product-search-term">Filter search results</label>
       </div>
       <!-- Clicking this button adds filter search terms -->
       <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
     </div>
     <div class="filter-view d-flex flex-wrap">
       <div class="filter-term-tile d-inline-flex">
-        <p>Pink <i class="fas fa-times-circle"></i></p>
+        <p>Electronics <i class="fas fa-times-circle"></i></p>
+      </div>
+      <div class="filter-term-tile d-inline-flex">
+        <p>Music <i class="fas fa-times-circle"></i></p>
       </div>
     </div>
     <section id="product-search" class="my-2">
@@ -144,7 +159,15 @@
         <div class="item-container"><a href="#"><img data-lazy="../images/hdr5.jpg"></a></div>
       </div>
     </section>
+
+    <div class="row submit-row d-flex justify-content-center">
+      <button class="btn waves-effect waves-light submit-btn" type="submit" name="action">Join
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+
   </div>
+
 
 </body>
 <!-- JQuery -->

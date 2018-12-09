@@ -36,6 +36,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Rancho|Sacramento|Telex" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded%7CDelius+Unicase%7CElsie+Swash+Caps%7CFontdiner+Swanky%7CMichroma%7CMountains+of+Christmas%7COrbitron%7CPermanent+Marker%7CRevalia%7CSpecial+Elite%7CSyncopate"
+    rel="stylesheet">
 
 </head>
 
@@ -47,6 +49,7 @@
         <li><a href="index.html"><i class="fas fa-home"></i></a></li>
         <li><a href="friend-list.html"><i class="fas fa-user-friends"></i></a></li>
         <li><a href="profile.html"><i class="fas fa-cog"></i></a></li>
+        <li><a href="profile.html"><i class="fas fa-cog"></i></a></li>
       </ul>
     </div>
   </nav>
@@ -54,20 +57,34 @@
   <div class="fluid-container">
     <div class="sidenav">
       <section class="row text-center">
-        <h5 class="name-text col-12">Contacts</h5>
+        <h5 class="section-title col-12 mt-2">Contacts</h5>
       </section>
 
       <section class="row d-flex justify-content-center circle-slider">
         <div id="circleslider300x300">
           <div class="viewport">
             <ul class="overview">
-              <li><div class="name-tile text-center">John Doe</div></li>
-              <li><div class="name-tile text-center">John Draper</div></li>
-              <li><div class="name-tile text-center">Mike Kelley</div></li>
-              <li><div class="name-tile text-center">Brintza Miles</div></li>
-              <li><div class="name-tile text-center">Greg Papadoplous</div></li>
-              <li><div class="name-tile text-center">Sastry Satyanarayana</div></li>
-              <li><div class="name-tile text-center">Vishnu Zee</div></li>
+              <li>
+                <div class="name-tile text-center">John Doe</div>
+              </li>
+              <li>
+                <div class="name-tile text-center">John Draper</div>
+              </li>
+              <li>
+                <div class="name-tile text-center">Mike Kelley</div>
+              </li>
+              <li>
+                <div class="name-tile text-center">Brintza Miles</div>
+              </li>
+              <li>
+                <div class="name-tile text-center">Greg Papadoplous</div>
+              </li>
+              <li>
+                <div class="name-tile text-center">Sastry Satyanarayana</div>
+              </li>
+              <li>
+                <div class="name-tile text-center">Vishnu Zee</div>
+              </li>
             </ul>
           </div>
 
@@ -77,54 +94,16 @@
         </div>
       </section>
 
-      <section class="row d-block justify-content-center ml-2 event-alerts">
-        <h5 class="name-text col-12 text-center">Upcoming Events</h5>
-        <h5 class="name-text col-12 text-center">12/17 - 12/30</h5>
-        <ul class="collection event-list">
-          <li class="collection-item avatar">
-            <div class="date-circle circle text-center">17</div>
-            <span class="title">Mike Kelley</span>
-            <p>Birthday <br>
-            </p>
-            <a href="#!" class="secondary-content ok-icon"><i class="fas fa-calendar-check"></i></a>
-          </li>
-          <li class="collection-item avatar">
-            <div class="date-circle circle text-center">18</div>
-            <span class="title">John Doe</span>
-            <p>Birthday <br>
-            </p>
-            <a href="#!" class="secondary-content ok-icon"><i class="fas fa-calendar-check"></i></a>
-          </li>
-          <li class="collection-item avatar">
-            <div class="date-circle circle text-center">28</div>
-            <span class="title">Pam Smith</span>
-            <p>Birthday <br>
-            </p>
-            <a href="#!" class="secondary-content missing-icon"><i class="fas fa-gift"></i></a>
-          </li>
-          <li class="collection-item avatar">
-            <div class="date-circle circle text-center">30</div>
-            <span class="title">Don Draper</span>
-            <p>Birthday <br>
-            </p>
-            <a href="#!" class="secondary-content missing-icon"><i class="fas fa-gift"></i></a>
-          </li>
-        </ul>
-      </section>
-
-    </div>
-
-    <div class="content">
-      <section id="events">
-        <h1 class="section-title w-100">Special Events</h1>
-        <div class="event-view d-flex flex-wrap">
+      <section id="events" class="d-block special-events">
+        <h1 class="section-title w-100 text-center">Special Events</h1>
+        <div class="event-view d-block justify-content-center">
 
           <div class="event-tile">
             <div class="row">
               <div class="col-2 event-icon"><i class="fas fa-ring"></i></div>
               <div class="col-8 event-details">
-                <p class="event-name">Anniversay</p>
-                <p class="event-date">12/3</p>
+                <p class="event-name">Anniversary</p>
+                <p class="event-date">1/5 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
               </div>
               <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
             </div>
@@ -134,7 +113,17 @@
               <div class="col-2 event-icon"><i class="fas fa-birthday-cake"></i></div>
               <div class="col-8 event-details">
                 <p class="event-name">Birthday</p>
-                <p class="event-date">12/3</p>
+                <p class="event-date">1/30 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-heart"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Valentine's Day</p>
+                <p class="event-date">2/14 <span class="missing-icon"><i class="fas fa-gift"></i></p>
               </div>
               <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
             </div>
@@ -144,17 +133,7 @@
               <div class="col-2 event-icon"><i class="fas fa-user-graduate"></i></div>
               <div class="col-8 event-details">
                 <p class="event-name">Graduation</p>
-                <p class="event-date">12/3</p>
-              </div>
-              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
-            </div>
-          </div>
-          <div class="event-tile">
-            <div class="row">
-              <div class="col-2 event-icon"><i class="fas fa-heart"></i></div>
-              <div class="col-8 event-details d-flex flex-wrap">
-                <p class="event-name">Valentine's Day</p>
-                <p class="event-date">2/14</p>
+                <p class="event-date">2/17/19 <span class="missing-icon"><i class="fas fa-gift"></i></p>
               </div>
               <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
             </div>
@@ -164,7 +143,58 @@
               <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
               <div class="col-8 event-details">
                 <p class="event-name">Mother's Day</p>
-                <p class="event-date">12/3</p>
+                <p class="event-date">5/12 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Custom Event</p>
+                <p class="event-date">9/9 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Custom Event</p>
+                <p class="event-date">10/5 <span class="missing-icon"><i class="fas fa-gift"></i></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-female"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Christmas</p>
+                <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="content">
+
+      <section id="preference-list" class="mt-2">
+        <h1 class="section-title">Preferences</h1>
+
+        <div class="preference-view d-flex flex-wrap">
+
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-ring"></i></div>
+              <div class="col-8 event-details">
+                <p class="event-name">Anniversary</p>
+                <p class="event-date">1/5 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
               </div>
               <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
             </div>
@@ -172,8 +202,7 @@
         </div>
       </section>
 
-      <section id="product-search" class="my-2">
-        <h1 class="section-title">Search</h1>
+      <section id="preference-list" class="my-2">
         <div class="slider-bar pb-3">
           <div class="item-container"><a href="#"><img data-lazy="../images/ex1.jpg"></a></div>
           <div class="item-container"><a href="#"><img data-lazy="../images/ex2.jpg"></a></div>
@@ -195,83 +224,78 @@
         </div>
         <!-- Clicking this button adds filter search terms -->
         <a class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
-      </div>
+        <button class="btn-floating" </div> </div> </div> <footer></footer>
 
-    </div>
-  </div>
+          <!-- JS Libraries -->
+          <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+          <!-- Latest version of materialize.js -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+          <!-- Slick Carousel -->
+          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+          <!-- Tiny Circleslider -->
+          <script type="text/javascript" src="../js/jquery.tinycircleslider.js"></script>
+          <!-- Calendar -->
+          <script type="text/javascript" src="../js/jquery.calendario.js"></script>
 
-  <footer></footer>
+          <!-- Initialize Document -->
+          <script type="text/javascript">
+            $(document).ready(() => {
 
-  <!-- JS Libraries -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <!-- Latest version of materialize.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <!-- Slick Carousel -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
-  <!-- Tiny Circleslider -->
-  <script type="text/javascript" src="../js/jquery.tinycircleslider.js"></script>
-  <!-- Calendar -->
-  <script type="text/javascript" src="../js/jquery.calendario.js"></script>
+              $('.slider-bar').slick({
+                centerMode: true,
+                slidesToShow: 9,
+                slidesToScroll: 3,
+                centerPadding: '20px',
+                lazyLoad: 'ondemand',
+                responsive: [{
+                  breakpoint: 1880,
+                  settings: {
+                    slidesToShow: 8
+                  }
+                }, {
+                  breakpoint: 1730,
+                  settings: {
+                    slidesToShow: 7
+                  }
+                }, {
+                  breakpoint: 1588,
+                  settings: {
+                    slidesToShow: 6
+                  }
+                }, {
+                  breakpoint: 1420,
+                  settings: {
+                    slidesToShow: 5
+                  }
+                }, {
+                  breakpoint: 1230,
+                  settings: {
+                    slidesToShow: 4
+                  }
+                }, {
+                  breakpoint: 1090,
+                  settings: {
+                    slidesToShow: 3
+                  }
+                }, {
+                  breakpoint: 955,
+                  settings: {
+                    slidesToShow: 2
+                  }
+                }]
+              });
 
-  <!-- Initialize Document -->
-  <script type="text/javascript">
-    $(document).ready(() => {
+              /* Initialize tiny circleslider */
+              $('#circleslider300x300').tinycircleslider({
+                interval: false,
+                dotsSnap: true,
+                dotsHide: false
+              });
 
-      $('.slider-bar').slick({
-        centerMode: true,
-        slidesToShow: 9,
-        slidesToScroll: 3,
-        centerPadding: '20px',
-        lazyLoad: 'ondemand',
-        responsive: [{
-          breakpoint: 1880,
-          settings: {
-            slidesToShow: 8
-          }
-        }, {
-          breakpoint: 1730,
-          settings: {
-            slidesToShow: 7
-          }
-        }, {
-          breakpoint: 1588,
-          settings: {
-            slidesToShow: 6
-          }
-        }, {
-          breakpoint: 1420,
-          settings: {
-            slidesToShow: 5
-          }
-        }, {
-          breakpoint: 1230,
-          settings: {
-            slidesToShow: 4
-          }
-        }, {
-          breakpoint: 1090,
-          settings: {
-            slidesToShow: 3
-          }
-        }, {
-          breakpoint: 955,
-          settings: {
-            slidesToShow: 2
-          }
-        }]
-      });
-
-      /* Initialize tiny circleslider */
-      $('#circleslider300x300').tinycircleslider({
-        interval: false,
-        dotsSnap: true,
-        dotsHide: false
-      });
-
-      $('body').bootstrapMaterialDesign();
-    })
-  </script>
+              $('body').bootstrapMaterialDesign();
+            })
+          </script>
 </body>
 
 </html>

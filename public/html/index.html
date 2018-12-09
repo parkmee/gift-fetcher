@@ -25,16 +25,21 @@
   <link rel="stylesheet" type="text/css" media="screen" href="../styles/tinycircleslider.css" />
 
   <!-- Calendar -->
-  <link rel="stylesheet" type="text/css" href="../styles/calendar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css">
 
   <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="../../public/styles/main.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="../../public/styles/carousel.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../styles/calendar.css">
 
   <!-- Fonts and Icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Rancho|Sacramento|Telex" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded%7CDelius+Unicase%7CElsie+Swash+Caps%7CFontdiner+Swanky%7CMichroma%7CMountains+of+Christmas%7COrbitron%7CPermanent+Marker%7CRevalia%7CSpecial+Elite%7CSyncopate"
+    rel="stylesheet">
 
 </head>
 
@@ -75,7 +80,7 @@
       </section>
 
       <section class="row d-block justify-content-center ml-2 event-alerts">
-        <h5 class="name-text col-12 text-center">Upcoming Events</h5>
+        <h5 class="name-text col-12 text-center">upcoming events</h5>
         <h5 class="name-text col-12 text-center">12/17 - 12/30</h5>
         <ul class="collection event-list">
           <li class="collection-item avatar">
@@ -113,7 +118,7 @@
 
     <div class="content">
       <section id="product-search" class="my-2">
-        <h1 class="section-title">Search</h1>
+        <h1 class="section-title">search</h1>
         <div class="slider-bar pb-3">
           <div class="item-container"><a href="#"><img data-lazy="../images/ex1.jpg"></a></div>
           <div class="item-container"><a href="#"><img data-lazy="../images/ex2.jpg"></a></div>
@@ -130,8 +135,10 @@
 
       <section id="event-view" class="row">
         <h1 class="section-title w-100">Calendar</h1>
-        <div class="calendar-view d-flex justify-content-center w-100">
-          <div id="calendar" class="fc-calendar-container"></div>
+        <div class="calendar-view">
+          <!-- See https://fullcalendar.io/docs/google-calendar for info on how to integrate with Google Calendar -->
+          <div id="calendar"></div>
+        </div>
       </section>
 
       <section id="friend-view">
@@ -217,9 +224,11 @@
 
   <footer></footer>
 
-  <!-- JS Libraries -->
+  <!-- JQuery - required to load before Full Calendar -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+  <!-- MomentJS - required to load before Full Calendar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.js"></script>
   <!-- Latest version of materialize.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- Slick Carousel -->
@@ -227,7 +236,7 @@
   <!-- Tiny Circleslider -->
   <script type="text/javascript" src="../js/jquery.tinycircleslider.js"></script>
   <!-- Calendar -->
-  <script type="text/javascript" src="../js/jquery.calendario.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
 
   <!-- Initialize Document -->
   <script type="text/javascript">
@@ -284,10 +293,10 @@
         dotsHide: false
       });
 
-      $('#calendar').calendario();
+      $('#calendar').fullCalendar();
 
       $('body').bootstrapMaterialDesign();
-    })
+    });
   </script>
 </body>
 
