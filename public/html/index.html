@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="../../public/styles/main.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="../../public/styles/carousel.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../styles/calendar.css">
+  <link rel="stylesheet" href="../../public/styles/friend-list.css" media="screen" title="no title" charset="utf-8">
 
   <!-- Fonts and Icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
@@ -57,61 +58,123 @@
 
   <div class="fluid-container">
     <div class="sidenav">
-      <section class="row text-center">
-        <h5 class="name-text col-12">Hello, Nani Whitner!</h5>
-      </section>
-
-      <section class="row d-flex justify-content-center circle-slider">
-        <div id="circleslider300x300">
-          <div class="viewport">
-            <ul class="overview">
-              <li><a href="#"><img id="gift" src="../images/gift.jpg"></a></li>
-              <li><a href="#"><img id="balloons" src="../images/birthday-balloons.jpg"></a></li>
-              <li><a href="#"><img id="friends" src="../images/friends.jpg"></a></li>
-              <li><a href="#"><img src="../images/hdr4.jpg"></a></li>
-              <li><a href="#"><img src="../images/hdr5.jpg"></a></li>
-            </ul>
-          </div>
-
-          <div class="dot"></div>
-          <div class="overlay"></div>
-          <div class="thumb"></div>
-        </div>
-      </section>
-
       <section class="row d-block justify-content-center ml-2 event-alerts">
-        <h5 class="name-text col-12 text-center">upcoming events</h5>
-        <h5 class="name-text col-12 text-center">12/17 - 12/30</h5>
-        <ul class="collection event-list">
-          <li class="collection-item avatar">
-            <div class="date-circle circle text-center">17</div>
-            <span class="title">Mike Kelley</span>
-            <p>Birthday <br>
-            </p>
-            <a href="#!" class="secondary-content ok-icon"><i class="fas fa-calendar-check"></i></a>
-          </li>
-          <li class="collection-item avatar">
-            <div class="date-circle circle text-center">18</div>
-            <span class="title">John Doe</span>
-            <p>Birthday <br>
-            </p>
-            <a href="#!" class="secondary-content ok-icon"><i class="fas fa-calendar-check"></i></a>
-          </li>
-          <li class="collection-item avatar">
-            <div class="date-circle circle text-center">28</div>
-            <span class="title">Pam Smith</span>
-            <p>Birthday <br>
-            </p>
-            <a href="#!" class="secondary-content missing-icon"><i class="fas fa-gift"></i></a>
-          </li>
-          <li class="collection-item avatar">
-            <div class="date-circle circle text-center">30</div>
-            <span class="title">Don Draper</span>
-            <p>Birthday <br>
-            </p>
-            <a href="#!" class="secondary-content missing-icon"><i class="fas fa-gift"></i></a>
-          </li>
-        </ul>
+        <h5 class="section-title col-12 text-center mt-2">upcoming events</h5>
+        <h5 class="sub-title col-12 text-center mt-2">12/9-12/29</h5>
+
+        <div class="upcoming-event-view d-block justify-content-center">
+
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-hanukiah"></i></div>
+              <div class="col-8 event-details">
+                <p class="contact-name">Natalie Portman</p>
+                <p class="event-name">Hanukkah</p>
+                <p class="event-date">12/10 <span class="missing-icon"><i class="fas fa-gift"></i></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+              <div class="row">
+                <div class="col-2 event-icon"><i class="fas fa-birthday-cake"></i></div>
+                <div class="col-8 event-details">
+                  <p class="contact-name">Mike Kelley</p>
+                  <p class="event-name">Birthday</p>
+                  <p class="event-date">12/17 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+                </div>
+                <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+              </div>
+            </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-user-graduate"></i></div>
+              <div class="col-8 event-details">
+                <p class="contact-name">Meeyoung Park</p>
+                <p class="event-name">Graduation</p>
+                <p class="event-date">12/22/18 <span class="missing-icon"><i class="fas fa-gift"></i></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-gift"></i></div>
+              <div class="col-8 event-details">
+                <p class="contact-name">Mike Kelley</p>
+                <p class="event-name">Custom Event</p>
+                <p class="event-date">5/12 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-gift"></i></div>
+              <div class="col-8 event-details">
+                <p class="contact-name">Nina Dobrev</p>
+                <p class="event-name">Custom Event</p>
+                <p class="event-date">9/9 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-tree"></i></div>
+              <div class="col-8 event-details">
+                <p class="contact-name">Mike Kelley</p>
+                <p class="event-name">Christmas</p>
+                <p class="event-date">12/25 <span class="missing-icon"><i class="fas fa-gift"></i></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+            <div class="row">
+              <div class="col-2 event-icon"><i class="fas fa-tree"></i></div>
+              <div class="col-8 event-details">
+                <p class="contact-name">Brintza Miles</p>
+                <p class="event-name">Christmas</p>
+                <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+              </div>
+              <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+            </div>
+          </div>
+          <div class="event-tile">
+              <div class="row">
+                <div class="col-2 event-icon"><i class="fas fa-tree"></i></div>
+                <div class="col-8 event-details">
+                  <p class="contact-name">Meeyoung Park</p>
+                  <p class="event-name">Christmas</p>
+                  <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+                </div>
+                <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+              </div>
+            </div>
+            <div class="event-tile">
+                <div class="row">
+                  <div class="col-2 event-icon"><i class="fas fa-tree"></i></div>
+                  <div class="col-8 event-details">
+                    <p class="contact-name">Arun Srinivasan</p>
+                    <p class="event-name">Christmas</p>
+                    <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+                  </div>
+                  <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+                </div>
+              </div>
+              <div class="event-tile">
+                  <div class="row">
+                    <div class="col-2 event-icon"><i class="fas fa-tree"></i></div>
+                    <div class="col-8 event-details">
+                      <p class="contact-name">Nani Whitner</p>
+                      <p class="event-name">Christmas</p>
+                      <p class="event-date">12/25 <span class="ok-icon"><i class="far fa-calendar-check"></i></span></p>
+                    </div>
+                    <div class="col-1 delete-icon"><i class="far fa-times-circle"></i></div>
+                  </div>
+                </div>
+        </div>
       </section>
 
     </div>
@@ -133,6 +196,8 @@
         </div>
       </section>
 
+      <hr class="ml-3">
+
       <section id="event-view" class="row">
         <h1 class="section-title w-100">Calendar</h1>
         <div class="calendar-view">
@@ -140,6 +205,8 @@
           <div id="calendar"></div>
         </div>
       </section>
+
+      <hr class="ml-3">
 
       <section id="friend-view">
         <h1 class="section-title w-100">Contacts</h1>

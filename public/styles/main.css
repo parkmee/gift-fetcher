@@ -35,12 +35,59 @@ html body {
 }
 
 .name-text {
-  font-family: roboto;
+  font-family: 'Sacramento';
+  font-size: 40px; 
 }
 
 /* Upcoming events */
+.upcoming-event-view {
+  height: 750px;
+  overflow: auto;
+}
+
+.upcoming-event-view .event-tile {
+  width: 300px;
+  font-size: 20px;
+  margin: 0px auto 10px auto;
+  border-radius: 25px;
+  background-color: #91abad;
+}
+
 .event-list {
   border-radius: 24px;
+}
+
+.event-icon {
+  font-size: 35px;
+  margin: 5px 0px 5px 0px;
+  color: white;
+}
+
+.contact-name, .event-name, .event-date {
+  font-size: 14px;
+  margin: 0px;
+  height: 25px !important;
+  font-family: 'Syncopate';
+  color: white;
+}
+
+.upcoming-event-view .event-name {
+  font-weight: normal;
+}
+
+.upcoming-event-view .contact-name {
+  font-weight: bold;
+}
+
+.upcoming-event-view .event-details {
+  margin: 5px 0px;
+}
+
+.upcoming-event-view .delete-icon {
+  position: relative;
+  right: -5px;
+  top: 5px;
+  color: white;
 }
 
 .date-circle {
@@ -91,6 +138,12 @@ html body {
   padding: 10px 20px 0px 20px;
   margin: 0px 0px 10px 0px;
   color: #ae0000;
+}
+
+.sub-title {
+  font-family: 'Syncopate';
+  color: #ae0000;
+  font-size: 16px;
 }
 
 /* Calendar */

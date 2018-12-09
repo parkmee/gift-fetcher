@@ -31,13 +31,6 @@
 .event-tile .row {
   margin: 0px;
   position: relative;
-
-}
-
-.event-tile .event-icon {
-  font-size: 35px;
-  margin: 5px 0px 5px 0px;
-  color: white;
 }
 
 .event-details {
@@ -45,7 +38,7 @@
   margin: auto 0px auto 0px;
 }
 
-.event-name {
+.event-view .event-name {
   font-weight: bold;
 }
 
