@@ -1,17 +1,31 @@
 .name-tile {
-  margin: 120px 0px 0px 0px;
-  height: 300px;
-  width: 300px;
-  font-size: 40px;
+  margin: 0px 0px 0px 0px;
+  width: 270px;
+  font-size: 50px;
+  font-family: 'Sacramento';
+  line-height: 60px;
 }
 
-/* Contact List */
+.name-tile a {
+  color: black;
+}
+
+/* Special Events */
+#add-event-btn {
+  margin-right: 30px;
+}
+
+.event-view {
+  height: 350px;
+  overflow: auto;
+}
+
 .event-tile {
-  width: 245px;
+  width: 300px;
   font-size: 20px;
-  margin: 0px 0px 16px 16px;
-  background: white;
+  margin: 0px auto 10px auto;
   border-radius: 25px;
+  background-color: #91abad;
 }
 
 .event-tile .row {
@@ -19,30 +33,74 @@
   position: relative;
 }
 
+.event-details {
+  align-content: flex-start;
+  margin: auto 0px auto 0px;
+}
+
+.event-view .event-name {
+  font-weight: bold;
+}
+
+.event-name, .event-date {
+  font-size: 14px;
+  margin: 0px;
+  height: 25px !important;
+  font-family: 'Syncopate';
+  color: white;
+}
+
+/* Preferences */
+#add-preference {
+  margin-left: 10px;
+}
+
+.preference-view {
+  margin: 0px 0px 0px 20px;
+}
+
+.preference-tile {
+  border-radius: 24px;
+  background-color: #91abad;
+  color: white;
+  margin: 0px 5px 10px 0px;
+  padding: 10px;
+  font-family: 'Syncopate';
+}
+
+.preference-name {
+  margin: 0px;
+}
+
+.preference-tile .row {
+  margin: 0px;
+  position: relative;
+}
+
 .event-tile .event-icon {
   font-size: 35px;
   margin: 5px 0px 5px 0px;
-  color: #91abad;
+  color: white;
 }
 
 .event-details {
   align-content: flex-start;
-  margin: auto 0px auto 5px;
+  margin: auto 0px auto 0px;
 }
 
 .event-name {
-  margin-right: 10px !important;
+  font-weight: bold;
 }
 
 .event-name, .event-date {
-  font-size: 18px;
+  font-size: 14px;
   margin: 0px;
   height: 25px !important;
+  font-family: 'Syncopate';
+  color: white;
 }
 
-.delete-icon {
-  position: relative;
-  right: 5px;
-  top: 5px;
-  color: #91abad;
+/* Self-entered preferences */
+.self-selected {
+  background-color: #404e7c;
 }

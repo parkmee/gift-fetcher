@@ -1,4 +1,16 @@
 /* New User Form */
+.form-title {
+  font-family: 'Syncopate';
+  color: #ae0000;
+  font-weight: bolder;
+}
+
+.form-section {
+  font-family: 'Syncopate';
+  color: #ae0000;
+  font-size: 16px;
+}
+
 .btn-floating {
   background-color: #91abad;
 }
@@ -22,17 +34,28 @@
   background-color: #91abad;
   border-radius: 24px;
   color: white;
-  margin-bottom: 20px;
+  margin: 0px 5px 10px 0px;
+  font-family: 'Syncopate';
 }
 
 .filter-term-tile p {
   margin: 0px;
 }
 
-#product-search-term {
-  margin-bottom: 0px;
+/* Events */
+.new-event-tile {
+  padding: 10px;
+  background-color: #91abad;
+  border-radius: 24px;
+  color: white;
+  margin: 0px 5px 10px 0px;
+  font-family: 'Syncopate';
 }
 
-#product-search .slick-arrow:before {
-  color: #ae0000;
+.new-event-tile p {
+  margin: 0px;
+}
+
+#product-search-term {
+  margin-bottom: 0px;
 }
