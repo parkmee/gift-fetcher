@@ -20,6 +20,7 @@ function onSignIn(googleUser) {
         url: "/api/person/getpersonbyemail/" + profile.getEmail(),
         type: "GET"
       }).then(function(data) {
+        //res.cookie("email", "express").send("cookie set");
             if (data !== null) {
                 // if user exist, send to index route
                 window.location.replace("/index");
@@ -28,6 +29,7 @@ function onSignIn(googleUser) {
                 window.location.replace("/profile");
             }
       });
+      
 }
 
 

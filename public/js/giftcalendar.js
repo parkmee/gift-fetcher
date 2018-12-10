@@ -6,6 +6,49 @@ const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v
 const SCOPES = "https://www.googleapis.com/auth/calendar";
 const reminderDays = 14;
 
+// var auth2; // The Sign-In object.
+// var googleUser; // The current user.
+
+// var appStart = function() {
+//     gapi.load('auth2', initSigninV2);
+// };
+
+// var initSigninV2 = function() {
+//     auth2 = gapi.auth2.init({
+//         client_id: CLIENT_ID,
+//         scope: SCOPES
+//     });
+
+//     // Listen for sign-in state changes.
+//     //auth2.isSignedIn.listen(signinChanged);
+
+//     // Listen for changes to current user.
+//     //auth2.currentUser.listen(userChanged);
+
+//     // Sign in the user if they are currently signed in.
+//     if (auth2.isSignedIn.get() == true) {
+//         auth2.signIn();
+//     }
+
+//     // Start with the current live values.
+//     //refreshValues();
+// };
+
+// var signinChanged = function (val) {
+//     console.log('Signin state changed to ', val);
+//     document.getElementById('signed-in-cell').innerText = val;
+// };
+
+// var userChanged = function (user) {
+//     console.log('User now: ', user);
+//     googleUser = user;
+//     updateGoogleUser();
+//     document.getElementById('curr-user-cell').innerText =
+//       JSON.stringify(user, undefined, 2);
+// };
+
+
+
 function handleClientLoad() {
     gapi.load('client:auth2', initClient);        
 }
@@ -22,8 +65,8 @@ function initClient() {
 
       // Handle the initial sign-in state.
       updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-      authorizeButton.onclick = handleAuthClick;
-      signoutButton.onclick = handleSignoutClick;
+      //authorizeButton.onclick = handleAuthClick;
+      //signoutButton.onclick = handleSignoutClick;
 
       if (gapi.auth2.isSignedIn.get()) {
         var profile = auth2.currentUser.get().getBasicProfile();
