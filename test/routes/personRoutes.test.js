@@ -14,13 +14,14 @@ var request;
 
 // TODO:  things to test
 /*
-    GET "/api/person/get/:personid"
+    GET "/api/person/:personid"
+    GET "/api/person/getpersonbyemail/:email"
     POST "/api/person/create"
     DELETE "/api/person/:personId"
 */
 
-//Test GET "/api/person/get/:personid"
-describe("GET /api/person", function() {
+//Test GET "/api/person/:personid""
+describe("GET /api/person/:personid", function() {
   // Before each test begins, create a new request server for testing
   // & delete all examples from the db
   beforeEach(function(done) {
@@ -55,7 +56,7 @@ describe("GET /api/person", function() {
         lastName: "carter"
       }
     ]).then(function() {
-      // Request the route that returns all examples
+      // Request the route that returns a specific person
       request.get("/api/person/2").end(function(err, res) {
         var responseStatus = res.status;
         var responseBody = res.body;
@@ -79,6 +80,75 @@ describe("GET /api/person", function() {
             email: "usertwo@user.com",
             firstName: "bob",
             lastName: "barker"
+          });
+
+        // The `done` function is used to end any asynchronous tests
+        done();
+      });
+    });
+  });
+});
+
+//Test GET "/api/person/getpersonbyemail/:email"
+describe("GET /api/person/getpersonbyemail/:email", function() {
+  // Before each test begins, create a new request server for testing
+  // & delete all examples from the db
+  beforeEach(function(done) {
+    request = chai.request(server);
+    db.sequelize.sync({ force: true }).then(function() {
+      done();
+    });
+  });
+
+  it("should find person by email", function(done) {
+    // Add some examples to the db to test with
+    db.Person.bulkCreate([
+      {
+        userName: "userone",
+        password: "secret",
+        email: "userone@user.com",
+        firstName: "adam",
+        lastName: "adams"
+      },
+      {
+        userName: "usertwo",
+        password: "secret",
+        email: "usertwo@user.com",
+        firstName: "bob",
+        lastName: "barker"
+      },
+      {
+        userName: "userthree",
+        password: "secret",
+        email: "userthree@user.com",
+        firstName: "charles",
+        lastName: "carter"
+      }
+    ]).then(function() {
+      // Request the route that returns all examples
+      request.get("/api/person/getpersonbyemail/userthree@user.com").end(function(err, res) {
+        var responseStatus = res.status;
+        var responseBody = res.body;
+
+        // Run assertions on the response
+
+        expect(err).to.be.null;
+
+        expect(responseStatus).to.equal(200);
+
+        // expect(responseBody)
+        //   .to.be.an("array")
+        //   .that.has.lengthOf(2);
+
+        expect(responseBody)
+          .to.be.an("object")
+          .that.includes({
+            id: 3,
+            userName: "userthree",
+            password: "secret",
+            email: "userthree@user.com",
+            firstName: "charles",
+            lastName: "carter"
           });
 
         // The `done` function is used to end any asynchronous tests
@@ -126,10 +196,10 @@ describe("POST /api/person/create", function() {
         expect(responseBody)
           .to.be.an("object")
           .that.includes(reqBody);
-
-        // The `done` function is used to end any asynchronous tests
-        done();
       });
+
+    // The `done` function is used to end any asynchronous tests
+    done();
   });
 });
 
@@ -142,7 +212,7 @@ describe("DELETE /api/person/:id", () => {
     });
   });
 
-  it("it should create a person", function() {
+  it("it should delete a person", function(done) {
     db.Person.create({
       userName: "userfive",
       password: "secret",
@@ -150,16 +220,11 @@ describe("DELETE /api/person/:id", () => {
       firstName: "John",
       lastName: "Doe"
     });
+    request.delete("/api/person/1").end(function(err, res) {
+      var responseStatus = res.status;
+      expect(responseStatus).to.equal(200);
+      expect(err).to.be.null;
 
-    it("should delete what was inserted", function() {
-      request.delete("/api/person/1").end(function(err, res) {
-        var responseStatus = res.status;
-        expect(responseStatus).to.equal(200);
-        expect(err).to.be.null;
-      });
-    });
-
-    it("testing to see if inserted point is still there", function(done) {
       request.get("/api/person/1").end(function(err, res) {
         var responseStatus = res.status;
 
@@ -168,9 +233,9 @@ describe("DELETE /api/person/:id", () => {
         expect(err).to.be.null;
 
         expect(responseStatus).to.equal(404);
-
-        done();
       });
     });
+
+    done();
   });
 });
