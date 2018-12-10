@@ -22,7 +22,7 @@ html body {
 }
 
 /* Side nav */
-.sidenav {
+.sidenav, .sidebar {
   height: 100%;
   width: 350px;
   position: fixed;

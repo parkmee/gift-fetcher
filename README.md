@@ -19,16 +19,33 @@ Visit the [web application](https://gift-fetcher.herokuapp.com/) deployed via He
 * Javascript
 * JQuery
 * Materialize
-* Moment.js
-* Full Calendar
 * MySql
 * Heroku
 * JawsDB
 * Node.js
+* JQuery Plug-ins
+    * Full Calendar
+    * Tiny Circleslider
 * Node packages
     * MySQL
     * Express
     * Express-handlebar
+    * Cheerio
+    * Request
+    * Dotenv
+    * Google-auth-library
+    * Google APIs
+    * MomentJS
+    * PopperJS
+    * Sequelize
+* Testing
+    * NYC
+    * Mocha
+    * Chai
+    * Chai-http
+    * ESLint
+    * Prettier 
+
 
 ## Links
 [Heroku](https://gift-fetcher.herokuapp.com/)

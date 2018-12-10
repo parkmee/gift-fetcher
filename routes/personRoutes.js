@@ -1,7 +1,7 @@
 const db = require("../models");
 
 module.exports = function(app) {
-  // get all people - dont't think this is necessary
+  // get all people - don't think this is necessary
   // app.get("/api/person/get", function(req, res) {
   //   db.Person.findAll().then(function(dbData) {
   //     res.json(dbData);
@@ -9,7 +9,7 @@ module.exports = function(app) {
   // });
 
   // get one
-  app.get("/api/person/get/:personid", function(req, res) {
+  app.get("/api/person/:personid", function(req, res) {
     db.Person.findOne({ where: { id: req.params.personid } }).then(function(dbData) {
       res.json(dbData);
     });
