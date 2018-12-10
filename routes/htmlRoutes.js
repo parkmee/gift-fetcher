@@ -9,46 +9,48 @@ require("../public/js/productGetter.js")();
 module.exports = function (app) {
   // Load index page
 
-  app.get("/index", function (req, res) {
-    // TODO: retrieve currentUserId to populate upcoming events for that person
-    //$.ajax("api/event/getcreatedbyevents/:createdBy", )
-
-    async function loadData() {
-      let promise = new Promise((resolve, reject) => {
-        searchProducts("popular gifts", 20)
-      });
-
-      let products = await promise;
-
-      res.render("index", {
-        events: testEvents,
-        products: products
-      })
-    }
-    loadData();
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
   });
 
-  /* app.get("/index", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/html/index.html"));
-  }); */
+  app.get("/logon", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
+  });
 
+  app.get("/profile", function(req, res) {
+    console.log("user directed to /profile - email: ", req.user.email);
+    res.sendFile(path.join(__dirname + "/../public/html/new-user.html"));
+  });
+
+  app.get("/index", function(req, res) {
+    console.log("user directed to /index - email: ", req.user.email);
+    // can autopopulate from google if we want
+    // username:	req.user.email
+    // firstname:  req.user.name.givenName
+    // lastname:	req.user.name.familyName
+    // email:		req.user.email;
+    // googleId: 	req.user.id;
+    
+     let hbsObjects = {
+      events: testEvents,
+       // TODO: need help loading products from productGetter.js need async function
+      products: "",
+    }
+
+    res.render("index", hbsObjects);
+    //res.sendFile(path.join(__dirname + "/../public/html/index.html"));
+  });
+  
   app.get("/contacts", function (req, res) {
     res.sendFile(path.join(__dirname + "/../public/html/contacts.html"));
-  });
-
-  app.get("/profile", function (req, res) {
-    res.sendFile(path.join(__dirname + "/../public/html/profile.html"));
   });
 
   app.get("/new-user", function (req, res) {
     res.sendFile(path.join(__dirname + "/../public/html/new-user.html"));
   });
 
-  app.get("/logon", function (req, res) {
-    res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
-  });
-
-  app.get("/calendartest", function (req, res) {
+  app.get("/calendartest", function(req, res) {
+    console.log("user directed to /index - email: ", req.user.email);
     res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.html"));
   });
 

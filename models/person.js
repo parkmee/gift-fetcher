@@ -6,7 +6,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     password: {
       type: DataTypes.STRING(150),
-      allowNull: false
+      allowNull: false,
+      defaultValue: "abcd1234"
     },
     email: {
       type: DataTypes.STRING(150),
@@ -19,6 +20,10 @@ module.exports = function(sequelize, DataTypes) {
     lastName: {
       type: DataTypes.STRING(150),
       allowNull: false
+    },
+    googleId: {
+      type: DataTypes.STRING(150),
+      allowNull: true
     }
   });
 
@@ -43,17 +48,6 @@ module.exports = function(sequelize, DataTypes) {
   Person.associate = function(models) {
     Person.hasMany(models.SavedProduct, {
       onDelete: "cascade"
-    });
-  };
-
-  Person.associate = function() {
-    Person.belongsToMany(models.Event);
-  };
-
-  Person.associate = function() {
-    Person.belongsToMany(Person, {
-      as: "linkedPerson",
-      through: "contacts"
     });
   };
 
