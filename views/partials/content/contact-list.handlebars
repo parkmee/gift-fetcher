@@ -1,0 +1,13 @@
+<section id="friend-view">
+  <h1 class="section-title w-100">Contacts <a class="btn-floating btn-small waves-effect waves-light modal-trigger"
+      href="#contact-modal" id="add-event-btn"><i class="material-icons">add</i></a></h1>
+
+  <div class="friend-list-view d-flex flex-wrap">
+    {{#each contacts}}
+      <div class="friend-tile d-inline-flex">
+      <p class="friend-name">{{personFirstName}} {{personLastName}} <i class="far fa-times-circle"></i></p>
+    </div>
+    {{/each}}
+  </div>
+
+</section>

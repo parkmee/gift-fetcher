@@ -17,6 +17,10 @@
 	width: 400px;
 } */
 
+#calendar-section {
+	margin: 0px 0px 0px 0px;
+}
+
 .calendar-view {
 	margin: 20px;
 }
