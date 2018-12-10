@@ -112,5 +112,43 @@ const testContacts = [
   }
 ];
 
-module.exports.testContacts = testContacts;
-module.exports.testEvents = testEvents;
+// test data to determine if only preferences for current user (2)
+// and contact (1) are rendered
+const testPreferences = [
+  {
+    personId: 1,
+    preference: "cats",
+    createdBy: 1
+  },
+  {
+    personId: 1,
+    preference: "books",
+    createdBy: 1
+  },
+  {
+    personId: 1,
+    preference: "electronics",
+    createdBy: 2
+  },
+  {
+    personId: 1,
+    preference: "cooking",
+    createdBy: 2
+  },
+  {
+    personId: 1,
+    preference: "err1-wrong createdBy",
+    createdBy: 3
+  },
+  {
+    personId: 2,
+    preference: "err2-wrong contact",
+    createdBy: 1
+  }
+];
+
+module.exports = {
+  testContacts,
+  testEvents,
+  testPreferences
+};
