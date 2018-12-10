@@ -7,11 +7,13 @@ const db = require("./models");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const passport = require("passport");
-const util = require("util");
+/* const util = require("util");
+ */
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
-const RedisStore = require("connect-redis")(session);
+/* const RedisStore = require("connect-redis")(session);
+ */
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
 
 const GOOGLE_CLIENT_ID = "810303275752-m5egdhj3bgkra6ch90dq4tj9s0v7drep.apps.googleusercontent.com";
