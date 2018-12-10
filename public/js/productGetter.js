@@ -11,7 +11,7 @@ module.exports = function () {
     console.log(searchString);
 
     // Amazon product search query
-    const queryUrl = "https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=pink+blanket&tag=giftfetcher-20&sort=review-rank";
+    const queryUrl = `https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=${searchString}&tag=giftfetcher-20&sort=review-rank`;
 
     // get DOM content
     request(queryUrl, function(error, response, body) {
