@@ -1,0 +1,62 @@
+<script type="text/javascript">
+  $(document).ready(() => {
+
+    $('.slider-bar').slick({
+      centerMode: true,
+      slidesToShow: 9,
+      slidesToScroll: 3,
+      centerPadding: '20px',
+      lazyLoad: 'ondemand',
+      responsive: [{
+        breakpoint: 1880,
+        settings: {
+          slidesToShow: 8
+        }
+      }, {
+        breakpoint: 1730,
+        settings: {
+          slidesToShow: 7
+        }
+      }, {
+        breakpoint: 1588,
+        settings: {
+          slidesToShow: 6
+        }
+      }, {
+        breakpoint: 1420,
+        settings: {
+          slidesToShow: 5
+        }
+      }, {
+        breakpoint: 1230,
+        settings: {
+          slidesToShow: 4
+        }
+      }, {
+        breakpoint: 1090,
+        settings: {
+          slidesToShow: 3
+        }
+      }, {
+        breakpoint: 955,
+        settings: {
+          slidesToShow: 2
+        }
+      }]
+    });
+  });
+</script>
+
+<h1 class="section-title">search</h1>
+<div class="slider-bar pb-3">
+  <div class="item-container"><a href="#"><img data-lazy="../../public/images/ex2.jpg"></a></div>
+  <div class="item-container"><a href="#"><img data-lazy="../../public/images/ex2.jpg"></a></div>
+  <div class="item-container"><a href="#"><img data-lazy="../../public/images/ex3.jpg"></a></div>
+  <div class="item-container"><a href="#"><img data-lazy="../../public/images/ex4.jpg"></a></div>
+  <div class="item-container"><a href="#"><img data-lazy="../../public/images/ex5.jpg"></a></div>
+  <div class="item-container"><a href="#"><img data-lazy="../../public/images/hdr1.jpg"></a></div>
+  <div class="item-container"><a href="#"><img data-lazy="../../public/images/hdr2.jpg"></a></div>
+  <div class="item-container"><a href="#"><img data-lazy="../../public/images/hdr3.jpg"></a></div>
+  <div class="item-container"><a href="#"><img data-lazy="../../public/images/hdr4.jpg"></a></div>
+  <div class="item-container"><a href="#"><img data-lazy="../../public/images/hdr5.jpg"></a></div>
+</div>
