@@ -31,10 +31,10 @@ module.exports = function (app) {
     // email:		req.user.email;
     // googleId: 	req.user.id;
     
-     let hbsObjects = {
+    let hbsObjects = {
       events: testEvents,
-       // TODO: need help loading products from productGetter.js need async function
-      products: "",
+      // TODO: need help loading products from productGetter.js need async function
+      products: ""
     }
 
     res.render("index", hbsObjects);
