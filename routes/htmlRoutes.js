@@ -8,6 +8,14 @@ const getProducts = require("../public/js/productGetter.js");
 module.exports = function (app) {
   // Load index page
 
+  app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
+  });
+
+  app.get("/logon", function (req, res) {
+    res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
+  });
+
   app.get("/index", function (req, res) {
     //console.log("user directed to /index - email: ", req.user.email);
     // can autopopulate from google if we want
@@ -16,8 +24,6 @@ module.exports = function (app) {
     // lastname:	req.user.name.familyName
     // email:		req.user.email;
     // googleId: 	req.user.id;
-
-    //const results = productGetter.searchProducts("pink blanket", 3);
 
     function renderPage(hbsObjects) {
       res.render("index", hbsObjects);
@@ -37,23 +43,8 @@ module.exports = function (app) {
       };
 
       renderPage(hbsObjects);
-    };
-
+    }
     loadDataToIndex();
-    /* 
-        const getProductData(cb) {
-    
-        }
-     */
-    //res.sendFile(path.join(__dirname + "/../public/html/index.html"));
-  });
-
-  app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
-  });
-
-  app.get("/logon", function (req, res) {
-    res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
   });
 
   app.get("/profile", function (req, res) {
@@ -62,7 +53,35 @@ module.exports = function (app) {
   });
 
   app.get("/contacts", function (req, res) {
-    res.sendFile(path.join(__dirname + "/../public/html/contacts.html"));
+    function renderPage(hbsObjects) {
+      res.render("contacts", hbsObjects);
+    }
+
+    function loadDataToIndex() {
+      const contacts = testData.testContacts.sort(dynamicSort("personLastName"));
+      const eventsByContact = "";
+      const preferencesByContact = testData.testPreferences.sort(dynamicSort("preference"));
+      const savedGiftsByContact = "";
+      const purchasesByContact = "";
+      console.log(contacts);
+      console.log(eventsByContact);
+      console.log(preferencesByContact);
+      console.log(savedGiftsByContact);
+      console.log(purchasesByContact);
+
+      let hbsObjects = {
+        events: eventsByContact,
+        contacts: contacts,
+        // TODO: need help loading products from productGetter.js need async function
+        preferences: preferencesByContact,
+        products: getProducts("cat sweater xmas", 3),
+        savedGifts: savedGiftsByContact,
+        purchases: purchasesByContact
+      };
+
+      renderPage(hbsObjects);
+    }
+    loadDataToIndex();
   });
 
   app.get("/new-user", function (req, res) {

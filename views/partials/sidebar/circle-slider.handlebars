@@ -1,0 +1,88 @@
+  <!-- Initialize Document -->
+  <script type="text/javascript">
+    $(document).ready(() => {
+
+      $('.slider-bar').slick({
+        centerMode: true,
+        slidesToShow: 9,
+        slidesToScroll: 3,
+        centerPadding: '20px',
+        lazyLoad: 'ondemand',
+        responsive: [{
+          breakpoint: 1880,
+          settings: {
+            slidesToShow: 8
+          }
+        }, {
+          breakpoint: 1730,
+          settings: {
+            slidesToShow: 7
+          }
+        }, {
+          breakpoint: 1588,
+          settings: {
+            slidesToShow: 6
+          }
+        }, {
+          breakpoint: 1420,
+          settings: {
+            slidesToShow: 5
+          }
+        }, {
+          breakpoint: 1230,
+          settings: {
+            slidesToShow: 4
+          }
+        }, {
+          breakpoint: 1090,
+          settings: {
+            slidesToShow: 3
+          }
+        }, {
+          breakpoint: 955,
+          settings: {
+            slidesToShow: 2
+          }
+        }]
+      });
+
+      /* Initialize tiny circleslider */
+      $('#circleslider300x300').tinycircleslider({
+        interval: false,
+        dotsSnap: true,
+        dotsHide: false
+      });
+
+      $('.modal').modal();
+      $('#contact-modal').modal();
+      $('select').formSelect();
+      $('.datepicker').datepicker();
+      $('body').bootstrapMaterialDesign();
+    });
+  </script>
+  
+  <div class="row d-flex mt-3">
+  <h1 class="section-title text-center mr-auto">Contacts</h1>
+  <a class="btn-floating btn-small waves-effect waves-light modal-trigger" href="#contact-modal" id="add-event-btn"><i
+      class="material-icons">add</i></a>
+</div>
+
+<section class="row d-flex justify-content-center circle-slider">
+  <div id="circleslider300x300">
+    <div class="viewport">
+      <ul class="overview">
+        {{#each contacts}}
+        <li class="d-flex align-items-center justify-content-center">
+          <div class="name-tile text-center">
+            <a class="modal-trigger" href="#contact-modal">{{personFirstName}} {{personLastName}}</a>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="dot"></div>
+    <div class="overlay"></div>
+    <div class="thumb"></div>
+  </div>
+</section>
