@@ -1,10 +1,49 @@
 const db = require("../models");
+const moment = require("moment");
 
 module.exports = function(app) {
-  // get all gift events by person
+  // get all gift events by person id
   app.get("/api/event/getpersonevents/:personId", function(req, res) {
     db.Event.findAll({ where: { personId: req.params.personId } }).then(function(dbData) {
       res.json(dbData);
+    });
+  });
+
+  app.get("/api/event/getcreatedbyevents/:createdBy", function(req, res) {
+    db.Person.findOne({
+      where: { id: req.params.createdBy }
+    }).then(function(personData) {
+      db.Event.findAll({
+        where: { createdBy: req.params.createdBy }
+      }).then(function(eventData) {
+        personData = personData.toJSON();
+        personData.events = eventData;
+        res.json(personData);
+      });
+    });
+  });
+
+  app.get("/api/event/getupcomingevents/:createdBy", function(req, res) {
+    db.Person.findOne({
+      where: { id: req.params.createdBy }
+    }).then(function(personData) {
+      db.Event.findAll({
+        where: {
+          createdBy: req.params.createdBy,
+          eventDate: {
+            $between: [
+              moment().toISOString(),
+              moment()
+                .add("days", 14)
+                .toISOString()
+            ]
+          }
+        }
+      }).then(function(eventData) {
+        personData = personData.toJSON();
+        personData.events = eventData;
+        res.json(personData);
+      });
     });
   });
 

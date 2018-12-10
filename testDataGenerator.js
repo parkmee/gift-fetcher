@@ -42,7 +42,7 @@ class TestData {
       title: "Donna's Xmas",
       description: "Donna's Xmas",
       eventDate: "2018-12-25",
-      createdBy: 4,
+      createdBy: 1,
       PersonId: 4,
       purchased: true
     });
@@ -51,7 +51,7 @@ class TestData {
       title: "Donna's Birthday",
       description: "Donna's Birthday",
       eventDate: "2019-01-01",
-      createdBy: 4,
+      createdBy: 1,
       PersonId: 4
     });
 
@@ -62,6 +62,21 @@ class TestData {
       createdBy: 1,
       PersonId: 4,
       purchased: true
+    });
+
+    db.Contact.create({
+      personId: 1,
+      linkedPersonId: 2
+    });
+
+    db.Contact.create({
+      personId: 1,
+      linkedPersonId: 3
+    });
+
+    db.Contact.create({
+      personId: 1,
+      linkedPersonId: 4
     });
 
     db.GiftPreference.create({
