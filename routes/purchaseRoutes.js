@@ -36,3 +36,12 @@ module.exports = function(app) {
     });
   });
 };
+
+// Get all purchases by contact
+app.get("/api/purchase/getbycreatorandperson/:createdBy/:personId", function(req, res) {
+  db.Purchase.findAll({
+    where: { createdBy: req.params.createdBy, personId: req.params.personId }
+  }).then(function(dbData) {
+    res.json(dbData);
+  });
+});
