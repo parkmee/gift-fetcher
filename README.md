@@ -26,6 +26,9 @@ Visit the [web application](https://gift-fetcher.herokuapp.com/) deployed via He
 * JQuery Plug-ins
     * Full Calendar
     * Tiny Circleslider
+* Custom built plug-ins
+    * Web scraper - Amazon product search
+    * Handlebar helpers for math functions and comparison logic
 * Node packages
     * MySQL
     * Express
@@ -45,7 +48,6 @@ Visit the [web application](https://gift-fetcher.herokuapp.com/) deployed via He
     * Chai-http
     * ESLint
     * Prettier 
-
 
 ## Links
 [Heroku](https://gift-fetcher.herokuapp.com/)
