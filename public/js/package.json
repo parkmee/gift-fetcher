@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "bluebird": "^3.5.3",
     "cheerio": "^1.0.0-rc.2",
     "crawl-amazon-products": "^0.3.0",
+    "crawler": "^1.2.0",
     "jsonframe-cheerio": "^3.0.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {},
   "scripts": {

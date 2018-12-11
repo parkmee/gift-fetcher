@@ -1,0 +1,28 @@
+<nav class="sticky-top">
+  <div class="nav-wrapper">
+    <a href="index.html" class="brand-logo"><span class="gift-icon"><i class="fas fa-gift"></i></span>Gift Fetcher</a>
+    {{!-- ToDo: Work on collapsible menu for mobile --}}
+    <ul class="right hide-on-small-only">
+      <li><a href="index"><i class="fas fa-home"></i></a></li>
+      <li><a href="contacts"><i class="fas fa-user-friends"></i></a></li>
+      <li><a href="profile"><i class="fas fa-cog"></i></a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="fluid-container">
+  <div class="sidebar">
+    {{> sidebar/circle-slider}}
+    {{> sidebar/events-by-contact}}
+  </div>
+  <div class="content">
+    {{> content/preferences}}
+    <hr class="ml-3">
+    <h1 class="section-title">Search for Gifts</h1>
+    {{> content/product-search}}
+    <hr class="ml-3">
+    {{> content/saved-gifts}}
+    <hr class="ml-3">
+    {{> content/purchase-history}}
+  </div>
+</div>

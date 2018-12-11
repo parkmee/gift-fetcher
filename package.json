@@ -16,6 +16,7 @@
     "connect-redis": "^3.4.0",
     "cookie-parser": "^1.4.3",
     "crawl-amazon-products": "^0.3.0",
+    "crawler": "^1.2.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",

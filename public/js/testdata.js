@@ -1,72 +1,63 @@
 const testEvents = [
   {
-    "Person.firstName": "Mike",
-    "Person.lastName": "Kelley",
+    firstName: "Mike",
+    lastName: "Kelley",
     createdBy: 1,
     title: "Birthday",
     eventDate: "12/17/2018",
     purchased: true
   },
   {
-<<<<<<< HEAD
-    "Person.firstName": "Brintza",
-    "Person.lastName": "Miles",
+    firstName: "Brintza",
+    lastName: "Miles",
     createdBy: 1,
     title: "Birthday",
     eventDate: "12/19/2018",
     purchased: true
-=======
-    personFirstName: "Brintza",
-    personLastName: "Miles",
-    eventCreatedBy: 1,
-    eventTitle: "Birthday",
-    eventDate: "12/15/2018",
-    eventPurchased: true
->>>>>>> 313f61ef0e03bd3fa2c7a677aac76accbed295a3
   },
   {
-    "Person.firstName": "Richard",
-    "Person.lastName": "Whitner",
+    firstName: "Richard",
+    lastName: "Whitner",
     createdBy: 1,
     title: "Wedding",
     eventDate: "12/25/2018",
     purchased: false
   },
   {
-    "Person.firstName": "Meeyoung",
-    "Person.lastName": "Park",
+    firstName: "Meeyoung",
+    lastName: "Park",
     createdBy: 1,
     title: "Christmas",
     eventDate: "12/25/2018",
     purchased: true
   },
   {
-    "Person.firstName": "Natalie",
-    "Person.lastName": "Portman",
+    firstName: "Natalie",
+    lastName: "Portman",
     createdBy: 1,
     title: "Hanukkah",
     eventDate: "12/25/2018",
     purchased: true
   },
   {
-    "Person.firstName": "Nina",
-    "Person.lastName": "Dobrev",
+    firstName: "Nina",
+    lastName: "Dobrev",
     createdBy: 1,
     title: "Custom Event",
     eventDate: "12/25/2018",
     purchased: false
   },
   {
-    "Person.firstName": "Dave",
-    "Person.lastName": "Zee",
+    firstName: "Dave",
+    lastName: "Zee",
     createdBy: 1,
     title: "Graduation",
     eventDate: "12/25/2018",
     purchased: true
   },
   {
-    "Person.firstName": "Rupesh",
-    "Person.lastName": "Srinivasan",
+    firstName: "Rupesh",
+    lastName: "Srinivasan",
     createdBy: 1,
     title: "Mother's Day",
     eventDate: "12/25/2018",
@@ -74,70 +65,162 @@ const testEvents = [
   }
 ];
 
-<<<<<<< HEAD
-// const testContacts = [
-//   {
-//     fk_linkedPersonId.firstName: "Mike",
-//     fk_linkedPersonId.lastName: "Kelley",
-//     linkedPersonId: 1
-//   },
-//   {
-//     fk_linkedPersonId.firstName: "Mike",
-//     fk_linkedPersonId.lastName: "Kelley",
-//     linkedPersonId: 2
-//   },
-// ];
-
-
-
-=======
+// construct data import to only include one instance of John Adams for linkedPersonId1
 const testContacts = [
   {
-    personFirstName: "John",
-    personLastName: "Adams"
+    firstName: "John",
+    lastName: "Adams",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Nina",
-    personLastName: "Dobrev"
+    firstName: "John",
+    lastName: "Adams",
+    linkedPersonId: 2
   },
   {
-    personFirstName: "Don",
-    personLastName: "Draper"
+    firstName: "Nina",
+    lastName: "Dobrev",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "John",
-    personLastName: "Doe"
+    firstName: "Don",
+    lastName: "Draper",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Greg",
-    personLastName: "Papadopolous"
+    firstName: "John",
+    lastName: "Doe",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Brintza",
-    personLastName: "Miles"
+    firstName: "Greg",
+    lastName: "Papadopolous",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Natalie",
-    personLastName: "Portman"
+    firstName: "Brintza",
+    lastName: "Miles",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Michael",
-    personLastName: "Kelley"
+    firstName: "Natalie",
+    lastName: "Portman",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Sastry",
-    personLastName: "Satyanarayana"
+    firstName: "Michael",
+    lastName: "Kelley",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Nani",
-    personLastName: "Whitner"
+    firstName: "Sastry",
+    lastName: "Satyanarayana",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Jesus",
-    personLastName: "Christ"
+    firstName: "Nani",
+    lastName: "Whitner",
+    linkedPersonId: 1
+  },
+  {
+    firstName: "Jesus",
+    lastName: "Christ",
+    linkedPersonId: 1
   }
 ];
 
-module.exports.testContacts = testContacts;
->>>>>>> 313f61ef0e03bd3fa2c7a677aac76accbed295a3
-module.exports.testEvents = testEvents;
+// test data to determine if only preferences for current user (2)
+// and contact (1) are rendered
+const testPreferences = [
+  {
+    personId: 1,
+    preference: "cats",
+    createdBy: 1
+  },
+  {
+    personId: 1,
+    preference: "books",
+    createdBy: 1
+  },
+  {
+    personId: 1,
+    preference: "electronics",
+    createdBy: 2
+  },
+  {
+    personId: 1,
+    preference: "cooking",
+    createdBy: 2
+  },
+  {
+    personId: 1,
+    preference: "err1-wrong createdBy",
+    createdBy: 3
+  },
+  {
+    personId: 2,
+    preference: "err2-wrong contact",
+    createdBy: 1
+  }
+];
+
+const testPerson = [
+  {
+    id: 1,
+    userName: "user1",
+    password: "",
+    email: "user1@email.com",
+    firstName: "Meeyoung",
+    lastName: "Park",
+    googleId: "123456"
+  },
+  {
+    id: 2,
+    userName: "user2",
+    password: "",
+    email: "user2@email.com",
+    firstName: "Brintza",
+    lastName: "Miles",
+    googleId: "223456"
+  },
+  {
+    id: 3,
+    userName: "user3",
+    password: "",
+    email: "user3@email.com",
+    firstName: "Meeyoung",
+    lastName: "Park",
+    googleId: "323456"
+  }
+];
+
+testSavedDates = [
+  {
+    description: "Birthday",
+    savedDate: "1/30/1982",
+    personId: 1
+  },
+  {
+    description: "Graduation",
+    savedDate: "2/17/2019",
+    personId: 1
+  },
+  {
+    description: "Christmas",
+    savedDate: "12/25/2018",
+    personId: 1
+  },
+  {
+    description: "Custom Date",
+    savedDate: "1/1/2001",
+    personId: 2
+  }
+];
+
+module.exports = {
+  testContacts,
+  testEvents,
+  testPreferences,
+  testPerson,
+  testSavedDates
+};
