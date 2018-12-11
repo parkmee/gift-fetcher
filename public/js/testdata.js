@@ -194,9 +194,33 @@ const testPerson = [
   }
 ];
 
+testSavedDates = [
+  {
+    description: "Birthday",
+    savedDate: "1/30/1982",
+    personId: 1
+  },
+  {
+    description: "Graduation",
+    savedDate: "2/17/2019",
+    personId: 1
+  },
+  {
+    description: "Christmas",
+    savedDate: "12/25/2018",
+    personId: 1
+  },
+  {
+    description: "Custom Date",
+    savedDate: "1/1/2001",
+    personId: 2
+  }
+];
+
 module.exports = {
   testContacts,
   testEvents,
   testPreferences,
-  testPerson
+  testPerson,
+  testSavedDates
 };

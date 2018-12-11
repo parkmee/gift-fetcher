@@ -90,11 +90,13 @@ module.exports = function(app) {
 
     function loadDataToSignIn() {
       const users = testData.testPerson.sort(dynamicSort("lastName"));
+      const savedDates = testData.testSavedDates.sort(dynamicSort("description"));
       console.log(users);
+      console.log(savedDates);
 
       let hbsObjects = {
-        users: users
-        //products: searchProducts("cat toys")
+        users: users,
+        products: searchProducts("cat toys")
       };
 
       renderPage(hbsObjects);
