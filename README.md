@@ -33,8 +33,7 @@ Visit the [web application](https://gift-fetcher.herokuapp.com/) deployed via He
     * MySQL
     * Express
     * Express-handlebar
-    * Cheerio
-    * Request
+    * Crawler (integrates Request and Cheerio)
     * Dotenv
     * Google-auth-library
     * Google APIs
