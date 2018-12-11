@@ -26,7 +26,8 @@ Visit the [web application](https://gift-fetcher.herokuapp.com/) deployed via He
 * JQuery Plug-ins
     * Full Calendar
     * Tiny Circleslider
-* Custom built plug-ins
+    * Slick Carousel
+* Custom plug-ins
     * Web scraper - Amazon product search
     * Handlebar helpers for math functions and comparison logic
 * Node packages
