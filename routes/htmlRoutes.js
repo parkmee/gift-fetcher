@@ -53,6 +53,7 @@ module.exports = function(app) {
   });
 
   app.get("/contacts", (req, res) => {
+
     function renderPage(hbsObjects) {
       res.render("contacts", hbsObjects);
     }
@@ -89,8 +90,7 @@ module.exports = function(app) {
   });
 
   app.get("/calendartest", (req, res) => {
-    console.log("user directed to /index - email: ", req.user.email);
-    res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.html"));
+    res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.1.html"));
   });
 
   // Render 404 page for any unmatched routes
