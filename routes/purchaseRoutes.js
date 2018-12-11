@@ -9,8 +9,8 @@ module.exports = function(app) {
   });
 
   // get all purchases by contact
-  app.get("/api/purchase/getbycontact/:contactId", function(req, res) {
-    db.Purchase.findAll({ where: { contactId: req.params.contactId } }).then(function(dbData) {
+  app.get("/api/purchase/getbycreator/:createdBy", function(req, res) {
+    db.Purchase.findAll({ where: { createdBy: req.params.createdBy } }).then(function(dbData) {
       res.json(dbData);
     });
   });
@@ -35,13 +35,13 @@ module.exports = function(app) {
       res.json(dbData);
     });
   });
-};
 
-// Get all purchases by contact
-app.get("/api/purchase/getbycreatorandperson/:createdBy/:personId", function(req, res) {
-  db.Purchase.findAll({
-    where: { createdBy: req.params.createdBy, personId: req.params.personId }
-  }).then(function(dbData) {
-    res.json(dbData);
+  // Get all purchases by contact
+  app.get("/api/purchase/getbycreatorandperson/:createdBy/:personId", function(req, res) {
+    db.Purchase.findAll({
+      where: { createdBy: req.params.createdBy, personId: req.params.personId }
+    }).then(function(dbData) {
+      res.json(dbData);
+    });
   });
-});
+};

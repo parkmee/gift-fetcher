@@ -7,11 +7,11 @@ const db = require("./models");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const passport = require("passport");
-const util = require("util");
+//const util = require("util");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
-const RedisStore = require("connect-redis")(session);
+//const RedisStore = require("connect-redis")(session);
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
 
 const GOOGLE_CLIENT_ID = "810303275752-m5egdhj3bgkra6ch90dq4tj9s0v7drep.apps.googleusercontent.com";
@@ -55,15 +55,15 @@ passport.deserializeUser((userDataFromCookie, done) => {
 // this can be called on a route to ensure the user is authenticated
 // TODO: apply on all html routes
 // TODO: figure out whatever is needed to apply to API routes too!
-const accessProtectionMiddleware = (req, res, next) => {
-  if (req.isAuthenticated()) {
-    next();
-  } else {
-    res.status(403).json({
-      message: "must be logged in to continue"
-    });
-  }
-};
+// const accessProtectionMiddleware = (req, res, next) => {
+//   if (req.isAuthenticated()) {
+//     next();
+//   } else {
+//     res.status(403).json({
+//       message: "must be logged in to continue"
+//     });
+//   }
+// };
 
 passport.use(
   new GoogleStrategy(
@@ -101,56 +101,62 @@ app.get(
       } else {
         // if user does NOT exist, send to profile route to create profile
         res.redirect("/profile");
+        //res.redirect("/calendartest");
       }
     });
   }
 );
 
 // Handlebars
-app.engine("handlebars", exphbs({
-  defaultLayout: "main",
-  // Source - https://stackoverflow.com/questions/33059203/error-missing-helper-in-handlebars-js
-  helpers: {
-    // usage in handlebar: {{math @index "+" 1}}
-    math: function (v1, operator, v2) {
-      v1 = parseFloat(v1);
-      v2 = parseFloat(v2);
-      return {
-        "+": v1 + v2,
-        "-": v1 - v2,
-        "*": v1 * v2,
-        "/": v1 / v2,
-        "%": v1 % v2
-      }[operator];
-    },
-    // usage in handlebars: {{#if (compare v1 "===" v2)}}
-    compare: function (v1, operator, v2) {
-      v1 = v1.toLowerCase();
-      v2 = v2.toLowerCase();
-      return {
-        "==": v1 == v2,
-        "!=": v1 != v2,
-        "===": v1 === v2,
-        "<": v1 < v2,
-        "<=": v1 <= v2,
-        ">": v1 > v2,
-        ">=": v1 >= v2,
-        "&&": !!(v1 && v2),
-        "||": !!(v1 || v2)
-      }[operator];
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main",
+    // Source - https://stackoverflow.com/questions/33059203/error-missing-helper-in-handlebars-js
+    helpers: {
+      // usage in handlebar: {{math @index "+" 1}}
+      math: function(v1, operator, v2) {
+        v1 = parseFloat(v1);
+        v2 = parseFloat(v2);
+        return {
+          "+": v1 + v2,
+          "-": v1 - v2,
+          "*": v1 * v2,
+          "/": v1 / v2,
+          "%": v1 % v2
+        }[operator];
+      },
+      // usage in handlebars: {{#if (compare v1 "===" v2)}}
+      compare: function(v1, operator, v2) {
+        v1 = v1.toLowerCase();
+        v2 = v2.toLowerCase();
+        return {
+          "==": v1 === v2,
+          "!=": v1 !== v2,
+          "===": v1 === v2,
+          "<": v1 < v2,
+          "<=": v1 <= v2,
+          ">": v1 > v2,
+          ">=": v1 >= v2,
+          "&&": !!(v1 && v2),
+          "||": !!(v1 || v2)
+        }[operator];
+      }
     }
-  }
-}));
+  })
+);
 app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/eventRoutes")(app);
+require("./routes/contactRoutes")(app);
 require("./routes/giftPreferenceRoutes")(app);
 require("./routes/personRoutes")(app);
 require("./routes/productRoutes")(app);
 require("./routes/purchaseRoutes")(app);
 require("./routes/savedDateRoutes")(app);
 require("./routes/savedProductRoutes")(app);
+require("./routes/googleCalendarRoute")(app);
 
 require("./routes/htmlRoutes")(app);
 
@@ -173,7 +179,6 @@ if (process.env.NODE_ENV === "development") {
 db.sequelize.sync(syncOptions).then(function() {
   //td.createTestData();
   app.listen(PORT, function() {
-
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
