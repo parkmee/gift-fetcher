@@ -164,8 +164,21 @@ const testPreferences = [
   }
 ];
 
+const testPerson = [
+  {
+    id: 1,
+    userName: "user1",
+    password: "",
+    email: "user1@email.com"
+    firstName: "Meeyoung",
+    lastName: "Park",
+    googleId: "123456"
+  }
+]
+
 module.exports = {
   testContacts,
   testEvents,
-  testPreferences
+  testPreferences,
+  testPerson
 };
