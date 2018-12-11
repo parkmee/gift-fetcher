@@ -100,7 +100,7 @@ app.get(
         res.redirect("/index");
       } else {
         // if user does NOT exist, send to profile route to create profile
-        res.redirect("/profile");
+        res.redirect("/new-user");
         //res.redirect("/calendartest");
       }
     });
