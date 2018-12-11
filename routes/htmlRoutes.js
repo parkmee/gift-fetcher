@@ -12,7 +12,7 @@ const moment = require("moment");
 // email:		req.user.email;
 // googleId: 	req.user.id;
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Load index page
 
   app.get("/", (req, res) => {
@@ -26,7 +26,6 @@ module.exports = function (app) {
   });
 
   app.get("/index", (req, res) => {
-
     function renderPage(hbsObjects) {
       res.render("index", hbsObjects);
     }
@@ -44,7 +43,7 @@ module.exports = function (app) {
           }
         ],
         raw: true
-      }).then(function (dbData) {
+      }).then(function(dbData) {
         contacts = dbData;
         console.log(contacts);
         console.log(contacts[0]['fk_linkedPersonId.id'])
@@ -85,7 +84,6 @@ module.exports = function (app) {
         //where: { id: req.params.createdBy }
         where: { id: 1 }
       }).then(function() { */
-
       //});
 
       //const contacts = testData.testContacts.sort(dynamicSort("lastName"));
@@ -156,7 +154,7 @@ module.exports = function (app) {
   });
 
   app.get("/calendartest", (req, res) => {
-    res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.1.html"));
+    res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.html"));
   });
 
   // Render 404 page for any unmatched routes

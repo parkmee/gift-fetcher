@@ -1,4 +1,4 @@
-require("dotenv").config({
+/* require("dotenv").config({
   path: __dirname + ".env"
 });
 var chai = require("chai");
@@ -12,14 +12,11 @@ chai.use(chaiHttp);
 
 var request;
 
-// // TODO:  things to test
-// /*
-
+// TODO:  things to test
 //     GET "/api/event/getpersonevents/:personId"
 //     GET "/api/event/getupcoming/:windowDays"
 //     POST "/api/event/create"
 //     DELETE "/api/event/:eventId"
-// */
 
 //Testing GET "/api/event/getpersonevents/:personId"
 describe("GET /api/event/getpersonevents/:personId", function() {
@@ -35,17 +32,17 @@ describe("GET /api/event/getpersonevents/:personId", function() {
   it("it should return events by person", function() {
     db.Person.bulkCreate([
       {
-        userName: "userone",
+        userName: "eventuserone",
         password: "secret",
-        email: "userone@user.com",
-        firstName: "User",
+        email: "eventuserone@user.com",
+        firstName: "EventUser",
         lastName: "One"
       },
       {
-        userName: "usertwo",
+        userName: "eventusertwo",
         password: "secret",
-        email: "usertwo@user.com",
-        firstName: "User",
+        email: "eventusertwo@user.com",
+        firstName: "EventUser",
         lastName: "Two"
       }
     ]);
@@ -54,15 +51,15 @@ describe("GET /api/event/getpersonevents/:personId", function() {
       //Add some examples to the db to test with
       db.Event.bulkCreate([
         {
-          description: "First Event",
-          title: "First Event",
+          description: "Test First Event",
+          title: "Test First Event",
           eventDate: "2018-12-15",
           PersonId: 1,
           createdBy: 1
         },
         {
-          description: "Second Event",
-          title: "Second Event",
+          description: " TestSecond Event",
+          title: "Test Second Event",
           eventDate: "2019-01-01",
           PersonId: 2,
           createdBy: 2
@@ -82,7 +79,7 @@ describe("GET /api/event/getpersonevents/:personId", function() {
         expect(responseBody[0])
           .to.be.an("object")
           .that.includes({
-            description: "First Event",
+            description: "Test First Event",
             eventDate: "2019-01-01",
             PersonId: 1,
             createdBy: 1
@@ -183,11 +180,11 @@ describe("POST /api/event/create", function() {
   it("should save an event", function(done) {
     //create a person first
     db.Person.create({
-      userName: "userone",
+      userName: "user4delete",
       password: "secret",
-      email: "userone@user.com",
-      firstName: "User",
-      lastName: "One"
+      email: "user4delete@user.com",
+      firstName: "Almost",
+      lastName: "Gone"
     });
 
     // Create an object to send to the endpoint
@@ -239,26 +236,31 @@ describe("DELETE /api/event/:eventId", function() {
     //create a person first to satisfy table relationships
 
     db.Person.create({
-      userName: "userone",
+      userName: "eventpersontobedeleted",
       password: "secret",
-      email: "userone@user.com",
-      firstName: "User",
-      lastName: "One"
+      email: "eventpersontobedeleted@user.com",
+      firstName: "Michael",
+      lastName: "Kelly"
     });
 
     //Add an event
     db.Event.create({
-      description: "First Event",
-      title: "First Event",
+      description: "Delete Event",
+      title: "Deleted Event",
       eventDate: "2018-12-15",
       PersonId: 1,
       createdBy: 1
     });
 
-    request.delete("/api/event/1").end(function(err, res) {
-      var responseStatus = res.status;
-      expect(responseStatus).to.equal(200);
-      expect(err).to.be.null;
+    request.delete("/api/person/1").end(function(err2, res2) {
+      var responseStatus2 = res2.status;
+      expect(responseStatus2).to.equal(200);
+      expect(err2).to.be.null;
+    });
+    request.delete("/api/event/1").end(function(err1, res1) {
+      var responseStatus1 = res1.status;
+      expect(responseStatus1).to.equal(200);
+      expect(err1).to.be.null;
     });
 
     request.get("/api/event/1").end(function(err, res) {
@@ -271,7 +273,6 @@ describe("DELETE /api/event/:eventId", function() {
       expect(responseStatus).to.equal(404);
       done();
     });
-
-    //The `done` function is used to end any asynchronous tests
   });
 });
+ */
