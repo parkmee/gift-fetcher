@@ -57,7 +57,7 @@ module.exports = function(app) {
       res.render("contacts", hbsObjects);
     }
 
-    function loadDataToIndex() {
+    function loadDataToContact() {
       const contacts = testData.testContacts.sort(dynamicSort("lastName"));
       const eventsByContact = "";
       const preferencesByContact = testData.testPreferences.sort(dynamicSort("preference"));
@@ -81,11 +81,26 @@ module.exports = function(app) {
 
       renderPage(hbsObjects);
     }
-    loadDataToIndex();
+    loadDataToContact();
   });
 
   app.get("/new-user", (req, res) => {
-    res.sendFile(path.join(__dirname + "/../public/html/new-user.html"));
+    function renderPage(hbsObjects) {
+      res.render("new-user", hbsObjects);
+    }
+
+    function loadDataToSignIn() {
+      const users = testData.testPerson.sort(dynamicSort("lastName"));
+      console.log(users);
+
+      let hbsObjects = {
+        users: users,
+        products: getProducts("cat sweater xmas", 3)
+      };
+
+      renderPage(hbsObjects);
+    }
+    loadDataToSignIn();
   });
 
   app.get("/calendartest", (req, res) => {
