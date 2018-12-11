@@ -1,20 +1,21 @@
 //dependencies
-const request = require('request');
-const cheerio = require('cheerio');
 
-module.exports = function () {
-  this.searchProducts = function (searchTerms, itemNumber) {
-    let products = [];
+const request = require("request");
+const cheerio = require("cheerio");
 
-    // Join search string with '+' sign
-    const searchString = searchTerms.split(" ").join("+");
-    console.log(searchString);
+module.exports = function(searchTerms, itemNumber) {
+  let products = [];
 
-    // Amazon product search query
-    const queryUrl = `https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=${searchString}&tag=giftfetcher-20&sort=review-rank`;
+  // Join search string with '+' sign
+  const searchString = searchTerms.split(" ").join("+");
+  console.log(searchString);
 
-    // get DOM content
-    request(queryUrl, function(error, response, body) {
+  // Amazon product search query
+  const queryUrl = `https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=${searchString}&tag=giftfetcher-20&sort=review-rank`;
+
+  // get DOM content
+  request(queryUrl, function(error, response, body) {
+    setTimeout(() => {
       if (error) {
         return console.error(error);
       }
@@ -55,7 +56,7 @@ module.exports = function () {
           return parseFloat(priceWhole) + parseFloat(priceFraction / 100);
         };
 
-        for (i = 0; i < itemNumber; i++) {
+        for (i = 3; i < itemNumber + 4; i++) {
           let product = {
             asin: getASIN(),
             description: getLongTitle(),
@@ -70,9 +71,12 @@ module.exports = function () {
         console.log(products);
         return products;
       }
-    });
-  };
+    }, 3000);
+  });
 };
+
+//test
+//searchProducts("pink blanket", 3);
 
 // alternate option - does not return all required variables
 

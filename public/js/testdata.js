@@ -8,12 +8,21 @@ const testEvents = [
     purchased: true
   },
   {
+<<<<<<< HEAD
     "Person.firstName": "Brintza",
     "Person.lastName": "Miles",
     createdBy: 1,
     title: "Birthday",
     eventDate: "12/19/2018",
     purchased: true
+=======
+    personFirstName: "Brintza",
+    personLastName: "Miles",
+    eventCreatedBy: 1,
+    eventTitle: "Birthday",
+    eventDate: "12/15/2018",
+    eventPurchased: true
+>>>>>>> 313f61ef0e03bd3fa2c7a677aac76accbed295a3
   },
   {
     "Person.firstName": "Richard",
@@ -65,6 +74,7 @@ const testEvents = [
   }
 ];
 
+<<<<<<< HEAD
 // const testContacts = [
 //   {
 //     fk_linkedPersonId.firstName: "Mike",
@@ -80,4 +90,54 @@ const testEvents = [
 
 
 
+=======
+const testContacts = [
+  {
+    personFirstName: "John",
+    personLastName: "Adams"
+  },
+  {
+    personFirstName: "Nina",
+    personLastName: "Dobrev"
+  },
+  {
+    personFirstName: "Don",
+    personLastName: "Draper"
+  },
+  {
+    personFirstName: "John",
+    personLastName: "Doe"
+  },
+  {
+    personFirstName: "Greg",
+    personLastName: "Papadopolous"
+  },
+  {
+    personFirstName: "Brintza",
+    personLastName: "Miles"
+  },
+  {
+    personFirstName: "Natalie",
+    personLastName: "Portman"
+  },
+  {
+    personFirstName: "Michael",
+    personLastName: "Kelley"
+  },
+  {
+    personFirstName: "Sastry",
+    personLastName: "Satyanarayana"
+  },
+  {
+    personFirstName: "Nani",
+    personLastName: "Whitner"
+  },
+  {
+    personFirstName: "Jesus",
+    personLastName: "Christ"
+  }
+];
+
+module.exports.testContacts = testContacts;
+>>>>>>> 313f61ef0e03bd3fa2c7a677aac76accbed295a3
 module.exports.testEvents = testEvents;
