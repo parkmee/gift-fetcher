@@ -21,10 +21,11 @@ var request;
 */
 
 //Test GET "/api/person/:personid""
-describe("GET /api/person/:personid", function() {
+describe("poersonRoute Tests", function() {
   // Before each test begins, create a new request server for testing
   // & delete all examples from the db
   beforeEach(function(done) {
+    this.timeout(10000);
     request = chai.request(server);
     db.sequelize.sync({ force: true }).then(function() {
       done();
@@ -167,21 +168,8 @@ describe("POST /api/person/create", function() {
           .to.be.an("object")
           .that.includes(reqBody);
       });
-
-    // The `done` function is used to end any asynchronous tests
-    done();
-  });
-});
-
-//Test "DELETE /api/person/:id"
-describe("DELETE /api/person/:id", () => {
-  beforeEach(function(done) {
-    request = chai.request(server);
-    db.sequelize.sync({ force: true }).then(function() {
-      done();
     });
   });
-
   it("it should delete a person", function(done) {
     db.Person.create({
       userName: "tobedeleted",
@@ -208,4 +196,5 @@ describe("DELETE /api/person/:id", () => {
 
     done();
   });
+
 });

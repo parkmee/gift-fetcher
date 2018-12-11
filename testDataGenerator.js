@@ -65,17 +65,17 @@ class TestData {
     });
 
     db.Contact.create({
-      personId: 1,
+      PersonId: 1,
       linkedPersonId: 2
     });
 
     db.Contact.create({
-      personId: 1,
+      PersonId: 1,
       linkedPersonId: 3
     });
 
     db.Contact.create({
-      personId: 1,
+      PersonId: 1,
       linkedPersonId: 4
     });
 

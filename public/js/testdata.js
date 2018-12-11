@@ -1,70 +1,96 @@
 const testEvents = [
   {
-    personFirstName: "Mike",
-    personLastName: "Kelley",
-    eventCreatedBy: 1,
-    eventTitle: "Birthday",
+    "Person.firstName": "Mike",
+    "Person.lastName": "Kelley",
+    createdBy: 1,
+    title: "Birthday",
     eventDate: "12/17/2018",
-    eventPurchased: true
+    purchased: true
   },
   {
+<<<<<<< HEAD
+    "Person.firstName": "Brintza",
+    "Person.lastName": "Miles",
+    createdBy: 1,
+    title: "Birthday",
+    eventDate: "12/19/2018",
+    purchased: true
+=======
     personFirstName: "Brintza",
     personLastName: "Miles",
     eventCreatedBy: 1,
     eventTitle: "Birthday",
     eventDate: "12/15/2018",
     eventPurchased: true
+>>>>>>> 313f61ef0e03bd3fa2c7a677aac76accbed295a3
   },
   {
-    personFirstName: "Richard",
-    personLastName: "Whitner",
-    eventCreatedBy: 1,
-    eventTitle: "Wedding",
+    "Person.firstName": "Richard",
+    "Person.lastName": "Whitner",
+    createdBy: 1,
+    title: "Wedding",
     eventDate: "12/25/2018",
-    eventPurchased: false
+    purchased: false
   },
   {
-    personFirstName: "Meeyoung",
-    personLastName: "Park",
-    eventCreatedBy: 1,
-    eventTitle: "Christmas",
+    "Person.firstName": "Meeyoung",
+    "Person.lastName": "Park",
+    createdBy: 1,
+    title: "Christmas",
     eventDate: "12/25/2018",
-    eventPurchased: true
+    purchased: true
   },
   {
-    personFirstName: "Natalie",
-    personLastName: "Portman",
-    eventCreatedBy: 1,
-    eventTitle: "Hanukkah",
+    "Person.firstName": "Natalie",
+    "Person.lastName": "Portman",
+    createdBy: 1,
+    title: "Hanukkah",
     eventDate: "12/25/2018",
-    eventPurchased: true
+    purchased: true
   },
   {
-    personFirstName: "Nina",
-    personLastName: "Dobrev",
-    eventCreatedBy: 1,
-    eventTitle: "Custom Event",
+    "Person.firstName": "Nina",
+    "Person.lastName": "Dobrev",
+    createdBy: 1,
+    title: "Custom Event",
     eventDate: "12/25/2018",
-    eventPurchased: false
+    purchased: false
   },
   {
-    personFirstName: "Dave",
-    personLastName: "Zee",
-    eventCreatedBy: 1,
-    eventTitle: "Graduation",
+    "Person.firstName": "Dave",
+    "Person.lastName": "Zee",
+    createdBy: 1,
+    title: "Graduation",
     eventDate: "12/25/2018",
-    eventPurchased: true
+    purchased: true
   },
   {
-    personFirstName: "Rupesh",
-    personLastName: "Srinivasan",
-    eventCreatedBy: 1,
-    eventTitle: "Mother's Day",
+    "Person.firstName": "Rupesh",
+    "Person.lastName": "Srinivasan",
+    createdBy: 1,
+    title: "Mother's Day",
     eventDate: "12/25/2018",
-    eventPurchased: true
+    purchased: true
   }
 ];
 
+<<<<<<< HEAD
+// const testContacts = [
+//   {
+//     fk_linkedPersonId.firstName: "Mike",
+//     fk_linkedPersonId.lastName: "Kelley",
+//     linkedPersonId: 1
+//   },
+//   {
+//     fk_linkedPersonId.firstName: "Mike",
+//     fk_linkedPersonId.lastName: "Kelley",
+//     linkedPersonId: 2
+//   },
+// ];
+
+
+
+=======
 const testContacts = [
   {
     personFirstName: "John",
@@ -113,4 +139,5 @@ const testContacts = [
 ];
 
 module.exports.testContacts = testContacts;
+>>>>>>> 313f61ef0e03bd3fa2c7a677aac76accbed295a3
 module.exports.testEvents = testEvents;

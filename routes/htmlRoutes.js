@@ -61,6 +61,28 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname + "/../public/html/new-user.html"));
   });
 
+<<<<<<< HEAD
+  app.get("/index", function(req, res) {
+    console.log("user directed to /index - email: ", req.user.email);
+    // can autopopulate from google if we want
+    // username:	req.user.email
+    // firstname:  req.user.name.givenName
+    // lastname:	req.user.name.familyName
+    // email:		req.user.email;
+    // googleId: 	req.user.id;
+
+    let hbsObjects = {
+      events: testEvents,
+      // TODO: need help loading products from productGetter.js need async function
+      products: ""
+    };
+
+    res.render("index", hbsObjects);
+    //res.sendFile(path.join(__dirname + "/../public/html/index.html"));
+  });
+
+=======
+>>>>>>> 313f61ef0e03bd3fa2c7a677aac76accbed295a3
   app.get("/contacts", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/html/contacts.html"));
   });
@@ -70,8 +92,7 @@ module.exports = function(app) {
   });
 
   app.get("/calendartest", function(req, res) {
-    console.log("user directed to /index - email: ", req.user.email);
-    res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.html"));
+    res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.1.html"));
   });
 
   // Render 404 page for any unmatched routes
