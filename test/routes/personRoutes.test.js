@@ -13,15 +13,14 @@ chai.use(chaiHttp);
 var request;
 
 // TODO:  things to test
-/*
-    GET "/api/person/:personid"
-    GET "/api/person/getpersonbyemail/:email"
-    POST "/api/person/create"
-    DELETE "/api/person/:personId"
-*/
+
+//GET "/api/person/:personid"
+//GET "/api/person/getpersonbyemail/:email"
+//POST "/api/person/create"
+//DELETE "/api/person/:personId"
 
 //Test GET "/api/person/:personid""
-describe("poersonRoute Tests", function() {
+describe("GET /api/person/:personid", function() {
   // Before each test begins, create a new request server for testing
   // & delete all examples from the db
   beforeEach(function(done) {
@@ -140,7 +139,7 @@ describe("POST /api/person/create", function() {
     });
   });
 
-  it("should save a person", function(done) {
+  it("should save a person", function() {
     // Create an object to send to the endpoint
     var reqBody = {
       userName: "createdperson",
@@ -168,6 +167,17 @@ describe("POST /api/person/create", function() {
           .to.be.an("object")
           .that.includes(reqBody);
       });
+  });
+});
+
+//Test DELETE "/api/person/create"
+describe("DELETE /api/person/:personId", function() {
+  // Before each test begins, create a new request server for testing
+  // & delete all examples from the db
+  beforeEach(function(done) {
+    request = chai.request(server);
+    db.sequelize.sync({ force: true }).then(function() {
+      done();
     });
   });
   it("it should delete a person", function(done) {
@@ -196,5 +206,4 @@ describe("POST /api/person/create", function() {
 
     done();
   });
-
 });
