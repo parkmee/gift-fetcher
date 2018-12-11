@@ -90,8 +90,6 @@ module.exports = function(app) {
       //const events = testData.testEvents.sort(dynamicSort("eventDate"));
       //console.log(testData.testContacts);
       //console.log(testData.testEvents);
-
-      
     }
     loadDataToIndex();
   });
