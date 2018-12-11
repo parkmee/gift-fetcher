@@ -31,60 +31,34 @@ describe("GET /api/person/:personid", function() {
     });
   });
 
-  it("should find person by person id", function(done) {
-    // Add some examples to the db to test with
-    db.Person.bulkCreate([
-      {
-        userName: "userone",
-        password: "secret",
-        email: "userone@user.com",
-        firstName: "adam",
-        lastName: "adams"
-      },
-      {
-        userName: "usertwo",
-        password: "secret",
-        email: "usertwo@user.com",
-        firstName: "bob",
-        lastName: "barker"
-      },
-      {
-        userName: "userthree",
-        password: "secret",
-        email: "userthree@user.com",
-        firstName: "charles",
-        lastName: "carter"
-      }
-    ]).then(function() {
-      // Request the route that returns a specific person
-      request.get("/api/person/2").end(function(err, res) {
-        var responseStatus = res.status;
-        var responseBody = res.body;
+  it("should find person by person id", function() {
+    db.Person.create({
+      userName: "mygetbyperson",
+      password: "secret",
+      email: "mygetbyperson@user.com",
+      firstName: "adam",
+      lastName: "adams"
+    });
+    request.get("/api/person/1").end(function(err, res) {
+      var responseStatus = res.status;
+      var responseBody = res.body;
 
-        // Run assertions on the response
+      // Run assertions on the response
 
-        expect(err).to.be.null;
+      expect(err).to.be.null;
 
-        expect(responseStatus).to.equal(200);
+      expect(responseStatus).to.equal(200);
 
-        // expect(responseBody)
-        //   .to.be.an("array")
-        //   .that.has.lengthOf(2);
-
-        expect(responseBody)
-          .to.be.an("object")
-          .that.includes({
-            id: 2,
-            userName: "usertwo",
-            password: "secret",
-            email: "usertwo@user.com",
-            firstName: "bob",
-            lastName: "barker"
-          });
-
-        // The `done` function is used to end any asynchronous tests
-        done();
-      });
+      expect(responseBody)
+        .to.be.an("object")
+        .that.includes({
+          id: 1,
+          userName: "mygetbyperson",
+          password: "secret",
+          email: "mygetbyperson@user.com",
+          firstName: "adam",
+          lastName: "adams"
+        });
     });
   });
 });
@@ -104,29 +78,29 @@ describe("GET /api/person/getpersonbyemail/:email", function() {
     // Add some examples to the db to test with
     db.Person.bulkCreate([
       {
-        userName: "userone",
+        userName: "personuserone",
         password: "secret",
-        email: "userone@user.com",
+        email: "personuserone@user.com",
         firstName: "adam",
         lastName: "adams"
       },
       {
-        userName: "usertwo",
+        userName: "personusertwo",
         password: "secret",
-        email: "usertwo@user.com",
+        email: "personusertwo@user.com",
         firstName: "bob",
         lastName: "barker"
       },
       {
-        userName: "userthree",
+        userName: "personuserthree",
         password: "secret",
-        email: "userthree@user.com",
+        email: "personuserthree@user.com",
         firstName: "charles",
         lastName: "carter"
       }
     ]).then(function() {
       // Request the route that returns all examples
-      request.get("/api/person/getpersonbyemail/userthree@user.com").end(function(err, res) {
+      request.get("/api/person/getpersonbyemail/personuserthree@user.com").end(function(err, res) {
         var responseStatus = res.status;
         var responseBody = res.body;
 
@@ -136,17 +110,13 @@ describe("GET /api/person/getpersonbyemail/:email", function() {
 
         expect(responseStatus).to.equal(200);
 
-        // expect(responseBody)
-        //   .to.be.an("array")
-        //   .that.has.lengthOf(2);
-
         expect(responseBody)
           .to.be.an("object")
           .that.includes({
             id: 3,
-            userName: "userthree",
+            userName: "personuserthree",
             password: "secret",
-            email: "userthree@user.com",
+            email: "personuserthree@user.com",
             firstName: "charles",
             lastName: "carter"
           });
@@ -172,9 +142,9 @@ describe("POST /api/person/create", function() {
   it("should save a person", function(done) {
     // Create an object to send to the endpoint
     var reqBody = {
-      userName: "userfour",
+      userName: "createdperson",
       password: "secret",
-      email: "userfour@user.com",
+      email: "createdperson@user.com",
       firstName: "Morgan",
       lastName: "Samuels"
     };
@@ -214,16 +184,16 @@ describe("DELETE /api/person/:id", () => {
 
   it("it should delete a person", function(done) {
     db.Person.create({
-      userName: "userfive",
+      userName: "tobedeleted",
       password: "secret",
-      email: "userfive@user.com",
+      email: "tobedeleted@user.com",
       firstName: "John",
       lastName: "Doe"
     });
-    request.delete("/api/person/1").end(function(err, res) {
-      var responseStatus = res.status;
-      expect(responseStatus).to.equal(200);
-      expect(err).to.be.null;
+    request.delete("/api/person/1").end(function(err1, res1) {
+      var responseStatus1 = res1.status;
+      expect(responseStatus1).to.equal(200);
+      expect(err1).to.be.null;
 
       request.get("/api/person/1").end(function(err, res) {
         var responseStatus = res.status;
