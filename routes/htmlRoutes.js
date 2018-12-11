@@ -68,7 +68,7 @@ module.exports = function(app) {
           raw: true
         }).then(function (eventData) {
           events = eventData;
-          console.log(events);
+          //console.log(events);
 
           let hbsObjects = {
             events: events,
