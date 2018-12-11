@@ -65,63 +65,67 @@ const testEvents = [
   }
 ];
 
-// const testContacts = [
-//   {
-//     fk_linkedPersonId.firstName: "Mike",
-//     fk_linkedPersonId.lastName: "Kelley",
-//     linkedPersonId: 1
-//   },
-//   {
-//     fk_linkedPersonId.firstName: "Mike",
-//     fk_linkedPersonId.lastName: "Kelley",
-//     linkedPersonId: 2
-//   },
-// ];
-
+// construct data import to only include one instance of John Adams for linkedPersonId1
 const testContacts = [
   {
-    personFirstName: "John",
-    personLastName: "Adams"
+    "fk_linkedPersonId.firstName": "John",
+    "fk_linkedPersonId.lastName": "Adams",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Nina",
-    personLastName: "Dobrev"
+    "fk_linkedPersonId.firstName": "John",
+    "fk_linkedPersonId.lastName": "Adams",
+    linkedPersonId: 2
   },
   {
-    personFirstName: "Don",
-    personLastName: "Draper"
+    "fk_linkedPersonId.firstName": "Nina",
+    "fk_linkedPersonId.lastName": "Dobrev",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "John",
-    personLastName: "Doe"
+    "fk_linkedPersonId.firstName": "Don",
+    "fk_linkedPersonId.lastName": "Draper",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Greg",
-    personLastName: "Papadopolous"
+    "fk_linkedPersonId.firstName": "John",
+    "fk_linkedPersonId.lastName": "Doe",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Brintza",
-    personLastName: "Miles"
+    "fk_linkedPersonId.firstName": "Greg",
+    "fk_linkedPersonId.lastName": "Papadopolous",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Natalie",
-    personLastName: "Portman"
+    "fk_linkedPersonId.firstName": "Brintza",
+    "fk_linkedPersonId.lastName": "Miles",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Michael",
-    personLastName: "Kelley"
+    "fk_linkedPersonId.firstName": "Natalie",
+    "fk_linkedPersonId.lastName": "Portman",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Sastry",
-    personLastName: "Satyanarayana"
+    "fk_linkedPersonId.firstName": "Michael",
+    "fk_linkedPersonId.lastName": "Kelley",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Nani",
-    personLastName: "Whitner"
+    "fk_linkedPersonId.firstName": "Sastry",
+    "fk_linkedPersonId.lastName": "Satyanarayana",
+    linkedPersonId: 1
   },
   {
-    personFirstName: "Jesus",
-    personLastName: "Christ"
+    "fk_linkedPersonId.firstName": "Nani",
+    "fk_linkedPersonId.lastName": "Whitner",
+    linkedPersonId: 1
+  },
+  {
+    "fk_linkedPersonId.firstName": "Jesus",
+    "fk_linkedPersonId.lastName": "Christ",
+    linkedPersonId: 1
   }
 ];
 
