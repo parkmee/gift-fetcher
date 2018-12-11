@@ -65,12 +65,14 @@ passport.deserializeUser((userDataFromCookie, done) => {
 //   }
 // };
 
+//const callbackUrl = "http://localhost:3000/auth/google/callback"
+const callbackUrl = "https://gift-fetcher.herokuapp.com/auth/google/callback"
 passport.use(
   new GoogleStrategy(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/auth/google/callback",
+      callbackURL: callbackUrl,
       scope: SCOPES
     },
     // This is a "verify" function required by all Passport strategies
