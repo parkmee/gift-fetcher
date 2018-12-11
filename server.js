@@ -7,6 +7,13 @@ const db = require("./models");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const passport = require("passport");
+<<<<<<< HEAD
+//const util = require("util");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+//const RedisStore = require("connect-redis")(session);
+=======
 /* const util = require("util");
  */
 const bodyParser = require("body-parser");
@@ -14,6 +21,7 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 /* const RedisStore = require("connect-redis")(session);
  */
+>>>>>>> 313f61ef0e03bd3fa2c7a677aac76accbed295a3
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
 
 const GOOGLE_CLIENT_ID = "810303275752-m5egdhj3bgkra6ch90dq4tj9s0v7drep.apps.googleusercontent.com";
@@ -57,6 +65,18 @@ passport.deserializeUser((userDataFromCookie, done) => {
 // this can be called on a route to ensure the user is authenticated
 // TODO: apply on all html routes
 // TODO: figure out whatever is needed to apply to API routes too!
+<<<<<<< HEAD
+// const accessProtectionMiddleware = (req, res, next) => {
+//   if (req.isAuthenticated()) {
+//     next();
+//   } else {
+//     res.status(403).json({
+//       message: "must be logged in to continue"
+//     });
+//   }
+// };
+
+=======
 /* const accessProtectionMiddleware = (req, res, next) => {
   if (req.isAuthenticated()) {
     next();
@@ -67,6 +87,7 @@ passport.deserializeUser((userDataFromCookie, done) => {
   }
 };
  */
+>>>>>>> 313f61ef0e03bd3fa2c7a677aac76accbed295a3
 passport.use(
   new GoogleStrategy(
     {
@@ -103,6 +124,7 @@ app.get(
       } else {
         // if user does NOT exist, send to profile route to create profile
         res.redirect("/profile");
+        //res.redirect("/calendartest");
       }
     });
   }
@@ -150,12 +172,14 @@ app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/eventRoutes")(app);
+require("./routes/contactRoutes")(app);
 require("./routes/giftPreferenceRoutes")(app);
 require("./routes/personRoutes")(app);
 require("./routes/productRoutes")(app);
 require("./routes/purchaseRoutes")(app);
 require("./routes/savedDateRoutes")(app);
 require("./routes/savedProductRoutes")(app);
+require("./routes/googleCalendarRoute")(app);
 
 require("./routes/htmlRoutes")(app);
 
