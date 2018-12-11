@@ -173,6 +173,24 @@ const testPerson = [
     firstName: "Meeyoung",
     lastName: "Park",
     googleId: "123456"
+  },
+  {
+    id: 2,
+    userName: "user2",
+    password: "",
+    email: "user2@email.com",
+    firstName: "Brintza",
+    lastName: "Miles",
+    googleId: "223456"
+  },
+  {
+    id: 3,
+    userName: "user3",
+    password: "",
+    email: "user3@email.com",
+    firstName: "Meeyoung",
+    lastName: "Park",
+    googleId: "323456"
   }
 ];
 
