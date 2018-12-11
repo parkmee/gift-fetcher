@@ -1,6 +1,6 @@
 const path = require("path");
 const testData = require("../public/js/testdata.js");
-const getProducts = require("../public/js/productGetter.js");
+const searchProducts = require("../public/js/productGetter.js");
 
 // notes on importing functions: https://stackoverflow.com/questions/5797852/in-node-js-how-do-i-include-functions-from-my-other-files
 // notes on async: https://stackoverflow.com/questions/46825735/how-do-i-stop-a-component-rendering-before-data-is-fetched
@@ -39,7 +39,7 @@ module.exports = function(app) {
         events: events,
         contacts: contacts,
         // TODO: need help loading products from productGetter.js need async function
-        products: getProducts("cat sweater xmas", 3)
+        products: searchProducts("cat toys")
       };
 
       renderPage(hbsObjects);
@@ -72,9 +72,8 @@ module.exports = function(app) {
       let hbsObjects = {
         events: eventsByContact,
         contacts: contacts,
-        // TODO: need help loading products from productGetter.js need async function
         preferences: preferencesByContact,
-        products: getProducts("cat sweater xmas", 3),
+        //products: searchProducts("cat toys"),
         savedGifts: savedGiftsByContact,
         purchases: purchasesByContact
       };
@@ -94,8 +93,8 @@ module.exports = function(app) {
       console.log(users);
 
       let hbsObjects = {
-        users: users,
-        products: getProducts("cat sweater xmas", 3)
+        users: users
+        //products: searchProducts("cat toys")
       };
 
       renderPage(hbsObjects);
