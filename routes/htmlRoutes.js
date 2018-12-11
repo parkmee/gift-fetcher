@@ -1,11 +1,18 @@
 const path = require("path");
 const testData = require("../public/js/testdata.js");
 const searchProducts = require("../public/js/productGetter.js");
+const db = require("../models");
+const moment = require("moment");
 
-// notes on importing functions: https://stackoverflow.com/questions/5797852/in-node-js-how-do-i-include-functions-from-my-other-files
-// notes on async: https://stackoverflow.com/questions/46825735/how-do-i-stop-a-component-rendering-before-data-is-fetched
+//console.log("user directed to /index - email: ", req.user.email);
+// can autopopulate from google if we want
+// username:	req.user.email
+// firstname:  req.user.name.givenName
+// lastname:	req.user.name.familyName
+// email:		req.user.email;
+// googleId: 	req.user.id;
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
 
   app.get("/", (req, res) => {
@@ -17,29 +24,64 @@ module.exports = function(app) {
   });
 
   app.get("/index", (req, res) => {
-    //console.log("user directed to /index - email: ", req.user.email);
-    // can autopopulate from google if we want
-    // username:	req.user.email
-    // firstname:  req.user.name.givenName
-    // lastname:	req.user.name.familyName
-    // email:		req.user.email;
-    // googleId: 	req.user.id;
 
     function renderPage(hbsObjects) {
       res.render("index", hbsObjects);
     }
 
     function loadDataToIndex() {
-      const contacts = testData.testContacts.sort(dynamicSort("lastName"));
-      const events = testData.testEvents.sort(dynamicSort("eventDate"));
+      let contacts = "";
+      let events = "";
+      db.Contact.findAll({
+        //where: { personId: req.params.personId },
+        where: { personId: 1 },
+        include: [
+          {
+            model: db.Person,
+            as: "fk_linkedPersonId"
+          }
+        ],
+        raw: true
+      }).then(function (dbData) {
+        contacts = dbData;
+        console.log(contacts);
+        console.log(contacts[0]['fk_linkedPersonId.id'])
+      });
+
+      /* db.Person.findOne({
+        //where: { id: req.params.createdBy }
+        where: { id: 1 }
+      }).then(function() { */
+      db.Event.findAll({
+        where: {
+          //createdBy: req.params.createdBy,
+          createdBy: 1,
+          eventDate: {
+            $between: [
+              moment().toISOString(),
+              moment()
+                .add("days", 14)
+                .toISOString()
+            ]
+          }
+        },
+        raw: true
+      }).then(function (eventData) {
+        events = eventData;
+        console.log(events);
+      });
+      //});
+
+      //const contacts = testData.testContacts.sort(dynamicSort("lastName"));
+      //const events = testData.testEvents.sort(dynamicSort("eventDate"));
       console.log(testData.testContacts);
-      console.log(testData.testEvents);
+      //console.log(testData.testEvents);
 
       let hbsObjects = {
         events: events,
-        contacts: contacts,
+        contacts: contacts
         // TODO: need help loading products from productGetter.js need async function
-        products: searchProducts("cat toys")
+        //products: searchProducts("cat toys")
       };
 
       renderPage(hbsObjects);
@@ -105,7 +147,7 @@ module.exports = function(app) {
   });
 
   app.get("/calendartest", (req, res) => {
-    res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.1.html"));
+    res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.html"));
   });
 
   // Render 404 page for any unmatched routes

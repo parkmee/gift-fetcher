@@ -1,17 +1,5 @@
 module.exports = function(sequelize) {
-  //module.exports = function(sequelize, DataTypes) {
-
-  const Contact = sequelize.define("Contact", {
-    // personId: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false
-    // },
-    // linkedPersonId: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false
-    // }
-  });
-
+  const Contact = sequelize.define("Contact", {});
   Contact.associate = function(models) {
     Contact.belongsTo(models.Person, {
       foreignKey: {
