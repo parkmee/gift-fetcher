@@ -12,19 +12,20 @@ const moment = require("moment");
 // email:		req.user.email;
 // googleId: 	req.user.id;
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Load index page
 
   app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
+    res.render("logon");
+    //res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
   });
 
   app.get("/logon", (req, res) => {
-    res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
+    res.render("logon");
+    //res.sendFile(path.join(__dirname + "/../public/html/logon.html"));
   });
 
   app.get("/index", (req, res) => {
-
     function renderPage(hbsObjects) {
       res.render("index", hbsObjects);
     }
@@ -42,49 +43,55 @@ module.exports = function (app) {
           }
         ],
         raw: true
-      }).then(function (dbData) {
+      }).then(function(dbData) {
         contacts = dbData;
         console.log(contacts);
         console.log(contacts[0]['fk_linkedPersonId.id'])
+        db.Event.findAll({
+          where: {
+            //createdBy: req.params.createdBy,
+            createdBy: 1,
+            eventDate: {
+              $between: [
+                moment().toISOString(),
+                moment()
+                  .add("days", 14)
+                  .toISOString()
+              ]
+            }
+          },
+          include: [
+            {
+              model: db.Person
+            }
+          ],
+          raw: true
+        }).then(function (eventData) {
+          events = eventData;
+          console.log(events);
+
+          let hbsObjects = {
+            events: events,
+            contacts: contacts
+            // TODO: need help loading products from productGetter.js need async function
+            //products: searchProducts("cat toys")
+          };
+          renderPage(hbsObjects);
+        });
       });
 
       /* db.Person.findOne({
         //where: { id: req.params.createdBy }
         where: { id: 1 }
       }).then(function() { */
-      db.Event.findAll({
-        where: {
-          //createdBy: req.params.createdBy,
-          createdBy: 1,
-          eventDate: {
-            $between: [
-              moment().toISOString(),
-              moment()
-                .add("days", 14)
-                .toISOString()
-            ]
-          }
-        },
-        raw: true
-      }).then(function (eventData) {
-        events = eventData;
-        console.log(events);
-      });
       //});
 
       //const contacts = testData.testContacts.sort(dynamicSort("lastName"));
       //const events = testData.testEvents.sort(dynamicSort("eventDate"));
-      console.log(testData.testContacts);
+      //console.log(testData.testContacts);
       //console.log(testData.testEvents);
 
-      let hbsObjects = {
-        events: events,
-        contacts: contacts
-        // TODO: need help loading products from productGetter.js need async function
-        //products: searchProducts("cat toys")
-      };
-
-      renderPage(hbsObjects);
+      
     }
     loadDataToIndex();
   });
