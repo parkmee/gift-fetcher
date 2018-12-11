@@ -1,4 +1,3 @@
-//TODO: add keys to dotenv later
 const CLIENT_ID = "810303275752-m5egdhj3bgkra6ch90dq4tj9s0v7drep.apps.googleusercontent.com";
 const API_KEY = "AIzaSyA19sjQUSJnmdZHmSJlXqT2-n_wSNgzTQM";
 
@@ -128,7 +127,7 @@ function addGoogleEvent(summary, description, eventDate) {
 function addEvent(evtTitle, evtDescription, evtDate, purchased, createdBy, personId) {
 
     // add to google calendar
-    addGoogleEvent(evtTitle, evtDescription, evtDate)
+    //addGoogleEvent(evtTitle, evtDescription, evtDate)
 
     let cellColor = "red";
     if (purchased) {
@@ -203,12 +202,18 @@ $(document).ready(function () {
   $("#save-event").on("click", function(){
     // call API to add event to the calendar
     // create post data for the API call
+    const eventTitle = $("#event-title").val();
+    const description = $("#event-description").val();
+    const eventDate = $("#event-date").val();
+    const createdBy = $("#created-by").val();
+    const personId = $("#person-id").val();
+
     const postData = {
-        title: $("#event-title").val(),
-        description: $("#event-description").val(),
-        eventDate: $("#event-date").val(),
-        createdBy: $("#created-by").val(),
-        PersonId: $("#person-id").val()
+        title: eventTitle,
+        description: description,
+        eventDate: eventDate,
+        createdBy: createdBy,
+        PersonId: personId
     }
     $.ajax({
         url: "/api/event/create",
@@ -224,6 +229,9 @@ $(document).ready(function () {
         $("#created-by").val(), 
         $("#person-id").val());
     
+    // add to google
+    addGoogleEvent(eventTitle, description, eventDate);
+
     $("#event-title").val("");
     $("#event-description").val("");
     $("#event-date").val("");

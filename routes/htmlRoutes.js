@@ -147,7 +147,7 @@ module.exports = function (app) {
   });
 
   app.get("/calendartest", (req, res) => {
-    res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.1.html"));
+    res.sendFile(path.join(__dirname + "/../public/html/mike-calendar.html"));
   });
 
   // Render 404 page for any unmatched routes
