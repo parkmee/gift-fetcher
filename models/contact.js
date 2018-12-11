@@ -1,4 +1,6 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize) {
+  //module.exports = function(sequelize, DataTypes) {
+
   const Contact = sequelize.define("Contact", {
     // personId: {
     //   type: DataTypes.INTEGER,

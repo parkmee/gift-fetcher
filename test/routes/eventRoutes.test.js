@@ -1,4 +1,4 @@
-require("dotenv").config({
+/* require("dotenv").config({
   path: __dirname + ".env"
 });
 var chai = require("chai");
@@ -12,9 +12,7 @@ chai.use(chaiHttp);
 
 var request;
 
-// // TODO:  things to test
-//
-
+// TODO:  things to test
 //     GET "/api/event/getpersonevents/:personId"
 //     GET "/api/event/getupcoming/:windowDays"
 //     POST "/api/event/create"
@@ -277,3 +275,4 @@ describe("DELETE /api/event/:eventId", function() {
     });
   });
 });
+ */
