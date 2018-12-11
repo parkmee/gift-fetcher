@@ -12,7 +12,7 @@ const moment = require("moment");
 // email:		req.user.email;
 // googleId: 	req.user.id;
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Load index page
 
   app.get("/", (req, res) => {
@@ -24,7 +24,6 @@ module.exports = function (app) {
   });
 
   app.get("/index", (req, res) => {
-
     function renderPage(hbsObjects) {
       res.render("index", hbsObjects);
     }
@@ -42,10 +41,10 @@ module.exports = function (app) {
           }
         ],
         raw: true
-      }).then(function (dbData) {
+      }).then(function(dbData) {
         contacts = dbData;
         console.log(contacts);
-        console.log(contacts[0]['fk_linkedPersonId.id'])
+        console.log(contacts[0]["fk_linkedPersonId.id"]);
       });
 
       /* db.Person.findOne({
@@ -66,7 +65,7 @@ module.exports = function (app) {
           }
         },
         raw: true
-      }).then(function (eventData) {
+      }).then(function(eventData) {
         events = eventData;
         console.log(events);
       });
