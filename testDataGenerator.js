@@ -51,8 +51,9 @@ class TestData {
       title: "Donna's Birthday",
       description: "Donna's Birthday",
       eventDate: "2019-01-01",
-      createdBy: 1,
-      PersonId: 4
+      createdBy: 4,
+      PersonId: 4,
+      purchase: false
     });
 
     db.Event.create({
@@ -61,6 +62,15 @@ class TestData {
       eventDate: "2019-02-05",
       createdBy: 1,
       PersonId: 4,
+      purchased: true
+    });
+
+    db.Event.create({
+      title: "Adam's Birthday",
+      description: "Adam's Birthday",
+      eventDate: "2019-02-05",
+      createdBy: 1,
+      PersonId: 1,
       purchased: true
     });
 
@@ -101,6 +111,12 @@ class TestData {
       preference: "earrings",
       createdBy: 1,
       PersonId: 4
+    });
+
+    db.GiftPreference.create({
+      preference: "tools",
+      createdBy: 1,
+      PersonId: 3
     });
 
     db.Product.create({
