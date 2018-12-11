@@ -39,7 +39,7 @@ class TestData {
     });
 
     db.Event.create({
-      title: "Donna's Xmas",
+      title: "Christmas",
       description: "Donna's Xmas",
       eventDate: "2018-12-25",
       createdBy: 1,
@@ -48,7 +48,7 @@ class TestData {
     });
 
     db.Event.create({
-      title: "Donna's Birthday",
+      title: "Birthday",
       description: "Donna's Birthday",
       eventDate: "2019-01-01",
       createdBy: 4,
@@ -57,7 +57,7 @@ class TestData {
     });
 
     db.Event.create({
-      title: "Donna's Work Anniversary",
+      title: "Anniversary",
       description: "Donna's Work Anniversary",
       eventDate: "2019-02-05",
       createdBy: 1,
@@ -66,7 +66,7 @@ class TestData {
     });
 
     db.Event.create({
-      title: "Adam's Birthday",
+      title: "Birthday",
       description: "Adam's Birthday",
       eventDate: "2019-02-05",
       createdBy: 1,
@@ -159,14 +159,14 @@ class TestData {
     });
 
     db.SavedDate.create({
-      description: "Work Anniversary",
+      description: "Anniversary",
       savedDate: "2018-12-18",
       createdBy: 4,
       PersonId: 4
     });
 
     db.SavedDate.create({
-      description: "Work Anniversary",
+      description: "Anniversary",
       savedDate: "2018-12-20",
       createdBy: 2,
       PersonId: 4
