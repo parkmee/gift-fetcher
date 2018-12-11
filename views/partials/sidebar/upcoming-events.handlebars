@@ -7,29 +7,29 @@
     <div class="event-tile">
       <div class="row">
         <div class="col-2 event-icon">
-          {{#if (compare eventTitle "===" "Birthday")}}
+          {{#if (compare title "===" "Birthday")}}
             <i class="fas fa-birthday-cake"></i>
-          {{else if (compare eventTitle "===" "Christmas")}}
+          {{else if (compare title "===" "Christmas")}}
             <i class="fas fa-tree"></i>
-          {{else if (compare eventTitle "===" "Graduation")}}
+          {{else if (compare title "===" "Graduation")}}
             <i class="fas fa-user-graduate"></i>
-          {{else if (compare eventTitle "===" "Hanukkah")}}
+          {{else if (compare title "===" "Hanukkah")}}
             <i class="fas fa-hanukiah"></i>
-          {{else if (compare eventTitle "===" "Anniversary")}}
+          {{else if (compare title "===" "Anniversary")}}
             <i class="fas fa-ring"></i>
-            {{else if (compare eventTitle "===" "Wedding")}}
+            {{else if (compare title "===" "Wedding")}}
             <i class="fas fa-ring"></i>
-          {{else if (compare eventTitle "===" "Valentine's Day")}}
+          {{else if (compare title "===" "Valentine's Day")}}
             <i class="fas fa-heart"></i>
           {{else}}
             <i class="fas fa-gift"></i>
           {{/if}}
         </div>
         <div class="col-8 event-details">
-          <p class="contact-name">{{personFirstName}} {{personLastName}}</p>
-          <p class="event-name">{{eventTitle}}</p>
+          <p class="contact-name">{{firstName}} {{lastName}}</p>
+          <p class="event-name">{{title}}</p>
           <p class="event-date">{{eventDate}}
-            {{#if eventPurchased}}
+            {{#if purchased}}
             <span class="ok-icon"><i class="far fa-calendar-check"></i></span>
             {{else}}
             <span class="missing-icon"><i class="fas fa-gift"></i></span>

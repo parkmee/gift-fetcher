@@ -1,63 +1,63 @@
 const testEvents = [
   {
-    "Person.firstName": "Mike",
-    "Person.lastName": "Kelley",
+    firstName: "Mike",
+    lastName: "Kelley",
     createdBy: 1,
     title: "Birthday",
     eventDate: "12/17/2018",
     purchased: true
   },
   {
-    "Person.firstName": "Brintza",
-    "Person.lastName": "Miles",
+    firstName: "Brintza",
+    lastName: "Miles",
     createdBy: 1,
     title: "Birthday",
     eventDate: "12/19/2018",
     purchased: true
   },
   {
-    "Person.firstName": "Richard",
-    "Person.lastName": "Whitner",
+    firstName: "Richard",
+    lastName: "Whitner",
     createdBy: 1,
     title: "Wedding",
     eventDate: "12/25/2018",
     purchased: false
   },
   {
-    "Person.firstName": "Meeyoung",
-    "Person.lastName": "Park",
+    firstName: "Meeyoung",
+    lastName: "Park",
     createdBy: 1,
     title: "Christmas",
     eventDate: "12/25/2018",
     purchased: true
   },
   {
-    "Person.firstName": "Natalie",
-    "Person.lastName": "Portman",
+    firstName: "Natalie",
+    lastName: "Portman",
     createdBy: 1,
     title: "Hanukkah",
     eventDate: "12/25/2018",
     purchased: true
   },
   {
-    "Person.firstName": "Nina",
-    "Person.lastName": "Dobrev",
+    firstName: "Nina",
+    lastName: "Dobrev",
     createdBy: 1,
     title: "Custom Event",
     eventDate: "12/25/2018",
     purchased: false
   },
   {
-    "Person.firstName": "Dave",
-    "Person.lastName": "Zee",
+    firstName: "Dave",
+    lastName: "Zee",
     createdBy: 1,
     title: "Graduation",
     eventDate: "12/25/2018",
     purchased: true
   },
   {
-    "Person.firstName": "Rupesh",
-    "Person.lastName": "Srinivasan",
+    firstName: "Rupesh",
+    lastName: "Srinivasan",
     createdBy: 1,
     title: "Mother's Day",
     eventDate: "12/25/2018",
@@ -68,63 +68,63 @@ const testEvents = [
 // construct data import to only include one instance of John Adams for linkedPersonId1
 const testContacts = [
   {
-    "fk_linkedPersonId.firstName": "John",
-    "fk_linkedPersonId.lastName": "Adams",
+    firstName: "John",
+    lastName: "Adams",
     linkedPersonId: 1
   },
   {
-    "fk_linkedPersonId.firstName": "John",
-    "fk_linkedPersonId.lastName": "Adams",
+    firstName: "John",
+    lastName: "Adams",
     linkedPersonId: 2
   },
   {
-    "fk_linkedPersonId.firstName": "Nina",
-    "fk_linkedPersonId.lastName": "Dobrev",
+    firstName: "Nina",
+    lastName: "Dobrev",
     linkedPersonId: 1
   },
   {
-    "fk_linkedPersonId.firstName": "Don",
-    "fk_linkedPersonId.lastName": "Draper",
+    firstName: "Don",
+    lastName: "Draper",
     linkedPersonId: 1
   },
   {
-    "fk_linkedPersonId.firstName": "John",
-    "fk_linkedPersonId.lastName": "Doe",
+    firstName: "John",
+    lastName: "Doe",
     linkedPersonId: 1
   },
   {
-    "fk_linkedPersonId.firstName": "Greg",
-    "fk_linkedPersonId.lastName": "Papadopolous",
+    firstName: "Greg",
+    lastName: "Papadopolous",
     linkedPersonId: 1
   },
   {
-    "fk_linkedPersonId.firstName": "Brintza",
-    "fk_linkedPersonId.lastName": "Miles",
+    firstName: "Brintza",
+    lastName: "Miles",
     linkedPersonId: 1
   },
   {
-    "fk_linkedPersonId.firstName": "Natalie",
-    "fk_linkedPersonId.lastName": "Portman",
+    firstName: "Natalie",
+    lastName: "Portman",
     linkedPersonId: 1
   },
   {
-    "fk_linkedPersonId.firstName": "Michael",
-    "fk_linkedPersonId.lastName": "Kelley",
+    firstName: "Michael",
+    lastName: "Kelley",
     linkedPersonId: 1
   },
   {
-    "fk_linkedPersonId.firstName": "Sastry",
-    "fk_linkedPersonId.lastName": "Satyanarayana",
+    firstName: "Sastry",
+    lastName: "Satyanarayana",
     linkedPersonId: 1
   },
   {
-    "fk_linkedPersonId.firstName": "Nani",
-    "fk_linkedPersonId.lastName": "Whitner",
+    firstName: "Nani",
+    lastName: "Whitner",
     linkedPersonId: 1
   },
   {
-    "fk_linkedPersonId.firstName": "Jesus",
-    "fk_linkedPersonId.lastName": "Christ",
+    firstName: "Jesus",
+    lastName: "Christ",
     linkedPersonId: 1
   }
 ];

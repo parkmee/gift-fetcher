@@ -30,7 +30,7 @@ module.exports = function(app) {
     }
 
     function loadDataToIndex() {
-      const contacts = testData.testContacts.sort(dynamicSort("personLastName"));
+      const contacts = testData.testContacts.sort(dynamicSort("lastName"));
       const events = testData.testEvents.sort(dynamicSort("eventDate"));
       console.log(testData.testContacts);
       console.log(testData.testEvents);
@@ -53,13 +53,12 @@ module.exports = function(app) {
   });
 
   app.get("/contacts", (req, res) => {
-
     function renderPage(hbsObjects) {
       res.render("contacts", hbsObjects);
     }
 
     function loadDataToIndex() {
-      const contacts = testData.testContacts.sort(dynamicSort("personLastName"));
+      const contacts = testData.testContacts.sort(dynamicSort("lastName"));
       const eventsByContact = "";
       const preferencesByContact = testData.testPreferences.sort(dynamicSort("preference"));
       const savedGiftsByContact = "";
