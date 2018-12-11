@@ -5,5 +5,4 @@ npm-debug.log
 .nyc_output
 archive
 public/js/node_modules
-font
 draw.io

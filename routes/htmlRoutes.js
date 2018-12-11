@@ -90,15 +90,68 @@ module.exports = function(app) {
       //const events = testData.testEvents.sort(dynamicSort("eventDate"));
       //console.log(testData.testContacts);
       //console.log(testData.testEvents);
-
-      
     }
     loadDataToIndex();
   });
 
   app.get("/profile", (req, res) => {
-    console.log("user directed to /profile - email: ", req.user.email);
-    res.sendFile(path.join(__dirname + "/../public/html/new-user.html"));
+    //console.log("user directed to /profile - email: ", req.user.email);
+    //res.sendFile(path.join(__dirname + "/../public/html/profile.html"));
+    function renderPage(hbsObjects) {
+      res.render("index", hbsObjects);
+    }
+
+    function loadDataToProfile() {
+      let contacts = "";
+      let events = "";
+      db.Contact.findAll({
+        //where: { personId: req.params.personId },
+        where: { personId: 1 },
+        include: [
+          {
+            model: db.Person,
+            as: "fk_linkedPersonId"
+          }
+        ],
+        raw: true
+      }).then(function(dbData) {
+        contacts = dbData;
+        console.log(contacts);
+        console.log(contacts[0]['fk_linkedPersonId.id'])
+        db.Event.findAll({
+          where: {
+            //createdBy: req.params.createdBy,
+            createdBy: 1,
+            eventDate: {
+              $between: [
+                moment().toISOString(),
+                moment()
+                  .add("days", 14)
+                  .toISOString()
+              ]
+            }
+          },
+          include: [
+            {
+              model: db.Person
+            }
+          ],
+          raw: true
+        }).then(function (eventData) {
+          events = eventData;
+          console.log(events);
+
+          let hbsObjects = {
+            events: events,
+            contacts: contacts
+            // TODO: need help loading products from productGetter.js need async function
+            //products: searchProducts("cat toys")
+          };
+          renderPage(hbsObjects);
+        });
+      });
+    }
+    loadDataToProfile();
   });
 
   app.get("/contacts", (req, res) => {
