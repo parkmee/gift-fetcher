@@ -1,5 +1,5 @@
 # Gift Fetcher
-Have you ever forgotten to get a gift for your loved one on their birthday, anniversary, or other special holiday? Gift Fetcher is your personal assistant to manage your list of family and friends, including notes about favorite colors, hobbies, and interests, to help you find and purchase the perfect gift for every special occasion. You can also send your gift preferences to your loved ones to make selecting the perfect gift easier. Gift Fetcher is integrated with Google Calendar to import dates of special occasions and with Amazon to search millions of potential gifts. Setup email notifications to remind you well in advance of upcoming events.
+Have you ever forgotten to get a gift for your loved one on their birthday,anniversary, or other special holiday? Gift Fetcher is your personal assistant to manage your list of family and friends, including notes about favorite colors, hobbies, and interests, to help you find and purchase the perfect gift for every special occasion. You can also send your gift preferences to your loved ones to make selecting the perfect gift easier. Gift Fetcher is integrated with Google Calendar to import dates of special occasions and with Amazon to search millions of potential gifts. Setup email notifications to remind you well in advance of upcoming events.
 
 ## Getting Started
 Visit the [web application](https://gift-fetcher.herokuapp.com/) deployed via Heroku.
@@ -58,4 +58,4 @@ Visit the [web application](https://gift-fetcher.herokuapp.com/) deployed via He
 
 * **Meeyoung Park** - [parkmee](https://github.com/parkmee)
 * **Mike Kelley** - [mjkelley354](https://github.com/mjkelley354)
-* **Brintza Miles - [brintzamiles](https://github.com/brintzamiles)
+* **Brintza Miles** - [brintzamiles](https://github.com/brintzamiles)
