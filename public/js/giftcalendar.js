@@ -1,5 +1,5 @@
-const CLIENT_ID = "810303275752-m5egdhj3bgkra6ch90dq4tj9s0v7drep.apps.googleusercontent.com";
-const API_KEY = "AIzaSyA19sjQUSJnmdZHmSJlXqT2-n_wSNgzTQM";
+const CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const API_KEY = process.env.GOOGLE_API_KEY;
 
 const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 const SCOPES = "https://www.googleapis.com/auth/calendar";

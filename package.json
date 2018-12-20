@@ -15,6 +15,7 @@
     "cheerio": "^1.0.0-rc.2",
     "connect-redis": "^3.4.0",
     "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
     "crawl-amazon-products": "^0.3.0",
     "crawler": "^1.2.0",
     "dotenv": "^6.2.0",
