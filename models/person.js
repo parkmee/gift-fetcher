@@ -24,6 +24,11 @@ module.exports = function(sequelize, DataTypes) {
     googleId: {
       type: DataTypes.STRING(150),
       allowNull: true
+    },
+    profileSaved: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
     }
   });
 
