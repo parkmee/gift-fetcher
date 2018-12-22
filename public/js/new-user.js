@@ -1,16 +1,16 @@
 $(".new-user-submit-btn").on("click", function(){
-    let email = $("#user-name").val();
-    let userName = $("#user-name").val();
-    let firstName = $("#first-name").val();
-    let lastName = $("#last-name").val();
+    const email = $("#user-name").val();
+    const userName = $("#user-name").val();
+    const firstName = $("#first-name").val();
+    const lastName = $("#last-name").val();
 
-    let postData = {
+    const postData = {
         email: email,
         userName: userName,
         firstName: firstName,
         lastName: lastName
     };
-    let newUserUrl = "/api/person/create";
+    const newUserUrl = "/api/person/create";
     $.ajax({
         url: newUserUrl,
         type: "POST",
