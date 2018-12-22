@@ -9,6 +9,14 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/event/geteventsbycreator", function(req, res) {
+    console.log("GET /api/event/geteventsbycreator was called");
+    db.Event.findAll({ where: { createdBy: req.user.id } }).then(function(dbData) {
+      console.log("returning data: ", dbData);
+      res.json(dbData);
+    });
+  });
+
   app.get("/api/event/getcreatedbyevents/:createdBy", function(req, res) {
     db.Person.findOne({
       where: { id: req.params.createdBy }

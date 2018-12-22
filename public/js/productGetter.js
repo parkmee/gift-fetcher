@@ -3,7 +3,7 @@ const Crawler = require("crawler");
 const c = new Crawler({
   maxConnections: 10,
   callback: function(error, res, done) {
-    let products = [];
+    const products = [];
 
     if (error) {
       console.error(error);
@@ -44,7 +44,7 @@ const c = new Crawler({
       };
 
       for (i = 3; i < 20; i++) {
-        let product = {
+        const product = {
           asin: getASIN(),
           description: getLongTitle(),
           title: getShortTitle(),

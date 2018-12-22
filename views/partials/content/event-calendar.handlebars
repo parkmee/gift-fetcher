@@ -1,6 +1,60 @@
 <script type="text/javascript">
+  
   $(document).ready(() => {
-    $('#calendar').fullCalendar();
+    /* initialize "new" calendar - Mike */
+    $('#calendar').fullCalendar({
+        defaultView: 'month',
+
+        // add click event for calendar events
+        eventClick: function(calEvent, jsEvent, view) {
+            alert('Event: ' + calEvent.title);
+            // change the border color just for fun
+            //$(this).css('border-color', 'red');
+            $(this).css('background-color', 'green');
+
+        },
+        
+        // add hover popup for the calendar events
+        eventRender: function(eventObj, $el) {
+            $el.popover({
+              title: eventObj.title,
+              content: eventObj.description,
+              trigger: 'hover',
+              placement: 'top',
+              container: 'body'
+            });
+        }
+
+
+    });
+
+    //loadCalendarData(personId)
+
+    $.ajax({
+          url: "/api/event/geteventsbycreator",
+          type: "GET"
+        }).then(function(data) {
+          alert(JSON.stringify(data));
+          console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+          console.log("data: ", data);
+          console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+          for (let i=0; i < data.length; i++) {   
+                     
+            let cellColor = "red";
+            if (purchased) {
+            cellColor = "green"
+            }
+
+            // add event to the calendar UI  
+            $('#calendar').fullCalendar('renderEvent', {
+                title: data[i].title,
+                description: data[i].description,
+                start: data[i].eventDate,
+                allDay: true,
+                color: cellColor     
+            });
+          }
+        });
   })
 
 </script>
