@@ -5,6 +5,12 @@ const db = require("../models");
 //const SCOPES = ["https://www.googleapis.com/auth/calendar", "profile", "email"];
 const SCOPES = [
   "https://www.googleapis.com/auth/calendar",
+  "profile",
+  "email"
+];
+
+const SCOPESOLD = [
+  "https://www.googleapis.com/auth/calendar",
   "https://www.googleapis.com/auth/userinfo.profile",
   "https://www.googleapis.com/auth/userinfo.email"
 ];
