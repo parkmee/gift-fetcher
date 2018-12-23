@@ -1,6 +1,46 @@
-<script type="text/javascript">
-  
-  $(document).ready(() => {
+<script>
+  // add an event to the calander
+function addEvent(evtTitle, evtDescription, evtDate, purchased, createdBy, personId) {
+
+    // add to google calendar
+    //addGoogleEvent(evtTitle, evtDescription, evtDate)
+
+    let cellColor = "red";
+    if (purchased) {
+    cellColor = "green"
+    }
+
+    // add event to the calendar UI  
+    $('#calendar').fullCalendar('renderEvent', {
+        title: evtTitle,
+        description: evtDescription,
+        start: evtDate,
+        allDay: true,
+        color: cellColor     
+    });
+}
+
+function loadCalendarData(personId) {
+    const getEventsUrl = "/api/event/geteventsbycreator"
+    //console.log("getEventsUrl: ", getEventsUrl);
+    $.ajax({
+        url: getEventsUrl,
+        type: "GET"
+      }).then(function(data) {
+        //console.log("data: ", data);
+        for (let i=0; i < data.length; i++) {            
+            addEvent(data[i].title, 
+                data[i].description, 
+                data[i].eventDate, 
+                data[i].purchased, 
+                data[i].createdBy, 
+                data[i].PersonId);
+        }
+      });
+}
+
+$(document).ready(function () {
+
     /* initialize "new" calendar - Mike */
     $('#calendar').fullCalendar({
         defaultView: 'month',
@@ -28,37 +68,13 @@
 
     });
 
-    //loadCalendarData(personId)
-
-    $.ajax({
-          url: "/api/event/geteventsbycreator",
-          type: "GET"
-        }).then(function(data) {
-          alert(JSON.stringify(data));
-          console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
-          console.log("data: ", data);
-          console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++");
-          for (let i=0; i < data.length; i++) {   
-                     
-            let cellColor = "red";
-            if (purchased) {
-            cellColor = "green"
-            }
-
-            // add event to the calendar UI  
-            $('#calendar').fullCalendar('renderEvent', {
-                title: data[i].title,
-                description: data[i].description,
-                start: data[i].eventDate,
-                allDay: true,
-                color: cellColor     
-            });
-          }
-        });
-  })
+    // load calendar events from the database for the PersonId
+    // this would be determined by the user who is logged on but for
+    // testing purposes, just use user person id = 4
+    loadCalendarData(4);
+  });
 
 </script>
-
 <section id="calendar-section" class="row">
   <h1 class="section-title w-100">calendar</h1>
   <div class="calendar-view">
