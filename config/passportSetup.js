@@ -2,18 +2,8 @@ const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
 const db = require("../models");
 
-//const SCOPES = ["https://www.googleapis.com/auth/calendar", "profile", "email"];
-const SCOPES = [
-  "https://www.googleapis.com/auth/calendar",
-  "profile",
-  "email"
-];
-
-const SCOPESOLD = [
-  "https://www.googleapis.com/auth/calendar",
-  "https://www.googleapis.com/auth/userinfo.profile",
-  "https://www.googleapis.com/auth/userinfo.email"
-];
+const SCOPES = ["profile", "email"];
+// const SCOPES = ["https://www.googleapis.com/auth/calendar.events", "profile", "email"];
 
 // once authenticated, save a cookie that contains the person id
 passport.serializeUser((person, done) => {
